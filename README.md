@@ -9,7 +9,7 @@ Machine: MSI Stealth 16 AI+, Windows 11 build 26200, Core Ultra 9 386H, 31.5 GB 
 ## In short
 
 - RTX GPU with 16 GB: the int4 package with an 8K-token context (steps 2 to 6) as a Foundry Local model decodes at 58.8 tokens/s, with 246 ms to the first token of a 933-token prompt. The daemon holds 13,294 MiB of GPU memory at most.
-- Keep the context short on a 16 GB GPU. The daemon sets aside the KV cache for the whole context, and the export sets 131072 tokens. With that context the int4 package fills the GPU over the 24 prompts, then takes 15 s to the first token and decodes at 43.3 tokens/s. The fp16 package and the catalog E2B's CUDA form (the `mixed` int4 / int8 decoder) run out of GPU memory on 18 of the 24 prompts.
+- Keep the context short on a 16 GB GPU. The daemon sets aside the KV cache for the whole context, and the export sets 131072 tokens. With that context the int4 package fills the GPU over the 24 prompts, then takes 15 s to the first token and decodes at 43.3 tokens/s. The fp16 package and the catalog E2B's CUDA form (the `mixed` int4 / int8 decoder) each ran out of GPU memory on 18 of the 24 prompts in a run (fp16 passed in another run, see "What to know").
 - Less GPU memory: the int4 decoder with an 8K context and the fp16 embedding session on the CPU (`e4b-cuda-int4-8k-embcpu`, step 7). The daemon holds 4,042 MiB after load and 9,186 MiB at most, and decodes at 47.0 tokens/s.
 - CPU only: the CPU package (step 8) on Foundry Local's CPU EP decodes at {{CPU_TOK}} tokens/s.
 - Intel GPU and NPU: Foundry Local 0.13.0 does not run these packages there. Its OpenVINO EP fails to load them, and local models do not take the WebGPU EP. Outside Foundry Local, ONNX Runtime GenAI 0.19.0 decodes at 18.9 tokens/s with WebGPU on the Intel GPU and 7.9 with OpenVINO (step 11). The NPU does not compile the graph.
@@ -153,6 +153,11 @@ foreach ($c in "decoder", "embedding", "vision_encoder", "audio_encoder") {
 }
 & $py export_e4b.py --model gemma-4-E4B-it --hf_id google/gemma-4-E4B-it --ep cpu --dtype f32 --out e4b-cpu-fp32 --config_only
 & $py quant_e4b.py --src e4b-cpu-fp32 --dst e4b-cpu-int4 --target cpu
+```
+
+```powershell
+# 8 (continued). The CPU package as a Foundry Local model on the CPU EP: the 24 prompts and the speed run
+$py = ".venv-export\Scripts\python.exe"
 $env:Path = "$PWD\cuda12-dll;$env:Path"
 foundry server start
 $base = (Get-Content "$env:USERPROFILE\.foundry\daemon.json" -Raw | ConvertFrom-Json).web_urls[0]
@@ -234,7 +239,7 @@ foreach ($a in "0", "1") {
 - Foundry Local's documented way to add a compiled model (a folder with `inference_model.json` in the model cache) did not list these packages with CLI 0.13.0, as a junction or as real folders in the catalog's layout (`Microsoft\<name>-1\v1\`) or flat; `foundry model register` works. While `foundry cache cd` points at another folder, the registered local models are not listed either.
 - `foundry cache cd` asks to confirm a daemon restart and fails in a non-interactive shell; `--force` skips only that question.
 - The daemon keeps a model's GPU memory after `foundry model unload`; `foundry server stop` frees it.
-- The daemon sets aside the KV cache for the whole context of `genai_config.json` on the first request, and the export sets 131072 tokens. On the 16 GB GPU, the int4 package with that context grows from 8,132 MiB after load to 15,997 MiB over the 24 prompts. The speed run after them takes 15 s to the first token and decodes at 43.3 tokens/s. As the only run in a fresh daemon, it takes 265 ms and decodes at 59.4 (`results/r7_int4_s.txt`). With a 32K context the daemon holds 14,838 MiB at most and decodes at 50.9 tokens/s; with 8K, 13,294 MiB and 58.8.
+- The daemon sets aside the KV cache for the whole context of `genai_config.json` on the first request, and the export sets 131072 tokens. On the 16 GB GPU, the int4 package with that context grows from 8,132 MiB after load to 15,997 MiB over the 24 prompts. The speed run after them takes 15 s to the first token and decodes at 43.3 tokens/s. As the only run in a fresh daemon, it takes 265 ms and decodes at 59.4 (`results/r7_int4_s.txt`). {{INT4_32K}} With 8K it holds 13,294 MiB at most and decodes at 58.8.
 - The fp16 package with the 131072-token context answered all 24 prompts in one run (`results/r7_fp16_embcpu_b.txt`) and ran out of GPU memory on 18 of them in another (`results/r7_fp16_embcpu_full.txt`). {{FP16_32K}}
 - The fp16 package is 16.6 GB and does not fit in a 16 GB GPU. `variant_pkg.py --place embedding=cpu` runs the embedding session (a lookup) on the CPU.
 - The int8 embedding runs slowly on the CPU: the 8K variant with it decodes at 13.5 tokens/s in Foundry Local and 14.3 in ONNX Runtime GenAI. `e4b-cuda-int4-8k-embcpu` takes the fp16 embedding from the fp16 package (`--take embedding=e4b-cuda-fp16`) and decodes at 47.0.
