@@ -10,6 +10,7 @@ of the first new token (saved as float32 .npy) and the top-8 logits of every lat
 import argparse
 import json
 import platform
+import sys
 import time
 
 import numpy as np
@@ -94,4 +95,7 @@ def main():
 
 
 if __name__ == "__main__":
+    # Output redirected to a file on Windows is written in the ANSI code page (cp932 on a Japanese system), which
+    # cannot encode every character of a model's answer: write UTF-8.
+    sys.stdout.reconfigure(encoding="utf-8")
     main()

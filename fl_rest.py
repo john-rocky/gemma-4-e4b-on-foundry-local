@@ -112,6 +112,9 @@ def speed(url, model, out_path, runs=3, warmup=1):
 
 
 if __name__ == "__main__":
+    # Output redirected to a file on Windows is written in the ANSI code page (cp932 on a Japanese system), which
+    # cannot encode every character of a model's answer: write UTF-8.
+    sys.stdout.reconfigure(encoding="utf-8")
     if len(sys.argv) < 5 or sys.argv[1] not in ("fixture", "speed"):
         sys.exit(__doc__)
     mode = sys.argv[1]
