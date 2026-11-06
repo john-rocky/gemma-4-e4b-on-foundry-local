@@ -51,10 +51,12 @@ def main():
     except ImportError as error:
         sys.exit(f"Olive does not import in this Python: {error}")
 
+    if not os.path.isfile(os.path.join(args.src, "genai_config.json")):
+        sys.exit(f"--src {args.src} is not a package folder (no genai_config.json)")
     os.makedirs(args.dst, exist_ok=True)
     for name in os.listdir(args.src):  # package-level files (genai_config.json, tokenizer, processors)
         path = os.path.join(args.src, name)
-        if os.path.isfile(path):
+        if os.path.isfile(path) and not name.endswith((".onnx", ".onnx.data")):  # a graph belongs in its component folder
             shutil.copy2(path, os.path.join(args.dst, name))
     work = os.path.join(args.dst, "_olive")
     os.makedirs(work, exist_ok=True)
@@ -104,6 +106,8 @@ def main():
         else:
             runner = [sys.executable, "-m", "olive", "run", "--config", cfg_path]
         code = subprocess.call(runner)
+        if code == 0:  # Olive's cache holds a second copy of the output model
+            shutil.rmtree(os.path.join(work, "cache_" + component), ignore_errors=True)
         sizes = {n: os.path.getsize(os.path.join(out_dir, n)) for n in os.listdir(out_dir)} if os.path.isdir(out_dir) else {}
         report["components"][component] = {"exit": code, "s": round(time.perf_counter() - t, 1), "params": params, "files": sizes}
         print(component, json.dumps(report["components"][component]), flush=True)
