@@ -1,0 +1,23 @@
+=== 2026-11-06T15:47:06.6079141+09:00; 0.13.0
+daemon running before: False
+start: * Starting Foundry Local server
+start: OpenVINOExecutionProvider: 0%
+start: NvTensorRTRTXExecutionProvider: 0%
+start: CUDAExecutionProvider: 0%
+start: WebGpuExecutionProvider: 0%
+start: * success: Server ready (http://127.0.0.1:64644)
+start:   Public API: http://127.0.0.1:64644/v1/
+start:   Local API (BYOM): http://127.0.0.1:64644/catalogs/local/v1/
+base=http://127.0.0.1:64644
+GET http://127.0.0.1:64644/catalogs/local/v1/models -> HTTP 200
+local models listed: gemma-4-e4b-it-cuda-fp16:1, gemma-4-e4b-it-cuda-int4-8k-arena:1, gemma-4-e4b-it-cuda-int4-8k-gpu:1, gemma-4-e4b-it-cuda-int4-8k-graph:1, gemma-4-e4b-it-cuda-int4-embf16-8k:1, gemma-4-e4b-it-openvino-cpu:1, gemma-4-e4b-it-openvino-gpu:1, gemma-4-e4b-it-openvino-npu:1, gemma-4-e4b-it-webgpu-igpu:1
+v1: HTTP/1.1 404 Not Found
+v1: Connection: keep-alive
+v1: Content-Type: application/json
+v1: Server: oatpp/1.3.0
+v1: Content-Length: 143
+v1: 
+v1: {"error":{"code":null,"message":"Model not found: No model matching 'gemma-4-e4b-it-cuda-fp16:1'","param":null,"type":"invalid_request_error"}}
+GPU memory used now: 0 MiB
+stop: * success: Server stopped.
+=== end 2026-11-06T15:47:31.9041856+09:00
