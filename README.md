@@ -6,13 +6,20 @@ The checks here are text in, text out. The packages also carry the vision and au
 
 Machine: MSI Stealth 16 AI+, Windows 11 build 26200, Core Ultra 9 386H, 31.5 GB RAM, RTX 5080 Laptop 16 GB (driver 591.74), Intel Graphics (driver 32.0.101.8724), Intel AI Boost NPU (driver 32.0.100.4841). Gemma 4 E4B at revision `4ecc2ba63b`.
 
-{{IN_SHORT}}
+## In short
+
+- RTX GPU with 16 GB: the int4 package with an 8K-token context (steps 2 to 6) as a Foundry Local model decodes at 58.8 tokens/s, with 246 ms to the first token of a 933-token prompt. The daemon holds 13,294 MiB of GPU memory at most.
+- Keep the context short on a 16 GB GPU. The daemon sets aside the KV cache for the whole context, and the export sets 131072 tokens. With that context the int4 package fills the GPU over the 24 prompts, then takes 15 s to the first token and decodes at 43.3 tokens/s. The fp16 package and the catalog E2B's CUDA form (the `mixed` int4 / int8 decoder) run out of GPU memory on 18 of the 24 prompts.
+- Less GPU memory: the int4 decoder with an 8K context and the fp16 embedding session on the CPU (`e4b-cuda-int4-8k-embcpu`, step 7). The daemon holds 4,042 MiB after load and 9,186 MiB at most, and decodes at 47.0 tokens/s.
+- CPU only: the CPU package (step 8) on Foundry Local's CPU EP decodes at {{CPU_TOK}} tokens/s.
+- Intel GPU and NPU: Foundry Local 0.13.0 does not run these packages there. Its OpenVINO EP fails to load them, and local models do not take the WebGPU EP. Outside Foundry Local, ONNX Runtime GenAI 0.19.0 decodes at 18.9 tokens/s with WebGPU on the Intel GPU and 7.9 with OpenVINO (step 11). The NPU does not compile the graph.
+- CUDA graphs double the decode speed in ONNX Runtime GenAI (54.7 to 103.8 tokens/s for int4), but not in Foundry Local 0.13.0.
 
 ## Results
 
 One laptop, 2026-11-06. The 24 prompts in `fixture/` run greedy with 48 new tokens, against Hugging Face transformers 5.22.1 in bf16 on the same machine (`results/hf_ref.json`). The answer keys were written before any ONNX output was measured. A form passes when it answers right wherever the reference does (20 of the 24 prompts), with at most one miss. "Text = HF" counts answers identical to the reference's text. "First token = HF" counts the same first token, with the largest logit difference (GenAI only: Foundry Local's REST API returns text).
 
-Speed: Foundry Local = a streamed chat completion over REST with a 933-token prompt and 160 new tokens; GenAI 0.19.0 = a 512-token prompt and 128 new tokens. Each is the median of 3 runs after a warm-up; the two runners used different prompts, so compare within one runner. VRAM: for Foundry Local, the daemon's own dedicated GPU memory (Windows performance counter); for GenAI, nvidia-smi's total.
+Speed: Foundry Local = a streamed chat completion over REST with a 933-token prompt and 160 new tokens; GenAI 0.19.0 = a 512-token prompt and 128 new tokens. Each is the median of 3 runs after a warm-up; the two runners used different prompts, so compare within one runner. Each Foundry Local form ran in a fresh daemon: load, the 24 prompts, then the speed run. VRAM: for Foundry Local, the daemon's own dedicated GPU memory at its highest over that run (Windows performance counter); for GenAI, nvidia-smi's total.
 
 <!-- table: python make_table.py --public -->
 | Form | Runner | EP / device | Keys (bar) | Text = HF | First token = HF | Prefill | Decode | VRAM peak |
@@ -78,10 +85,15 @@ foundry server start
 ```
 
 ```powershell
-# 5. Register the folder as a local model (no copy) and ask one question
-foundry model register (Resolve-Path e4b-cuda-int4) gemma-4-e4b-it-cuda-int4:1 --task vision-language-chat --device gpu --execution-provider CUDAExecutionProvider
-foundry model load gemma-4-e4b-it-cuda-int4:1
-foundry complete gemma-4-e4b-it-cuda-int4:1 "What is the capital of Japan? Answer in one word." -m 48 -t 0
+# 5. The int4 package with an 8K-token context: the export sets 131072, and on a 16 GB GPU that slows the daemon down
+#    (see "What to know"). variant_pkg.py makes a folder of hard links to a package's weights with a new
+#    genai_config.json. Register that folder as a local model (no copy) and ask one question.
+$py = ".venv-export\Scripts\python.exe"
+& $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-8k --max_length 8192
+$env:Path = "$PWD\cuda12-dll;$env:Path"
+foundry model register (Resolve-Path e4b-cuda-int4-8k) gemma-4-e4b-it-cuda-int4-8k:1 --task vision-language-chat --device gpu --execution-provider CUDAExecutionProvider
+foundry model load gemma-4-e4b-it-cuda-int4-8k:1
+foundry complete gemma-4-e4b-it-cuda-int4-8k:1 "What is the capital of Japan? Answer in one word." -m 48 -t 0
 ```
 
 ```powershell
@@ -89,30 +101,36 @@ foundry complete gemma-4-e4b-it-cuda-int4:1 "What is the capital of Japan? Answe
 #    then the speed run (a 933-token prompt, 160 new tokens, 3 runs after a warm-up)
 $base = (Get-Content "$env:USERPROFILE\.foundry\daemon.json" -Raw | ConvertFrom-Json).web_urls[0]
 $py = ".venv-export\Scripts\python.exe"
-& $py fl_rest.py fixture "$base/catalogs/local/v1" gemma-4-e4b-it-cuda-int4:1 results\hf_ref.json fixture-cuda-int4.json
-& $py score_keys.py --keys fixture\answer_keys.json --ref results\hf_ref.json fixture-cuda-int4.json
-& $py fl_rest.py speed "$base/catalogs/local/v1" gemma-4-e4b-it-cuda-int4:1 speed-cuda-int4.jsonl
-foundry model unload gemma-4-e4b-it-cuda-int4:1
+& $py fl_rest.py fixture "$base/catalogs/local/v1" gemma-4-e4b-it-cuda-int4-8k:1 results\hf_ref.json fixture-e4b-cuda-int4-8k.json
+& $py score_keys.py --keys fixture\answer_keys.json --ref results\hf_ref.json fixture-e4b-cuda-int4-8k.json
+& $py fl_rest.py speed "$base/catalogs/local/v1" gemma-4-e4b-it-cuda-int4-8k:1 speed-e4b-cuda-int4-8k.jsonl
+foundry model unload gemma-4-e4b-it-cuda-int4-8k:1
 ```
 
 ```powershell
-# 7. More local models from the same weights. variant_pkg.py makes a folder of hard links to a package's weights
-#    with a new genai_config.json: where each session runs, the context length, CUDA graphs on the decoder.
+# 7. The other forms of the results table as local models: the export's 131072-token context and 32K, CUDA graphs,
+#    fp16, the catalog E2B's mixed form, the embedding session on the CPU, the CUDA memory arena growing by request.
 $py = ".venv-export\Scripts\python.exe"
-& $py variant_pkg.py --src e4b-cuda-fp16 --dst e4b-cuda-fp16-embcpu --place embedding=cpu
+& $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-32k --max_length 32768
 & $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-graph --place decoder=cuda --cuda_option enable_cuda_graph=1
+& $py variant_pkg.py --src e4b-cuda-fp16 --dst e4b-cuda-fp16-embcpu --place embedding=cpu
+& $py variant_pkg.py --src e4b-cuda-fp16-embcpu --dst e4b-cuda-fp16-embcpu-32k --max_length 32768
 & $py variant_pkg.py --src e4b-cuda-mixed --dst e4b-cuda-mixed-32k --max_length 32768
 & $py variant_pkg.py --src e4b-cuda-mixed-32k --dst e4b-cuda-mixed-32k-graph --place decoder=cuda --cuda_option enable_cuda_graph=1
-& $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-8k-emb8 --place embedding=cpu --max_length 8192
-& $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-8k --take embedding=e4b-cuda-fp16 --place embedding=cpu --max_length 8192
-& $py variant_pkg.py --src e4b-cuda-int4-8k --dst e4b-cuda-int4-8k-graph --place decoder=cuda --cuda_option enable_cuda_graph=1
+& $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-8k-emb8cpu --place embedding=cpu --max_length 8192
+& $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-8k-embcpu --take embedding=e4b-cuda-fp16 --place embedding=cpu --max_length 8192
+& $py variant_pkg.py --src e4b-cuda-int4-8k-embcpu --dst e4b-cuda-int4-8k-embcpu-arena --place decoder=cuda,vision=cuda,speech=cuda --cuda_option arena_extend_strategy=kSameAsRequested
+& $py variant_pkg.py --src e4b-cuda-int4-8k-embcpu --dst e4b-cuda-int4-8k-embcpu-graph --place decoder=cuda --cuda_option enable_cuda_graph=1
 # Each one: a fresh daemon (it keeps its GPU memory after an unload), register, load, the 24 prompts, the speed run.
-# e4b-cuda-mixed keeps the export's 131072-token context and runs out of the 16 GB GPU on most prompts (results table).
+# The 131072-token fp16 and mixed packages run out of the 16 GB GPU on most prompts (results table).
 $env:Path = "$PWD\cuda12-dll;$env:Path"
-foreach ($m in @(@("e4b-cuda-fp16-embcpu", "gemma-4-e4b-it-cuda-fp16-embcpu:1"), @("e4b-cuda-int4-graph", "gemma-4-e4b-it-cuda-int4-graph:1"),
-                 @("e4b-cuda-mixed", "gemma-4-e4b-it-cuda-mixed:1"), @("e4b-cuda-mixed-32k", "gemma-4-e4b-it-cuda-mixed-32k:1"),
-                 @("e4b-cuda-mixed-32k-graph", "gemma-4-e4b-it-cuda-mixed-32k-graph:1"), @("e4b-cuda-int4-8k-emb8", "gemma-4-e4b-it-cuda-int4-8k-emb8:1"),
-                 @("e4b-cuda-int4-8k", "gemma-4-e4b-it-cuda-int4-8k:1"), @("e4b-cuda-int4-8k-graph", "gemma-4-e4b-it-cuda-int4-8k-graph:1"))) {
+foreach ($m in @(@("e4b-cuda-int4", "gemma-4-e4b-it-cuda-int4:1"), @("e4b-cuda-int4-32k", "gemma-4-e4b-it-cuda-int4-32k:1"),
+                 @("e4b-cuda-int4-graph", "gemma-4-e4b-it-cuda-int4-graph:1"), @("e4b-cuda-fp16-embcpu", "gemma-4-e4b-it-cuda-fp16-embcpu:1"),
+                 @("e4b-cuda-fp16-embcpu-32k", "gemma-4-e4b-it-cuda-fp16-embcpu-32k:1"), @("e4b-cuda-mixed", "gemma-4-e4b-it-cuda-mixed:1"),
+                 @("e4b-cuda-mixed-32k", "gemma-4-e4b-it-cuda-mixed-32k:1"), @("e4b-cuda-mixed-32k-graph", "gemma-4-e4b-it-cuda-mixed-32k-graph:1"),
+                 @("e4b-cuda-int4-8k-emb8cpu", "gemma-4-e4b-it-cuda-int4-8k-emb8cpu:1"), @("e4b-cuda-int4-8k-embcpu", "gemma-4-e4b-it-cuda-int4-8k-embcpu:1"),
+                 @("e4b-cuda-int4-8k-embcpu-arena", "gemma-4-e4b-it-cuda-int4-8k-embcpu-arena:1"),
+                 @("e4b-cuda-int4-8k-embcpu-graph", "gemma-4-e4b-it-cuda-int4-8k-embcpu-graph:1"))) {
   $folder = $m[0]; $id = $m[1]
   foundry server stop
   foundry server start
@@ -174,11 +192,12 @@ foreach ($m in "e4b-cuda-int4", "e4b-cuda-mixed") {
   & $py genai_speed.py -m $m --provider cuda --ep_option enable_cuda_graph=1 --label "$m-graph" --out "speed-genai-$m-graph.jsonl"
 }
 # fp16 and the int8 embedding on the CPU, with the sessions where their genai_config.json puts them
-foreach ($m in "e4b-cuda-fp16-embcpu", "e4b-cuda-int4-8k-emb8") {
+# (the speed run stops on the fp16 package in GenAI 0.19.0, see "What to know")
+foreach ($m in "e4b-cuda-fp16-embcpu", "e4b-cuda-int4-8k-emb8cpu") {
   & $py genai_parity.py -m $m --provider follow_config @ref --out "parity-$m.json"
-  & $py genai_speed.py -m $m --provider follow_config --label $m --out "speed-genai-$m.jsonl"
 }
-.venv-export\Scripts\python.exe score_keys.py --keys fixture\answer_keys.json --ref hf_ref.json parity-e4b-cuda-int4.json parity-e4b-cuda-int4-graph.json parity-e4b-cuda-mixed.json parity-e4b-cuda-mixed-graph.json parity-e4b-cuda-fp16-embcpu.json parity-e4b-cuda-int4-8k-emb8.json
+& $py genai_speed.py -m e4b-cuda-int4-8k-emb8cpu --provider follow_config --label e4b-cuda-int4-8k-emb8cpu --out speed-genai-e4b-cuda-int4-8k-emb8cpu.jsonl
+.venv-export\Scripts\python.exe score_keys.py --keys fixture\answer_keys.json --ref hf_ref.json parity-e4b-cuda-int4.json parity-e4b-cuda-int4-graph.json parity-e4b-cuda-mixed.json parity-e4b-cuda-mixed-graph.json parity-e4b-cuda-fp16-embcpu.json parity-e4b-cuda-int4-8k-emb8cpu.json
 ```
 
 ```powershell
@@ -214,9 +233,20 @@ foreach ($a in "0", "1") {
 - Registered local models answer on the daemon's `/catalogs/local/v1` path. The `/v1` path answers HTTP 404 `Model not found` for them.
 - Foundry Local's documented way to add a compiled model (a folder with `inference_model.json` in the model cache) did not list these packages with CLI 0.13.0, as a junction or as real folders in the catalog's layout (`Microsoft\<name>-1\v1\`) or flat; `foundry model register` works. While `foundry cache cd` points at another folder, the registered local models are not listed either.
 - `foundry cache cd` asks to confirm a daemon restart and fails in a non-interactive shell; `--force` skips only that question.
-- The daemon keeps a model's GPU memory after `foundry model unload`; `foundry server stop` frees it. It also sets aside the KV cache for the whole context of `genai_config.json` (131072 tokens in the export) on the first request.
+- The daemon keeps a model's GPU memory after `foundry model unload`; `foundry server stop` frees it.
+- The daemon sets aside the KV cache for the whole context of `genai_config.json` on the first request, and the export sets 131072 tokens. On the 16 GB GPU, the int4 package with that context grows from 8,132 MiB after load to 15,997 MiB over the 24 prompts. The speed run after them takes 15 s to the first token and decodes at 43.3 tokens/s. As the only run in a fresh daemon, it takes 265 ms and decodes at 59.4 (`results/r7_int4_s.txt`). With a 32K context the daemon holds 14,838 MiB at most and decodes at 50.9 tokens/s; with 8K, 13,294 MiB and 58.8.
+- The fp16 package with the 131072-token context answered all 24 prompts in one run (`results/r7_fp16_embcpu_b.txt`) and ran out of GPU memory on 18 of them in another (`results/r7_fp16_embcpu_full.txt`). {{FP16_32K}}
 - The fp16 package is 16.6 GB and does not fit in a 16 GB GPU. `variant_pkg.py --place embedding=cpu` runs the embedding session (a lookup) on the CPU.
-{{KNOW_LINES}}
+- The int8 embedding runs slowly on the CPU: the 8K variant with it decodes at 13.5 tokens/s in Foundry Local and 14.3 in ONNX Runtime GenAI. `e4b-cuda-int4-8k-embcpu` takes the fp16 embedding from the fp16 package (`--take embedding=e4b-cuda-fp16`) and decodes at 47.0.
+- `arena_extend_strategy=kSameAsRequested` in the CUDA options left the daemon's GPU memory as it was over the 24 prompts and the speed run: 4,042 MiB after load and 9,186 MiB at most, with and without it. {{ARENA_FRESH}}
+- The `mixed` decoder is 5.05 GB against 2.80 GB for RTN int4. Its first-token logits are closer to the Hugging Face model's (largest difference 16.3 against 34.4), and it gives the same 13 of 24 identical texts. It misses one keyed answer (p22: its 48 tokens stop before the answer).
+- With the export's 131072-token context, the `mixed` package runs out of the 16 GB GPU on 18 of the 24 prompts (`CUDA error: out of memory`). With a 32K context it answers all 24, but the daemon holds 15,986 MiB, and the 933-token prompt takes 1.8 s to the first token after a 0.24 s warm-up.
+- The text of the int4 (RTN) package differs from the Hugging Face model's on more prompts than fp16 does (13/24 equal against 22/24), while the keyed answers stay right. The gap comes from the int4 decoder weights: an int4 decoder with the fp16 embedding gives the same 13/24, and the fp16 decoder with the int8 embedding gives 22/24 (`results/parity_diag_*.json`). The CPU package with fp32 instead of int8 compute in its int4 MatMuls also gives 13/24, at 3.8 instead of 15.6 tokens/s (`results/parity_cpu_int4_acc0.json`).
+- CUDA graphs (`enable_cuda_graph` 1 on the decoder session; the catalog E2B packages set 0) keep the answers and raise the decode speed in ONNX Runtime GenAI 0.19.0: int4 from 54.7 to 103.8 tokens/s, `mixed` from 50.7 to 70.5. In Foundry Local 0.13.0 the 8K and 32K variants keep their speed (47.0 to 47.8 and 49.3 to 49.7 tokens/s), and the 131072-token int4 package decodes at 23.5 instead of 43.3 tokens/s.
+- ONNX Runtime GenAI 0.19.0's speed run stops on the fp16 package at the first decode step: `The output OrtValue provided for output 'inputs_embeds' of node 'InsertedPrecisionFreeCast_inputs_embeds' (Cast) has shape {1,512,2560} but the computed output shape for this run is {1,1,2560}`. Its 24 prompts run, and Foundry Local runs the same package with the 933-token prompt.
+- Foundry Local 0.13.0's own OpenVINO execution provider (the WinML plugin package 1.8.95.0) fails to load these packages on the Intel GPU, the NPU and the CPU alike, with `OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build` ([microsoft/Foundry-Local#1261](https://github.com/microsoft/Foundry-Local/issues/1261)). Step 11 runs the CPU package through ONNX Runtime GenAI 0.19.0 and the pip plugin `onnxruntime-ep-openvino` 1.8.1 instead: 7.9 tokens/s on the Intel GPU and 5.9 on the CPU, slower than the CPU EP (15.6).
+- With `enable_causallm=True` (the provider option of the catalog's OpenVINO variants), the OpenVINO EP refuses this graph on the Intel GPU and the NPU, with every session or only the decoder on the device: `the model graph has been partitioned into 277 subgraphs`. The open olive-recipes PR [#527](https://github.com/microsoft/olive-recipes/pull/527) gives the cause for Gemma 4: OpenVINO's ONNX frontend has no `RMSNormalization` (opset 24; the E4B decoder has 235 of them) and fails shape inference on `Attention` with a KV cache. Without that option, the NPU does not compile the dynamic-shape graph: `Upper bounds are not specified for node ...`.
+- Foundry Local 0.13.0 does not load a local model on the WebGPU EP: the load of a model registered with `--execution-provider WebGpuExecutionProvider` fails with `unknown execution provider for local model`. ONNX Runtime GenAI 0.19.0 with the pip plugin `onnxruntime-ep-webgpu` 0.5.0 runs the int4 package with every session on WebGPU: 18.9 tokens/s on the Intel GPU and 57.1 on the RTX, where CUDA decodes at 54.7 and takes 134 ms instead of 1,748 ms for the 512-token prompt. On the RTX, the Python process stayed alive after its run, so `genai_parity.py` and `genai_speed.py` exit right after writing their output when a session runs on WebGPU.
 
 ## Files
 

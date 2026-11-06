@@ -1,0 +1,253 @@
+﻿=== arm mixed_32k_graph pkg=e4b_cuda_mixed_g id=gemma-4-e4b-it-cuda-mixed-32k-graph:1 task=vision-language-chat device=gpu ep=CUDAExecutionProvider at 2026-11-06T13:49:52.7817804+09:00
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 0.7 s]
+
+--- foundry server start
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:56793)
+  Public API: http://127.0.0.1:56793/v1/
+  Local API (BYOM): http://127.0.0.1:56793/catalogs/local/v1/
+[exit=0, 5.1 s]
+url=http://127.0.0.1:56793/catalogs/local/v1
+
+--- foundry model unregister gemma-4-e4b-it-cuda-mixed-32k-graph:1
+● error: No local registration matches 'gemma-4-e4b-it-cuda-mixed-32k-graph:1'.
+Hint: Pass a registered local alias or exact canonical model ID.
+[exit=3, 1.3 s]
+
+--- foundry model register e4b_cuda_mixed_g gemma-4-e4b-it-cuda-mixed-32k-graph:1 --task vision-language-chat --display-name Gemma 4 E4B (mixed_32k_graph) --device gpu --execution-provider CUDAExecutionProvider
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-mixed-32k-graph:1
+■ note: Alias: gemma-4-e4b-it-cuda-mixed-32k-graph
+■ note: Folder: e4b_cuda_mixed_g
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-mixed-32k-graph:1
+[exit=0, 0.2 s]
+
+--- foundry model list --search e4b --variants
++------------------------------------------------------------------------------+
+| Model     | Source | Variant  | Type     | Device | Executio | Size | Cached |
+| Name      |        |          |          |        | n        |      |        |
+|           |        |          |          |        | Provider |      |        |
+|-----------+--------+----------+----------+--------+----------+------+--------|
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | CPUExecu | —    | ●      |
+| 4b-it-cpu |        | E4B      | al       |        | tionProv |      |        |
+| -int4     |        | (cpu_int |          |        | ider     |      |        |
+|           |        | 4)       |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16    |        | (fp16_em |          |        | vider    |      |        |
+|           |        | bcpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4    |        | (int4)   |          |        | vider    |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+|           |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+| -arena    |        | bcpu_8k_ |          |        |          |      |        |
+|           |        | arena)   |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-em |        | (int4_em |          |        | vider    |      |        |
+| bf16-8k   |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_arena |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-gr |        | (int4_gr |          |        | vider    |      |        |
+| aph       |        | aph)     |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed   |        | (mixed)  |          |        | vider    |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k        |        | 2k)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | OpenVINO | —    | ●      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-cpu |        | (ov_cpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | OpenVINO | —    | ●      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-gpu |        | (ov_gpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | NPU    | OpenVINO | —    | ●      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-npu |        | (ov_npu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | WebGpuEx | —    | ●      |
+| 4b-it-web |        | E4B      | al       |        | ecutionP |      |        |
+| gpu-igpu  |        | (webgpu_ |          |        | rovider  |      |        |
+|           |        | igpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k-graph  |        | 2k_graph |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
++------------------------------------------------------------------------------+
+Device: NPU / GPU / CPU = exact hardware target for this variant.
+Execution Provider: runtime backend used by this variant.
+Cached: this specific variant is downloaded on this machine.
+[exit=0, 0.1 s]
+
+--- foundry cache ls --search e4b --variants
++------------------------------------------------------------------------------+
+| Alias     | Source | Variant  | Type     | Device | Executio | Size | Loaded |
+|           |        |          |          |        | n        |      |        |
+|           |        |          |          |        | Provider |      |        |
+|-----------+--------+----------+----------+--------+----------+------+--------|
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | CPUExecu | —    | ○      |
+| 4b-it-cpu |        | E4B      | al       |        | tionProv |      |        |
+| -int4     |        | (cpu_int |          |        | ider     |      |        |
+|           |        | 4)       |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16    |        | (fp16_em |          |        | vider    |      |        |
+|           |        | bcpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4    |        | (int4)   |          |        | vider    |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+|           |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+| -arena    |        | bcpu_8k_ |          |        |          |      |        |
+|           |        | arena)   |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-em |        | (int4_em |          |        | vider    |      |        |
+| bf16-8k   |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_arena |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-gr |        | (int4_gr |          |        | vider    |      |        |
+| aph       |        | aph)     |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed   |        | (mixed)  |          |        | vider    |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k        |        | 2k)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | OpenVINO | —    | ○      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-cpu |        | (ov_cpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | OpenVINO | —    | ○      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-gpu |        | (ov_gpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | NPU    | OpenVINO | —    | ○      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-npu |        | (ov_npu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | WebGpuEx | —    | ○      |
+| 4b-it-web |        | E4B      | al       |        | ecutionP |      |        |
+| gpu-igpu  |        | (webgpu_ |          |        | rovider  |      |        |
+|           |        | igpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k-graph  |        | 2k_graph |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
++------------------------------------------------------------------------------+
+[exit=0, 0.1 s]
+
+--- foundry model load gemma-4-e4b-it-cuda-mixed-32k-graph:1
+■ Loading model (gemma-4-e4b-it-cuda-mixed-32k-graph:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-mixed-32k-graph' (GPU variant 
+'gemma-4-e4b-it-cuda-mixed-32k-graph:1') into memory.
+[exit=0, 20.8 s]
+gpu peak MiB after load: 11220 (daemon only: 11220)
+
+--- foundry complete gemma-4-e4b-it-cuda-mixed-32k-graph:1 What is the capital of Japan? Answer in one word. -m 48 -t 0
+Tokyo
+[exit=0, 1.1 s]
+--- fixture (REST)
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.36454159999266267, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.1276161999994656, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.33772949999547563, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.0179426000104286, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the context. Here are the most common and useful optionn### Most Common & Versatile Options\n\n**1. ありがとう", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.0142192000057548, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on how concise or explicit you want to be.\n\n### 1. Using the Multiplication Operator (`*`) - Most Common\n\nThis is the", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.0523076999961631, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.2311653000069782, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.28447300000698306, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.4142826999886893, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.20421209999767598, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.0748477000015555, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius** ($\\text{100}^\\circ\\text{C}$).", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 29, "s": 0.6021332999953302, "equal": true, "common_prefix_chars": 96, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "yrasessen", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 4, "s": 0.1427618000016082, "equal": false, "common_prefix_chars": 4, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.1105262000055518, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.10144860000582412, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.2695945000014035, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\n**Reasoning:**\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2):\n\n* $2 \\times ", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 0.944027500008815, "equal": false, "common_prefix_chars": 44, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.273156299997936, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is how green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 17, "s": 0.3771322999964468, "equal": false, "common_prefix_chars": 18, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.34821959999680985, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue waves crash and foam,\nSalty spray upon the breeze,\nDeep secrets below.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 19, "s": 0.4931097999942722, "equal": false, "common_prefix_chars": 33, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The opposite of \"ancient\" depends slightly on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several good options, categorized by the shade of meaninn**Most Direct Opposites (Focusing", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.0425998999999138, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 27, "s": 0.6883717000018805, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here's how to calculate the average spee\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n* Distance = $60 \\text{", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.012265400000615, "equal": false, "common_prefix_chars": 57, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+gpu peak MiB after fixture: 15936 (daemon only: 15939)
+--- speed (REST, streamed); cpu load % before: 10
+  busy: System 4 7 %core
+  busy: MsMpEng 2400 4 %core
+  busy: svchost 5096 2 %core
+  busy: powershell 12096 2 %core
+  busy: svchost 4952 2 %core
+{"run": 0, "warmup": true, "ttft_ms": 244.90309999964666, "chunks": 160, "decode_tok_s": 48.32613760174561, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 303.7007000093581, "chunks": 160, "decode_tok_s": 49.43246555217204, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 314.2946000007214, "chunks": 160, "decode_tok_s": 49.909843674452524, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 307.308200004627, "chunks": 160, "decode_tok_s": 49.672038025907995, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-mixed-32k-graph:1", "runs": 3, "ttft_ms_median": 307.308200004627, "decode_tok_s_median": 49.672038025907995, "prompt_tokens": 933}
+gpu peak MiB after speed: 15936 (daemon only: 15939)
+
+--- foundry model unload gemma-4-e4b-it-cuda-mixed-32k-graph:1
+● success: Unloaded 'gemma-4-e4b-it-cuda-mixed-32k-graph:1' from memory.
+[exit=0, 0.8 s]
+
+--- modules in the daemon
+onnxruntime.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime.dll  1.31.0.20261008.6.402979a
+onnxruntime-genai.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime-genai.dll  0.18.0
+onnxruntime_providers_shared.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime_providers_shared.dll  1.31.0.20261008.6.402979a
+onnxruntime_providers_openvino_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_openvino_plugin.dll  1.7.0+72b3270.ci.72
+openvino_onnx_frontend.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_onnx_frontend.dll  2026.3.0.22451
+openvino.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino.dll  2026.3.0.22451
+openvino_auto_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_auto_plugin.dll  2026.3.0.22451
+openvino_intel_npu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_npu_plugin.dll  2026.3.0.22451
+openvino_intel_gpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_gpu_plugin.dll  2026.3.0.22451
+openvino_intel_cpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_cpu_plugin.dll  2026.3.0.22451
+onnxruntime-genai-cuda.dll  onnxruntime-genai-cuda.dll  0.18.0
+cudart64_12.dll  cudart64_12.dll  6,14,11,12090
+onnxruntime_providers_cuda.dll  onnxruntime_providers_cuda.dll  1.31.0.20261008.4.402979a
+cublas64_12.dll  cublas64_12.dll  6,14,11,1292
+cublasLt64_12.dll  cublasLt64_12.dll  6,14,11,1292
+onnxruntime_providers_nv_tensorrt_rtx.dll  MicrosoftCorporationII.WinML.NVIDIA.TRT-RTX.EP.2_2.30.51.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_nv_tensorrt_rtx.dll  0.4.0
+onnxruntime_providers_webgpu.dll  onnxruntime_providers_webgpu.dll  1.28.20260728.4.7f4a15b
+cudnn64_9.dll  cudnn64_9.dll  9.28.0.42
+cudnn_ops64_9.dll  cudnn_ops64_9.dll  9.28.0.42
+cudnn_graph64_9.dll  cudnn_graph64_9.dll  
+--- sdk log, errors
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 2.1 s]
+=== end 2026-11-06T13:50:56.9102724+09:00

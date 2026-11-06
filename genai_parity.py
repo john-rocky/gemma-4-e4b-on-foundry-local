@@ -31,6 +31,18 @@ def register_plugins():
         og.register_execution_provider_library(module.get_ep_name(), module.get_library_path())
 
 
+def uses_webgpu(args):
+    """True when a session runs on the WebGPU EP (by --provider or by the package's genai_config.json)."""
+    if args.provider == "webgpu":
+        return True
+    if args.provider != "follow_config":
+        return False
+    import os
+
+    with open(os.path.join(args.model, "genai_config.json"), encoding="utf-8") as f:
+        return '"WebGPU"' in f.read()
+
+
 def make_model(args):
     config = og.Config(args.model)
     if args.provider == "follow_config":
@@ -196,6 +208,14 @@ def main():
         print("SUMMARY", json.dumps(summary), flush=True)
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
+    if uses_webgpu(args):
+        # The WebGPU plugin 0.5.0 on the RTX adapter kept the process alive after main() returned (outputs written, no
+        # CPU use, 2026-11-06): leave without the interpreter's teardown once everything is on disk.
+        import os
+        import sys
+
+        sys.stdout.flush()
+        os._exit(0)
 
 
 if __name__ == "__main__":
