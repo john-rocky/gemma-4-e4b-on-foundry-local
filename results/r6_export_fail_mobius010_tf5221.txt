@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "export_e4b.py", line 65, in <module>
+    main()
+  File "export_e4b.py", line 48, in main
+    pkg = build(args.model, dtype=args.dtype, execution_provider=args.ep, load_weights=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_builder.py", line 571, in build
+    config = _config_from_hf(hf_config, parent_config=parent_config, module_class=module_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_config_resolver.py", line 59, in _config_from_hf
+    return config_cls.from_transformers(hf_config, parent_config=parent_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_base.py", line 1623, in from_transformers
+    base = ArchitectureConfig.from_transformers(config, parent_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "_base.py", line 661, in from_transformers
+    if (hasattr(config, "head_dim") and config.head_dim is not None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "configuration_utils.py", line 658, in __getattribute__
+    return super().__getattribute__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "configuration_utils.py", line 298, in __getattribute__
+    raise AmbiguousGlobalPerLayerAttributeError(
+transformers.integrations.heterogeneity.configuration_utils.AmbiguousGlobalPerLayerAttributeError: 'head_dim' is a per-layer attribute and may vary across layers. Access it via the individual layer configs instead (e.g. config.per_layer_config[i].head_dim). To read the global config value from config.head_dim anyway, set `allow_global_per_layer_attribute_access` to `True` on the config. Warning: only do this if the caller can safely handle heterogeneous configs; code that assumes a homogeneous model may use the global value incorrectly.

@@ -1,0 +1,5 @@
+# The Hugging Face reference (bf16 on an NVIDIA GPU). torch comes from the PyTorch CUDA 13.0 index:
+#   pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cu130
+transformers==5.22.1
+accelerate==1.15.0
+numpy==2.5.4

@@ -1,0 +1,152 @@
+{
+ "written": "2026-11-06 10:37 JST, before any E4B ONNX output was measured",
+ "rule": "Parity bar (task level): a form passes when its greedy answer satisfies the key on every prompt whose Hugging Face bf16 answer satisfies it, allowing at most 1 miss out of those prompts. Keys are case-insensitive substring checks (all = every string, any = at least one, word = whole word, min_lines = non-empty lines in the answer). Instruments, not the bar: first-token top-1 vs HF, teacher-forced top-1 rate, max |delta| of logits, exact greedy token match.",
+ "keys": {
+  "p01": {
+   "all": [
+    "tokyo"
+   ]
+  },
+  "p02": {
+   "all": [
+    "391"
+   ]
+  },
+  "p03": {
+   "all": [
+    "jupiter"
+   ]
+  },
+  "p04": {
+   "all": [
+    "beau",
+    "aujourd"
+   ]
+  },
+  "p05": {
+   "any": [
+    "ありがとう",
+    "感謝"
+   ]
+  },
+  "p06": {
+   "all": [
+    "def ",
+    "return"
+   ]
+  },
+  "p07": {
+   "all": [
+    "red",
+    "blue",
+    "yellow"
+   ]
+  },
+  "p08": {
+   "all": [
+    "au"
+   ],
+   "word": true
+  },
+  "p09": {
+   "all": [
+    "shakespeare"
+   ]
+  },
+  "p10": {
+   "any": [
+    "5000",
+    "5,000",
+    "5 000"
+   ]
+  },
+  "p11": {
+   "all": [
+    "yes"
+   ]
+  },
+  "p12": {
+   "all": [
+    "100"
+   ]
+  },
+  "p13": {
+   "all": [
+    "yrassecen"
+   ]
+  },
+  "p14": {
+   "any": [
+    "joyful",
+    "cheerful",
+    "glad",
+    "content",
+    "delighted",
+    "elated",
+    "merry",
+    "pleased",
+    "jubilant",
+    "ecstatic",
+    "cheery",
+    "upbeat",
+    "thrilled",
+    "blissful",
+    "jovial"
+   ]
+  },
+  "p15": {
+   "any": [
+    "富士山",
+    "富士"
+   ]
+  },
+  "p16": {
+   "all": [
+    "madrid"
+   ]
+  },
+  "p17": {
+   "all": [
+    "32"
+   ]
+  },
+  "p18": {
+   "all": [
+    "central processing unit"
+   ]
+  },
+  "p19": {
+   "all": [
+    "sunlight"
+   ]
+  },
+  "p20": {
+   "all": [
+    "366"
+   ]
+  },
+  "p21": {
+   "min_lines": 3
+  },
+  "p22": {
+   "any": [
+    "modern",
+    "new",
+    "contemporary",
+    "recent",
+    "young"
+   ]
+  },
+  "p23": {
+   "any": [
+    "neural processing unit",
+    "neural"
+   ]
+  },
+  "p24": {
+   "all": [
+    "40"
+   ]
+  }
+ }
+}

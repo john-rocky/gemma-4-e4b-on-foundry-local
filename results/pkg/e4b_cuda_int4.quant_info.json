@@ -1,0 +1,86 @@
+{
+ "src": "e4b_cuda_f16",
+ "target": "cuda",
+ "components": {
+  "decoder": {
+   "exit": 0,
+   "s": 55.4,
+   "params": {
+    "bits": 4,
+    "block_size": 32,
+    "is_symmetric": true,
+    "type": "OnnxBlockWiseRtnQuantization",
+    "save_as_external_data": true,
+    "external_data_name": "model.onnx.data"
+   },
+   "files": {
+    "footprint.json": 1115,
+    "model.onnx": 1028264,
+    "model.onnx.data": 2799146496,
+    "model_config.json": 370,
+    "output_footprint.json": 1115,
+    "run_history.txt": 253
+   }
+  },
+  "embedding": {
+   "exit": 0,
+   "s": 215.2,
+   "params": {
+    "bits": 8,
+    "block_size": 32,
+    "is_symmetric": false,
+    "type": "OnnxBlockWiseRtnQuantization",
+    "save_as_external_data": true,
+    "external_data_name": "model.onnx.data"
+   },
+   "files": {
+    "footprint.json": 1118,
+    "model.onnx": 15765,
+    "model.onnx.data": 3846932992,
+    "model_config.json": 372,
+    "output_footprint.json": 1118,
+    "run_history.txt": 254
+   }
+  },
+  "vision_encoder": {
+   "exit": 0,
+   "s": 10.5,
+   "params": {
+    "bits": 8,
+    "block_size": 32,
+    "is_symmetric": false,
+    "type": "OnnxBlockWiseRtnQuantization",
+    "save_as_external_data": true,
+    "external_data_name": "model.onnx.data"
+   },
+   "files": {
+    "footprint.json": 1123,
+    "model.onnx": 1182945,
+    "model.onnx.data": 196718080,
+    "model_config.json": 377,
+    "output_footprint.json": 1123,
+    "run_history.txt": 254
+   }
+  },
+  "audio_encoder": {
+   "exit": 0,
+   "s": 9.6,
+   "params": {
+    "bits": 8,
+    "block_size": 32,
+    "is_symmetric": false,
+    "type": "OnnxBlockWiseRtnQuantization",
+    "save_as_external_data": true,
+    "external_data_name": "model.onnx.data"
+   },
+   "files": {
+    "footprint.json": 1122,
+    "model.onnx": 1235179,
+    "model.onnx.data": 338212096,
+    "model_config.json": 376,
+    "output_footprint.json": 1122,
+    "run_history.txt": 253
+   }
+  }
+ }
+}

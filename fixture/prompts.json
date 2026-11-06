@@ -1,0 +1,223 @@
+{
+ "name": "m1-gemma4-e4b-text-v1",
+ "note": "24 fixed single-turn prompts, greedy decoding, 48 new tokens; chat template from the model's tokenizer",
+ "max_new_tokens": 48,
+ "records": [
+  {
+   "id": "p01",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What is the capital of Japan? Answer in one word."
+    }
+   ]
+  },
+  {
+   "id": "p02",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What is 17 multiplied by 23? Give only the number."
+    }
+   ]
+  },
+  {
+   "id": "p03",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Name the largest planet in the solar system."
+    }
+   ]
+  },
+  {
+   "id": "p04",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Translate to French: The weather is nice today."
+    }
+   ]
+  },
+  {
+   "id": "p05",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Translate to Japanese: Thank you for your help."
+    }
+   ]
+  },
+  {
+   "id": "p06",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Write a Python function that returns the square of a number."
+    }
+   ]
+  },
+  {
+   "id": "p07",
+   "messages": [
+    {
+     "role": "user",
+     "content": "List three primary colors, separated by commas."
+    }
+   ]
+  },
+  {
+   "id": "p08",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What is the chemical symbol for gold?"
+    }
+   ]
+  },
+  {
+   "id": "p09",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Who wrote the play Romeo and Juliet?"
+    }
+   ]
+  },
+  {
+   "id": "p10",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Convert 5 kilometers to meters. Give only the number."
+    }
+   ]
+  },
+  {
+   "id": "p11",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Is 97 a prime number? Answer yes or no."
+    }
+   ]
+  },
+  {
+   "id": "p12",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What is the boiling point of water at sea level in Celsius?"
+    }
+   ]
+  },
+  {
+   "id": "p13",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Spell the word 'necessary' backwards."
+    }
+   ]
+  },
+  {
+   "id": "p14",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Give one synonym for 'happy'."
+    }
+   ]
+  },
+  {
+   "id": "p15",
+   "messages": [
+    {
+     "role": "user",
+     "content": "日本で一番高い山は何ですか?一言で答えてください。"
+    }
+   ]
+  },
+  {
+   "id": "p16",
+   "messages": [
+    {
+     "role": "user",
+     "content": "¿Cuál es la capital de España?"
+    }
+   ]
+  },
+  {
+   "id": "p17",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Complete the sequence: 2, 4, 8, 16, ..."
+    }
+   ]
+  },
+  {
+   "id": "p18",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What does CPU stand for?"
+    }
+   ]
+  },
+  {
+   "id": "p19",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Summarize in one sentence: Photosynthesis is the process by which green plants use sunlight to make food from carbon dioxide and water."
+    }
+   ]
+  },
+  {
+   "id": "p20",
+   "messages": [
+    {
+     "role": "user",
+     "content": "How many days are in a leap year?"
+    }
+   ]
+  },
+  {
+   "id": "p21",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Write a haiku about the ocean."
+    }
+   ]
+  },
+  {
+   "id": "p22",
+   "messages": [
+    {
+     "role": "user",
+     "content": "What is the opposite of 'ancient'?"
+    }
+   ]
+  },
+  {
+   "id": "p23",
+   "messages": [
+    {
+     "role": "user",
+     "content": "Explain what an NPU is in one sentence."
+    }
+   ]
+  },
+  {
+   "id": "p24",
+   "messages": [
+    {
+     "role": "user",
+     "content": "If a train travels 60 km in 1.5 hours, what is its average speed in km/h?"
+    }
+   ]
+  }
+ ]
+}

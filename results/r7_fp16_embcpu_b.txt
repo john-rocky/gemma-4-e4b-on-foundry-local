@@ -1,0 +1,80 @@
+﻿=== arm fp16_embcpu_b pkg=e4b_cuda_f16_embcpu id=gemma-4-e4b-it-cuda-fp16:1 task=vision-language-chat device=gpu ep=CUDAExecutionProvider at 2026-11-06T10:47:22.6726109+09:00
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 3.2 s]
+
+--- foundry server start
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:59448)
+  Public API: http://127.0.0.1:59448/v1/
+  Local API (BYOM): http://127.0.0.1:59448/catalogs/local/v1/
+[exit=0, 5.3 s]
+url=http://127.0.0.1:59448/catalogs/local/v1
+
+--- foundry model load gemma-4-e4b-it-cuda-fp16:1
+■ Loading model (gemma-4-e4b-it-cuda-fp16:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-fp16' (GPU variant 'gemma-4-e4b-it-cuda-fp16:1') 
+into memory.
+[exit=0, 27.5 s]
+gpu peak MiB after load: 12004
+--- fixture (REST)
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.8081241999971098, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.17013350000343053, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.4531118000013521, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most standard and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5252961999940453, "equal": true, "common_prefix_chars": 199, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" to Japanese, depending on the level of formality and the context. Here are the most common and useful optionn### 1. Standard & Polite (Most Common)\n\n", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.4670346999992034, "equal": false, "common_prefix_chars": 119, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on the style you prefen### 1. Using the Multiplication Operator (`*`) - Most Common\n\nThis is the most straightforward and readable", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.5095402000006288, "equal": true, "common_prefix_chars": 227, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.20205120000173338, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.32713950000470504, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "**William Shakespeare** wrote the play *Romeo and Juliet*.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 12, "s": 0.4226053000020329, "equal": true, "common_prefix_chars": 58, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.16589720000047237, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.0857728999981191, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius** ($\\text{100}^\\circ\\text{C}$).", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 29, "s": 0.9728451000046334, "equal": true, "common_prefix_chars": 96, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "yrassenec", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 4, "s": 0.16777050000382587, "equal": true, "common_prefix_chars": 9, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.12957019999885233, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.11216540000168607, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.3075548999986495, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2: $2^1, 2^2, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.4713409000032698, "equal": true, "common_prefix_chars": 166, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.3121298999976716, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.6649464000001899, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.5511406000005081, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue waves crash and foam,\nSalty breezes kiss the skin,\nDeep secrets below.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 19, "s": 0.663923000000068, "equal": true, "common_prefix_chars": 75, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The most direct and common opposites of \"ancient\" arn* **Modern:** This is often the best general opposite, referring to the present time or recent times.\n* **Contemporary:** This specifically means belonging to or occurring in the", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.625394899994717, "equal": true, "common_prefix_chars": 234, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to efficiently accelerate the computations required for artificial intelligence and machine learning tasks, such as deep learning inference.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 34, "s": 1.175228199994308, "equal": false, "common_prefix_chars": 111, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here's how to calculate the average spee\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n\n* **Distance:** 60 km\n", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 2.4234316000001854, "equal": true, "common_prefix_chars": 162, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 22, "prompt_tokens_equal_ref": 24}
+gpu peak MiB after fixture: 12862
+
+--- foundry model unload gemma-4-e4b-it-cuda-fp16:1
+● success: Unloaded 'gemma-4-e4b-it-cuda-fp16:1' from memory.
+[exit=0, 1.6 s]
+
+--- modules in the daemon
+onnxruntime.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime.dll  1.31.0.20261008.6.402979a
+onnxruntime-genai.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime-genai.dll  0.18.0
+onnxruntime_providers_shared.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime_providers_shared.dll  1.31.0.20261008.6.402979a
+onnxruntime_providers_openvino_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_openvino_plugin.dll  1.7.0+72b3270.ci.72
+openvino_onnx_frontend.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_onnx_frontend.dll  2026.3.0.22451
+openvino.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino.dll  2026.3.0.22451
+openvino_auto_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_auto_plugin.dll  2026.3.0.22451
+openvino_intel_npu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_npu_plugin.dll  2026.3.0.22451
+openvino_intel_gpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_gpu_plugin.dll  2026.3.0.22451
+openvino_intel_cpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_cpu_plugin.dll  2026.3.0.22451
+onnxruntime-genai-cuda.dll  onnxruntime-genai-cuda.dll  0.18.0
+cudart64_12.dll  cudart64_12.dll  6,14,11,12090
+onnxruntime_providers_cuda.dll  onnxruntime_providers_cuda.dll  1.31.0.20261008.4.402979a
+cublas64_12.dll  cublas64_12.dll  6,14,11,1292
+cublasLt64_12.dll  cublasLt64_12.dll  6,14,11,1292
+onnxruntime_providers_nv_tensorrt_rtx.dll  MicrosoftCorporationII.WinML.NVIDIA.TRT-RTX.EP.2_2.30.51.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_nv_tensorrt_rtx.dll  0.4.0
+onnxruntime_providers_webgpu.dll  onnxruntime_providers_webgpu.dll  1.28.20260728.4.7f4a15b
+cudnn64_9.dll  cudnn64_9.dll  9.28.0.42
+cudnn_ops64_9.dll  cudnn_ops64_9.dll  9.28.0.42
+cudnn_graph64_9.dll  cudnn_graph64_9.dll  
+--- sdk log, errors
+[2026-11-06 04:08:19.820] [warning] EP: failed to load 'onnxruntime-genai-cuda.dll' (126) The library or one of its dependencies could not be found. Install the CUDA runtime major version required by the provider and expose its DLL directory via PATH or AddDllDirectory, or place the dependencies beside the provider DLLs. Windows/Linux x64 require CUDA 12 and compatible cuDNN 9 runtimes, while Windows/Linux ARM require CUDA 13 and compatible cuDNN 9 runtimes.
+[2026-11-06 04:08:21.324] [warning] Failed to download or register EP(s) [CUDAExecutionProvider]; continuing with the remaining execution providers (CPU is always available; also registered: [OpenVINOExecutionProvider, NvTensorRTRTXExecutionProvider, WebGpuExecutionProvider]). See earlier logs for the underlying cause.
+=== end 2026-11-06T10:48:20.9208822+09:00
