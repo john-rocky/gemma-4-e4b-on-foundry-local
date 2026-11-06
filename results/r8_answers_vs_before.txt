@@ -1,0 +1,32 @@
+# Answers after the Windows update of 2026-11-06 (build 26200.9711) against the same forms before it (build
+# 26200.6899). After = the README walk's files (packages built by its steps from an empty folder, steps 5 to 11
+# run after the update); before = the results table's files. Compared where both runs answered.
+
+## Foundry Local (REST)
+fixture-e4b-cuda-int4-8k.json              vs fl_fixture_int4_8k_gpu.json                    identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-int4.json                 vs fl_fixture_int4_full.json                      identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-int4-32k.json             vs fl_fixture_int4_32k.json                       identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-int4-graph.json           vs fl_fixture_int4_graph.json                     identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-fp16-embcpu.json          vs fl_fixture_fp16_embcpu_full.json               identical text 6/6; failed requests after 0, before 18
+fixture-e4b-cuda-fp16-embcpu-32k.json      vs fl_fixture_fp16_embcpu_32k.json                identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-mixed.json                vs fl_fixture_mixed.json                          identical text 6/6; failed requests after 0, before 18
+fixture-e4b-cuda-mixed-32k.json            vs fl_fixture_mixed_32k.json                      identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-mixed-32k-graph.json      vs fl_fixture_mixed_32k_graph.json                identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-int4-8k-emb8cpu.json      vs fl_fixture_int4_embcpu_8k.json                 identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-int4-8k-embcpu.json       vs fl_fixture_int4_embf16cpu_8k.json              identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-int4-8k-embcpu-arena.json vs fl_fixture_int4_embf16cpu_8k_arena_full.json   identical text 24/24; failed requests after 0, before 0
+fixture-e4b-cuda-int4-8k-embcpu-graph.json vs fl_fixture_int4_embf16cpu_8k_graph.json        identical text 24/24; failed requests after 0, before 0
+fixture-cpu-int4.json                      vs fl_fixture_cpu_int4_full.json                  identical text 24/24; failed requests after 0, before 0
+
+## ONNX Runtime GenAI 0.19.0
+parity-e4b-cuda-int4.json                  vs parity_cuda_int4.json                          identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-e4b-cuda-int4-graph.json            vs parity_cuda_int4_graph.json                    identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-e4b-cuda-mixed.json                 vs parity_cuda_mixed.json                         identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-e4b-cuda-mixed-graph.json           vs parity_cuda_mixed_graph.json                   identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-e4b-cuda-fp16-embcpu.json           vs parity_cuda_f16_embcpu.json                    identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-e4b-cuda-int4-8k-emb8cpu.json       vs parity_cuda_int4_embcpu_8k.json                identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-cpu-int4.json                       vs parity_cpu_int4.json                           identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-openvino-CPU.json                   vs parity_ov_cpu_cpu_int4.json                    identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-openvino-GPU.json                   vs parity_ov_gpu_cpu_int4.json                    identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-webgpu-0.json                       vs parity_webgpu_rtx_int4.json                    identical text 24/24, same first token 24/24; failed requests after 0, before 0
+parity-webgpu-1.json                       vs parity_webgpu_igpu_int4.json                   identical text 24/24, same first token 24/24; failed requests after 0, before 0

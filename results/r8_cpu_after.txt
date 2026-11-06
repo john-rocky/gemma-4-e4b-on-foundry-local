@@ -1,0 +1,17 @@
+# Foundry Local CPU EP, the CPU int4 package (the table's package folder), after the Windows update of 2026-11-06
+# (build 26200.9711): a fresh daemon, load, then the speed run, as in the results table's CPU row. Script: lane-internal.
+20:37:07 cpu speed after the update: start; package e4b_cpu_int4; hold 21:05-22:05; up to 300 min
+20:38:55   lock taken; waiting up to 10 minutes for a quiet PC
+20:39:23   quiet: 3 CPU samples in a row under 15 % (last 4 %), RTX 0 MiB; top: System 15%core, MsMpEng 4%core, WmiPrvSE 3%core
+20:39:23   free RAM GB 24.3
+20:39:34     Local API (BYOM): http://127.0.0.1:58610/catalogs/local/v1/
+20:39:36   ● success: Registered local model.
+20:40:10   'gemma-4-e4b-it-cpu-int4-after:1') into memory.
+20:43:40   {"run": 0, "warmup": true, "ttft_ms": 33751.29879999986, "chunks": 160, "decode_tok_s": 6.656217605099401, "prompt_tokens": 933, "completion_tokens": 160}
+20:43:40   {"run": 1, "warmup": false, "ttft_ms": 33071.992000001046, "chunks": 160, "decode_tok_s": 9.095761099595123, "prompt_tokens": 933, "completion_tokens": 160}
+20:43:40   {"run": 2, "warmup": false, "ttft_ms": 33056.482300000425, "chunks": 160, "decode_tok_s": 8.947775027971861, "prompt_tokens": 933, "completion_tokens": 160}
+20:43:40   {"run": 3, "warmup": false, "ttft_ms": 33223.332100000334, "chunks": 160, "decode_tok_s": 9.283679466661782, "prompt_tokens": 933, "completion_tokens": 160}
+20:43:40   SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cpu-int4-after:1", "runs": 3, "ttft_ms_median": 33071.992000001046, "decode_tok_s_median": 9.095761099595123, "prompt_tokens": 933}
+20:43:40   speed run done; build tools' CPU seconds during the run: 0
+20:43:46 cpu speed after the update: end; lock released
+

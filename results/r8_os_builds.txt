@@ -1,0 +1,15 @@
+# Windows builds on the laptop, read 2026-11-06 20:0x JST (registry, Get-HotFix and dism)
+# HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion CurrentBuild.UBR (DisplayVersion):
+OS build now: 26200.9711 (25H2)
+# Get-HotFix, newest first:
+hotfix KB5127648 installed 11/06/2026
+hotfix KB5127647 installed 11/05/2026
+hotfix KB5128942 installed 11/05/2026
+# dism /online /get-packages /format:table | findstr RollupFix (install time as dism prints it; 8:34 = the 17:31-17:35 JST restarts):
+Package_for_RollupFix~31bf3856ad364e35~amd64~~26100.1742.1.10
+Package_for_RollupFix~31bf3856ad364e35~amd64~~26100.6899.1.25 | Security Update | 2026/06/18 23:56
+Package_for_RollupFix~31bf3856ad364e35~amd64~~26100.9711.1.30 | Security Update | 2026/11/06 8:34
+# The cumulative update before 11-06 was 6899 (build 26200.6899); 9711 came with the 11-06 restarts.
+# Microsoft Store updates in the System log after the restarts (WindowsUpdateClient event 19): 17:38:15
+# Microsoft.WinML.Intel.OpenVINO.EP.Framework.2, 17:39:00 Microsoft.WinML.NVIDIA.TRT-RTX.EP.Framework.2,
+# 18:43 Microsoft.MixedRealityLink, Microsoft.Paint. NVIDIA driver: 591.74 (nvidia-smi).

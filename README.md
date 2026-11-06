@@ -8,7 +8,7 @@ Machine: MSI Stealth 16 AI+, Windows 11 build 26200.6899 (26200.9711 after an up
 
 ## In short
 
-The numbers in this section and in the results table were measured on 11-06 before the laptop installed a Windows update at 17:31. After the update, steps 5 to 7 give the same answers, and decode in Foundry Local is slower (see "After the Windows update").
+The numbers in this section and in the results table were measured on 11-06 before the laptop installed a Windows update at 17:31. After the update, every form gives the same answers word for word, and most forms decode more slowly (see "After the Windows update").
 
 - RTX GPU with 16 GB: the int4 package with an 8K-token context (steps 2 to 6) as a Foundry Local model decodes at 58.8 tokens/s, with 246 ms to the first token of a 933-token prompt. The daemon holds 13,294 MiB of GPU memory at most.
 - Keep the context short on a 16 GB GPU. The export sets 131072 tokens. With that context, before the update, the int4 package filled the GPU over the 24 prompts, then took 15 s to the first token and decoded at 43.3 tokens/s. The fp16 package and the catalog E2B's CUDA form (the `mixed` int4 / int8 decoder) each ran out of GPU memory on 18 of the 24 prompts in a run (fp16 passed in another run, see "What to know"). After the update, the `mixed` package answered all 24 and peaked at 15,971 MiB.
@@ -59,17 +59,19 @@ Speed: Foundry Local = a streamed chat completion over REST with a 933-token pro
 
 ## After the Windows update
 
-The laptop installed a Windows update and restarted between 17:31 and 17:35 on 11-06 (build 26200.6899 to 26200.9711, `results/r8_os_builds.txt`). Foundry Local, the CUDA DLLs, the GPU driver and the packages stayed the same. Every step of this README ran once on the laptop, in order, from an empty folder: steps 1 to 4 before the update and steps 5 to 11 after it (`results/r8_walk_block1.log` to `results/r8_walk_block12.log`, one log per code block).
+The laptop installed a Windows update and restarted between 17:31 and 17:35 on 11-06 (build 26200.6899 to 26200.9711, `results/r8_os_builds.txt`). Foundry Local, the CUDA DLLs and the GPU driver stayed the same. Every step of this README ran once on the laptop, in order, from an empty folder: steps 1 to 4 before the update and steps 5 to 11 after it (`results/r8_walk_block1.log` to `results/r8_walk_block12.log`, one log per code block).
 
 - Every Foundry Local form of steps 5 to 8 gives the same answers, word for word, wherever both runs answered (`results/r8_answers_vs_before.txt`). The two 131072-token forms that ran out of GPU memory before now answer all 24. The Hugging Face reference made again in step 9 gives the same 24 answers.
 - On a quiet PC, the 8K int4 package decodes at 32 tokens/s instead of 58.8 (`results/r8_diag_after_update.txt`). With the daemon limited to the four P-cores (processor affinity) it decodes at 40 to 42. Its decode follows the daemon's CPU placement, and one GPU reading per run showed 21 to 43 % utilization, so the limit is on the CPU side. What the update changed there is not established.
 - The CPU package on Foundry Local's CPU EP decodes at 9.1 tokens/s with 33,072 ms to the first token, against 11.6 and 20,195 ms before, in the same procedure (`results/r8_cpu_after.txt`).
+- In ONNX Runtime GenAI 0.19.0 (steps 10 and 11), every form gives the same texts and first tokens as before. On CUDA without CUDA graphs, decode takes 7 to 9 ms more per token: int4 runs at 36.5 tokens/s instead of 54.7, `mixed` at 37.5 instead of 50.7. With CUDA graphs the difference is under 1 ms per token: int4 at 98.0 instead of 103.8, `mixed` at 67.9 instead of 70.5 (`results/r8_walk_block11.log`).
+- In step 11, WebGPU on the RTX decodes at 18.4 tokens/s instead of 57.1, with about the same prefill time (1,776 ms against 1,748) and GPU memory (7,875 MiB against 7,879). The CPU EP decodes at 10.2 instead of 15.6, and its 512-token prefill takes 18.7 s instead of 9.4. OpenVINO decodes at 6.4 instead of 7.9 on the Intel GPU and at 5.9 as before on the CPU, where its prefill takes 12.4 s instead of 5.8. WebGPU on the Intel GPU decodes at 17.4 instead of 18.9 (`results/r8_walk_block12.log`).
 - The 131072-token int4 package rises only to 8,230 MiB (8,136 after load) over the 24 prompts, against 15,997 MiB before, then to 13,350 MiB in the speed run, with 249 ms to the first token. The `mixed` package answers all 24 prompts and peaks at 15,971 MiB in the speed run.
 - Foundry Local's OpenVINO EP still fails to load the CPU package on the Intel GPU, the NPU and the CPU, with the same error (`results/r8_ov_recheck.txt`).
 
 ## Steps
 
-Clone this repo into an empty folder and run the steps in PowerShell from it, in order. They need Python 3.12 (`py -3.12`), Foundry Local 0.13.0 (`winget install Microsoft.FoundryLocal`), an NVIDIA driver for CUDA 12 and 13, and about {{DISK}} GB of disk.
+Clone this repo into an empty folder and run the steps in PowerShell from it, in order. They need Python 3.12 (`py -3.12`), Foundry Local 0.13.0 (`winget install Microsoft.FoundryLocal`) and an NVIDIA driver for CUDA 12 and 13. The folder's files add up to 223 GB after the last step. The variants are hard links to their package's weight files, so the folder takes less space on disk.
 
 ```powershell
 # 1. The weights (16 GB) and the export environment
@@ -295,7 +297,7 @@ The numbers in this section were measured before the Windows update of 11-06 17:
 | `make_table.py` | The results table above, from `results/` |
 | `requirements-*.txt` | The Python packages of each environment: export, reference, GenAI with CUDA, GenAI with the CPU / OpenVINO / WebGPU plugins |
 | `fixture/` | The 24 prompts and the answer keys, written before any ONNX output was measured |
-| `results/` | Every file behind the table: answers, speed runs, the Foundry Local logs (GPU memory, loaded DLLs, errors) |
+| `results/` | Every file behind the table: answers, speed runs, the Foundry Local logs (GPU memory, loaded DLLs, errors). `r8_*`: the runs after the Windows update, with one log per code block of the steps |
 
 ## License
 

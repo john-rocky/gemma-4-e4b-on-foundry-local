@@ -1,0 +1,652 @@
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "embedding": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 32768, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 32768
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "1"}}], "embedding": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 131072, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 131072
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "embedding": [], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 131072, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 131072
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "embedding": [], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 32768, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 32768
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "embedding": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 32768, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 32768
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "1"}}], "embedding": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 32768, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 32768
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "embedding": [], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 8192, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 8192
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "embedding": [], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 8192, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 8192
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0", "arena_extend_strategy": "kSameAsRequested"}}], "embedding": [], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0", "arena_extend_strategy": "kSameAsRequested"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0", "arena_extend_strategy": "kSameAsRequested"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 8192, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 8192
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "1"}}], "embedding": [], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 8192, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 8192
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50249)
+  Public API: http://127.0.0.1:50249/v1/
+  Local API (BYOM): http://127.0.0.1:50249/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4
+■ note: Folder: e4b-cuda-int4
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4:1
+■ Loading model (gemma-4-e4b-it-cuda-int4:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4' (GPU variant 'gemma-4-e4b-it-cuda-int4:1') 
+into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.8433978999998999, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.16975209999998242, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.43139240000004975, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.618454799999995, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the nuance you want to convey.\n\nHere are the most common and useful optionn### 1. Standard & Polite", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.4777890999999954, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on what style you prefen### 1. Using the Multiplication Operator (Most Common)\n\nThis is the most straightforward and readable method.", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.4973510999999462, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.2413503000000219, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.36468649999994796, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.4947497000000567, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.20501339999998436, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.10752830000001268, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius ($\\text{100}^\\circ\\text{C}$)**.", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 30, "s": 0.9506403999999975, "equal": false, "common_prefix_chars": 64, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "The word \"necessary\" spelled backwards is **yrasercen**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5178396000000021, "equal": false, "common_prefix_chars": 0, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.12406709999993382, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.12346849999994447, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.3211286000000655, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric progression where each number is double the previous number (powers of 2: $2^1, 2^2, 2^3, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.5468898999999965, "equal": false, "common_prefix_chars": 64, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.28398700000002464, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.61828909999997, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.4531402000000071, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue vastness stretches far,\nWaves crash on the sandy shore,\nDeep secrets it holds.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 20, "s": 0.6614807999999357, "equal": false, "common_prefix_chars": 5, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The best opposite of \"ancient\" depends on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several options, categorized by the nuance you wish to emphasizn### 1. Emphasizing New", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.4372716999999966, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate the processing of machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 30, "s": 0.9481361999999081, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here is how to solve the problen**1. Identify the given information:**\n* Distance traveled = $60 \\text{ km}$\n* Time taken = $1.5 \\text{ hours}$\n\n**2.", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.49584040000002, "equal": false, "common_prefix_chars": 4, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-int4.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 264.31000000002314, "chunks": 160, "decode_tok_s": 30.956277373307934, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 282.9629999999952, "chunks": 160, "decode_tok_s": 31.944565771289056, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 237.82310000001416, "chunks": 160, "decode_tok_s": 32.347629188344555, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 234.66289999998935, "chunks": 160, "decode_tok_s": 32.55562717566003, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4:1", "runs": 3, "ttft_ms_median": 237.82310000001416, "decode_tok_s_median": 32.347629188344555, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50329)
+  Public API: http://127.0.0.1:50329/v1/
+  Local API (BYOM): http://127.0.0.1:50329/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4-32k:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4-32k
+■ note: Folder: e4b-cuda-int4-32k
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4-32k:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-32k:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-32k' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-32k:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.9045043000000987, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.1774173000000019, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.4157610999999406, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5826571000000058, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the nuance you want to convey.\n\nHere are the most common and useful optionn### 1. Standard & Polite", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5006951999999956, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on what style you prefen### 1. Using the Multiplication Operator (Most Common)\n\nThis is the most straightforward and readable method.", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.4942723000000342, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.23802200000000084, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.3585991999999578, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5114113000000771, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.20591930000000502, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.09879269999998996, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius ($\\text{100}^\\circ\\text{C}$)**.", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 30, "s": 0.9742582000000084, "equal": false, "common_prefix_chars": 64, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "The word \"necessary\" spelled backwards is **yrasercen**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.4915581000000202, "equal": false, "common_prefix_chars": 0, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.1416454000000158, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.14991859999997814, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.3191252000000304, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric progression where each number is double the previous number (powers of 2: $2^1, 2^2, 2^3, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.5259949000000006, "equal": false, "common_prefix_chars": 64, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.30669509999995626, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.6574332999999797, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.4643204000000196, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue vastness stretches far,\nWaves crash on the sandy shore,\nDeep secrets it holds.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 20, "s": 0.6708446000000095, "equal": false, "common_prefix_chars": 5, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The best opposite of \"ancient\" depends on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several options, categorized by the nuance you wish to emphasizn### 1. Emphasizing New", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.5365458999999646, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate the processing of machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 30, "s": 0.9880932999999459, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here is how to solve the problen**1. Identify the given information:**\n* Distance traveled = $60 \\text{ km}$\n* Time taken = $1.5 \\text{ hours}$\n\n**2.", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.5382296000000224, "equal": false, "common_prefix_chars": 4, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-int4-32k.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 281.6854999999805, "chunks": 160, "decode_tok_s": 30.391418533795296, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 286.04470000004767, "chunks": 160, "decode_tok_s": 33.198892434837106, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 252.02789999991637, "chunks": 160, "decode_tok_s": 33.227774892232205, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 263.446799999997, "chunks": 160, "decode_tok_s": 33.64323406950058, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-32k:1", "runs": 3, "ttft_ms_median": 263.446799999997, "decode_tok_s_median": 33.227774892232205, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-32k:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50409)
+  Public API: http://127.0.0.1:50409/v1/
+  Local API (BYOM): http://127.0.0.1:50409/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4-graph:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4-graph
+■ note: Folder: e4b-cuda-int4-graph
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4-graph:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-graph:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-graph' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-graph:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.8962930999999799, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.3822394000000031, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.4181683999998995, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5434070999999676, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the nuance you want to convey.\n\nHere are the most common and useful optionn### 1. Standard & Polite", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.4141490000000658, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on what style you prefen### 1. Using the Multiplication Operator (Most Common)\n\nThis is the most straightforward and readable method.", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.4702455999999984, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.21330599999998867, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.3445450000000392, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.4757761999999275, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.17972259999999096, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.09226460000002135, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius ($\\text{100}^\\circ\\text{C}$)**.", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 30, "s": 0.9995066000000179, "equal": false, "common_prefix_chars": 64, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "The word \"necessary\" spelled backwards is **yrasercen**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.4865753000000268, "equal": false, "common_prefix_chars": 0, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.1312656000000061, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.13658550000002379, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.3125835000000734, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric progression where each number is double the previous number (powers of 2: $2^1, 2^2, 2^3, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.507250499999941, "equal": false, "common_prefix_chars": 64, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.30427510000004077, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.7082919000000629, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.5298396000000594, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue vastness stretches far,\nWaves crash on the sandy shore,\nDeep secrets it holds.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 20, "s": 0.6755454999999984, "equal": false, "common_prefix_chars": 5, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The best opposite of \"ancient\" depends on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several options, categorized by the nuance you wish to emphasizn### 1. Emphasizing New", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.4870787999999493, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate the processing of machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 30, "s": 0.978691700000013, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here is how to solve the problen**1. Identify the given information:**\n* Distance traveled = $60 \\text{ km}$\n* Time taken = $1.5 \\text{ hours}$\n\n**2.", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.5586061999999856, "equal": false, "common_prefix_chars": 4, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-int4-graph.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 268.13559999993686, "chunks": 160, "decode_tok_s": 30.721583332439923, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 291.65290000003097, "chunks": 160, "decode_tok_s": 32.108329221683405, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 238.5520999999926, "chunks": 160, "decode_tok_s": 32.05364821117109, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 242.49150000002828, "chunks": 160, "decode_tok_s": 31.931806834981348, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-graph:1", "runs": 3, "ttft_ms_median": 242.49150000002828, "decode_tok_s_median": 32.05364821117109, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-graph:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50485)
+  Public API: http://127.0.0.1:50485/v1/
+  Local API (BYOM): http://127.0.0.1:50485/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-fp16-embcpu:1
+■ note: Alias: gemma-4-e4b-it-cuda-fp16-embcpu
+■ note: Folder: e4b-cuda-fp16-embcpu
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-fp16-embcpu:1
+■ Loading model (gemma-4-e4b-it-cuda-fp16-embcpu:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-fp16-embcpu' (GPU variant 
+'gemma-4-e4b-it-cuda-fp16-embcpu:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 1.3173007999999982, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.22174119999999675, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.49992550000001756, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most standard and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.95257909999998, "equal": true, "common_prefix_chars": 199, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" to Japanese, depending on the level of formality and the context. Here are the most common and useful optionn### 1. Standard & Polite (Most Common)\n\n", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.7497516000000815, "equal": false, "common_prefix_chars": 119, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on the style you prefen### 1. Using the Multiplication Operator (`*`) - Most Common\n\nThis is the most straightforward and readable", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.7344410000000607, "equal": true, "common_prefix_chars": 227, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.2865225000000464, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.38845979999996416, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "**William Shakespeare** wrote the play *Romeo and Juliet*.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 12, "s": 0.5341316000000234, "equal": true, "common_prefix_chars": 58, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.26160509999999704, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.13351209999996172, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius** ($\\text{100}^\\circ\\text{C}$).", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 29, "s": 1.1155840000000126, "equal": true, "common_prefix_chars": 96, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "yrassenec", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 4, "s": 0.19763450000004923, "equal": true, "common_prefix_chars": 9, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.19972329999995964, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.1448597000000973, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.35969330000000355, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2: $2^1, 2^2, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.7552108999999518, "equal": true, "common_prefix_chars": 166, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.39242079999996804, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.780524200000059, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.5599032000000079, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue waves crash and foam,\nSalty breezes kiss the skin,\nDeep secrets below.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 19, "s": 0.7734560000000101, "equal": true, "common_prefix_chars": 75, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The most direct and common opposites of \"ancient\" arn* **Modern:** This is often the best general opposite, referring to the present time or recent times.\n* **Contemporary:** This specifically means belonging to or occurring in the", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.7645703999999114, "equal": true, "common_prefix_chars": 234, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to efficiently accelerate the computations required for artificial intelligence and machine learning tasks, such as deep learning inference.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 34, "s": 1.3025872000000618, "equal": false, "common_prefix_chars": 111, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here's how to calculate the average spee\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n\n* **Distance:** 60 km\n", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.8186277999999447, "equal": true, "common_prefix_chars": 162, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 22, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-fp16-embcpu.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 559.8733999999013, "chunks": 160, "decode_tok_s": 26.48570434108161, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 475.5049999999983, "chunks": 160, "decode_tok_s": 27.423128314576793, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 456.8170000000009, "chunks": 160, "decode_tok_s": 27.195436256873627, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 460.9871000000112, "chunks": 160, "decode_tok_s": 26.80067453420955, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-fp16-embcpu:1", "runs": 3, "ttft_ms_median": 460.9871000000112, "decode_tok_s_median": 27.195436256873627, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-fp16-embcpu:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50582)
+  Public API: http://127.0.0.1:50582/v1/
+  Local API (BYOM): http://127.0.0.1:50582/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-fp16-embcpu-32k:1
+■ note: Alias: gemma-4-e4b-it-cuda-fp16-embcpu-32k
+■ note: Folder: e4b-cuda-fp16-embcpu-32k
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-fp16-embcpu-32k:1
+■ Loading model (gemma-4-e4b-it-cuda-fp16-embcpu-32k:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-fp16-embcpu-32k' (GPU variant 
+'gemma-4-e4b-it-cuda-fp16-embcpu-32k:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 1.6052615999999489, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.19623439999998027, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.4777602000000343, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most standard and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.9040061000000605, "equal": true, "common_prefix_chars": 199, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" to Japanese, depending on the level of formality and the context. Here are the most common and useful optionn### 1. Standard & Polite (Most Common)\n\n", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.8182183000000123, "equal": false, "common_prefix_chars": 119, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on the style you prefen### 1. Using the Multiplication Operator (`*`) - Most Common\n\nThis is the most straightforward and readable", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.788739200000009, "equal": true, "common_prefix_chars": 227, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.24476470000001882, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.40448539999999866, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "**William Shakespeare** wrote the play *Romeo and Juliet*.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 12, "s": 0.5119101999999884, "equal": true, "common_prefix_chars": 58, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.2112985999999637, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.10691539999993438, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius** ($\\text{100}^\\circ\\text{C}$).", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 29, "s": 1.1202177999999776, "equal": true, "common_prefix_chars": 96, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "yrassenec", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 4, "s": 0.21625470000003588, "equal": true, "common_prefix_chars": 9, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.21031249999998636, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.14289819999999054, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.3554050999999845, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2: $2^1, 2^2, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.7842084000000114, "equal": true, "common_prefix_chars": 166, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.3489311999999245, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.7657441000000063, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.5537316000001056, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue waves crash and foam,\nSalty breezes kiss the skin,\nDeep secrets below.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 19, "s": 0.775243899999964, "equal": true, "common_prefix_chars": 75, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The most direct and common opposites of \"ancient\" arn* **Modern:** This is often the best general opposite, referring to the present time or recent times.\n* **Contemporary:** This specifically means belonging to or occurring in the", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.8119929000000639, "equal": true, "common_prefix_chars": 234, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to efficiently accelerate the computations required for artificial intelligence and machine learning tasks, such as deep learning inference.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 34, "s": 1.3217152000000851, "equal": false, "common_prefix_chars": 111, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here's how to calculate the average spee\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n\n* **Distance:** 60 km\n", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.8375939000000017, "equal": true, "common_prefix_chars": 162, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 22, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-fp16-embcpu-32k.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 532.5235999999904, "chunks": 160, "decode_tok_s": 25.48659316237002, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 476.5474999999242, "chunks": 160, "decode_tok_s": 26.83412601454054, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 441.414899999927, "chunks": 160, "decode_tok_s": 26.606321076213987, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 445.45529999993505, "chunks": 160, "decode_tok_s": 26.61279522774636, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-fp16-embcpu-32k:1", "runs": 3, "ttft_ms_median": 445.45529999993505, "decode_tok_s_median": 26.61279522774636, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-fp16-embcpu-32k:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50635)
+  Public API: http://127.0.0.1:50635/v1/
+  Local API (BYOM): http://127.0.0.1:50635/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-mixed:1
+■ note: Alias: gemma-4-e4b-it-cuda-mixed
+■ note: Folder: e4b-cuda-mixed
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-mixed:1
+■ Loading model (gemma-4-e4b-it-cuda-mixed:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-mixed' (GPU variant 'gemma-4-e4b-it-cuda-mixed:1') 
+into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.6952138999999988, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.17697290000000976, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.42130280000014864, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5475506000000223, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the context. Here are the most common and useful optionn### Most Common & Versatile Options\n\n**1. ありがとう", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.47022620000007, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on how concise or explicit you want to be.\n\n### 1. Using the Multiplication Operator (`*`) - Most Common\n\nThis is the", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.523519800000031, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.21057040000005145, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.35884680000003755, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5008505999999215, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.19518779999998515, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.09287930000004962, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius** ($\\text{100}^\\circ\\text{C}$).", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 29, "s": 0.9439864999999372, "equal": true, "common_prefix_chars": 96, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "yrasessen", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 4, "s": 0.1990235999999186, "equal": false, "common_prefix_chars": 4, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.1349875000000793, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.12220130000014251, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.31767280000008213, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\n**Reasoning:**\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2):\n\n* $2 \\times ", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.5292613999999958, "equal": false, "common_prefix_chars": 44, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.2989454000000933, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is how green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 17, "s": 0.5938948999998956, "equal": false, "common_prefix_chars": 18, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.4751359000001685, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue waves crash and foam,\nSalty spray upon the breeze,\nDeep secrets below.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 19, "s": 0.654864299999872, "equal": false, "common_prefix_chars": 33, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The opposite of \"ancient\" depends slightly on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several good options, categorized by the shade of meaninn**Most Direct Opposites (Focusing", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.4961455999998634, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 27, "s": 0.8972623999998177, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here's how to calculate the average spee\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n* Distance = $60 \\text{", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.5332949999999528, "equal": false, "common_prefix_chars": 57, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-mixed.json", "keys_ok": 20, "of": 24, "misses": ["p06", "p13", "p22", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": ["p22"], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 286.8154999998751, "chunks": 160, "decode_tok_s": 30.87609462066558, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 357.0646000000579, "chunks": 160, "decode_tok_s": 31.536252230991835, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 269.3137999999635, "chunks": 160, "decode_tok_s": 32.10522566460147, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 265.0911000000633, "chunks": 160, "decode_tok_s": 33.777987612019025, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-mixed:1", "runs": 3, "ttft_ms_median": 269.3137999999635, "decode_tok_s_median": 32.10522566460147, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-mixed:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50683)
+  Public API: http://127.0.0.1:50683/v1/
+  Local API (BYOM): http://127.0.0.1:50683/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-mixed-32k:1
+■ note: Alias: gemma-4-e4b-it-cuda-mixed-32k
+■ note: Folder: e4b-cuda-mixed-32k
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-mixed-32k:1
+■ Loading model (gemma-4-e4b-it-cuda-mixed-32k:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-mixed-32k' (GPU variant 
+'gemma-4-e4b-it-cuda-mixed-32k:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.7676323999999113, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.366320099999939, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.4379599000001235, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5375516999999945, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the context. Here are the most common and useful optionn### Most Common & Versatile Options\n\n**1. ありがとう", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.461895499999855, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on how concise or explicit you want to be.\n\n### 1. Using the Multiplication Operator (`*`) - Most Common\n\nThis is the", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.491823899999872, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.23683200000004945, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.33699209999986124, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.501453900000115, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.2043492000000242, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.1056229999999232, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius** ($\\text{100}^\\circ\\text{C}$).", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 29, "s": 0.9573936000001595, "equal": true, "common_prefix_chars": 96, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "yrasessen", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 4, "s": 0.19528780000018742, "equal": false, "common_prefix_chars": 4, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.1446209999999155, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.1481975000001512, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.3259603999999854, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\n**Reasoning:**\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2):\n\n* $2 \\times ", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.515034900000046, "equal": false, "common_prefix_chars": 44, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.32067529999994804, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is how green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 17, "s": 0.6124013999999534, "equal": false, "common_prefix_chars": 18, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.4680296999999882, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue waves crash and foam,\nSalty spray upon the breeze,\nDeep secrets below.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 19, "s": 0.6598375999999462, "equal": false, "common_prefix_chars": 33, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The opposite of \"ancient\" depends slightly on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several good options, categorized by the shade of meaninn**Most Direct Opposites (Focusing", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.5112856999999167, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 27, "s": 0.8870683000000099, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here's how to calculate the average spee\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n* Distance = $60 \\text{", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.5296660999999858, "equal": false, "common_prefix_chars": 57, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-mixed-32k.json", "keys_ok": 20, "of": 24, "misses": ["p06", "p13", "p22", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": ["p22"], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 283.7328999999045, "chunks": 160, "decode_tok_s": 31.59503730588929, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 311.18289999994886, "chunks": 160, "decode_tok_s": 33.39114551663726, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 260.2137000001221, "chunks": 160, "decode_tok_s": 33.17285391507644, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 260.86179999992964, "chunks": 160, "decode_tok_s": 32.880059993081005, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-mixed-32k:1", "runs": 3, "ttft_ms_median": 260.86179999992964, "decode_tok_s_median": 33.17285391507644, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-mixed-32k:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50730)
+  Public API: http://127.0.0.1:50730/v1/
+  Local API (BYOM): http://127.0.0.1:50730/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-mixed-32k-graph:1
+■ note: Alias: gemma-4-e4b-it-cuda-mixed-32k-graph
+■ note: Folder: e4b-cuda-mixed-32k-graph
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-mixed-32k-graph:1
+■ Loading model (gemma-4-e4b-it-cuda-mixed-32k-graph:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-mixed-32k-graph' (GPU variant 
+'gemma-4-e4b-it-cuda-mixed-32k-graph:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 0.8555350999999973, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.1842917999999827, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.45431460000008883, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5639399000001504, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the context. Here are the most common and useful optionn### Most Common & Versatile Options\n\n**1. ありがとう", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5310994000001301, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on how concise or explicit you want to be.\n\n### 1. Using the Multiplication Operator (`*`) - Most Common\n\nThis is the", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.468796900000143, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.22706429999993816, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.3478794000000107, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.49340729999994437, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.1986260000001039, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.12461880000000747, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius** ($\\text{100}^\\circ\\text{C}$).", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 29, "s": 0.9422885999999835, "equal": true, "common_prefix_chars": 96, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "yrasessen", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 4, "s": 0.19503600000007282, "equal": false, "common_prefix_chars": 4, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.13348560000008547, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.12897239999983867, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.31018700000004173, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\n**Reasoning:**\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2):\n\n* $2 \\times ", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.468865199999982, "equal": false, "common_prefix_chars": 44, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.30490690000010545, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is how green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 17, "s": 0.5821614999999838, "equal": false, "common_prefix_chars": 18, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.4615530999999464, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue waves crash and foam,\nSalty spray upon the breeze,\nDeep secrets below.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 19, "s": 0.6432251999999608, "equal": false, "common_prefix_chars": 33, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The opposite of \"ancient\" depends slightly on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several good options, categorized by the shade of meaninn**Most Direct Opposites (Focusing", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.4071582999999919, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 27, "s": 0.8288861000000907, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here's how to calculate the average spee\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n* Distance = $60 \\text{", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.4646543000001202, "equal": false, "common_prefix_chars": 57, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-mixed-32k-graph.json", "keys_ok": 20, "of": 24, "misses": ["p06", "p13", "p22", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": ["p22"], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 279.48270000001685, "chunks": 160, "decode_tok_s": 32.114817704176126, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 1259.6284000001106, "chunks": 160, "decode_tok_s": 32.96615942874359, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 323.83389999995416, "chunks": 160, "decode_tok_s": 32.96502690537016, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 321.07710000013867, "chunks": 160, "decode_tok_s": 33.536133433145835, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-mixed-32k-graph:1", "runs": 3, "ttft_ms_median": 323.83389999995416, "decode_tok_s_median": 32.96615942874359, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-mixed-32k-graph:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50792)
+  Public API: http://127.0.0.1:50792/v1/
+  Local API (BYOM): http://127.0.0.1:50792/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4-8k-emb8cpu:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4-8k-emb8cpu
+■ note: Folder: e4b-cuda-int4-8k-emb8cpu
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4-8k-emb8cpu:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-8k-emb8cpu:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-8k-emb8cpu' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-8k-emb8cpu:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 1.1158086000000367, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.6661315000001196, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 1.949611700000105, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 7.644762899999932, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the nuance you want to convey.\n\nHere are the most common and useful optionn### 1. Standard & Polite", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 7.487271899999996, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on what style you prefen### 1. Using the Multiplication Operator (Most Common)\n\nThis is the most straightforward and readable method.", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 7.2325276999999915, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.9606962999998814, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 1.568505499999901, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 2.3978087000000414, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.8192761999998766, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.31195150000007743, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius ($\\text{100}^\\circ\\text{C}$)**.", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 30, "s": 4.726976800000102, "equal": false, "common_prefix_chars": 64, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "The word \"necessary\" spelled backwards is **yrasercen**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 2.3362807000000885, "equal": false, "common_prefix_chars": 0, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.512724100000014, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.5697979999999916, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 1.4956751999998232, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric progression where each number is double the previous number (powers of 2: $2^1, 2^2, 2^3, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 7.367831900000056, "equal": false, "common_prefix_chars": 64, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 1.427105900000015, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 3.199146500000097, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 2.108394899999894, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue vastness stretches far,\nWaves crash on the sandy shore,\nDeep secrets it holds.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 20, "s": 3.0950557999999546, "equal": false, "common_prefix_chars": 5, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The best opposite of \"ancient\" depends on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several options, categorized by the nuance you wish to emphasizn### 1. Emphasizing New", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 7.522353300000077, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate the processing of machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 30, "s": 4.852147999999943, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here is how to solve the problen**1. Identify the given information:**\n* Distance traveled = $60 \\text{ km}$\n* Time taken = $1.5 \\text{ hours}$\n\n**2.", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 7.495469199999889, "equal": false, "common_prefix_chars": 4, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-int4-8k-emb8cpu.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 701.5397000000121, "chunks": 160, "decode_tok_s": 6.358779902747387, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 743.9322000000175, "chunks": 160, "decode_tok_s": 6.566221185175924, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 596.1950000000797, "chunks": 160, "decode_tok_s": 6.57229360100494, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 565.1059000001624, "chunks": 160, "decode_tok_s": 6.507966825823303, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-8k-emb8cpu:1", "runs": 3, "ttft_ms_median": 596.1950000000797, "decode_tok_s_median": 6.566221185175924, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-8k-emb8cpu:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50839)
+  Public API: http://127.0.0.1:50839/v1/
+  Local API (BYOM): http://127.0.0.1:50839/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4-8k-embcpu:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4-8k-embcpu
+■ note: Folder: e4b-cuda-int4-8k-embcpu
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4-8k-embcpu:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-8k-embcpu:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-8k-embcpu' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-8k-embcpu:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 1.1728570999998738, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.33841819999997824, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.4496318000001338, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.6825805999999375, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the nuance you want to convey.\n\nHere are the most common and useful optionn### 1. Standard & Polite", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5321359000001848, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on what style you prefen### 1. Using the Multiplication Operator (Most Common)\n\nThis is the most straightforward and readable method.", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.5628421000001254, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.23176039999998466, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.34037810000018, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5238065999999435, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.20616679999989174, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.12128770000003897, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius ($\\text{100}^\\circ\\text{C}$)**.", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 30, "s": 1.0114324000001034, "equal": false, "common_prefix_chars": 64, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "The word \"necessary\" spelled backwards is **yrasercen**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5060662000000775, "equal": false, "common_prefix_chars": 0, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.1455475000000206, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.14595149999991008, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.32384320000005573, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric progression where each number is double the previous number (powers of 2: $2^1, 2^2, 2^3, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.574531400000069, "equal": false, "common_prefix_chars": 64, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.2961287999999058, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.683817099999942, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.48992699999985234, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue vastness stretches far,\nWaves crash on the sandy shore,\nDeep secrets it holds.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 20, "s": 0.6883190000000923, "equal": false, "common_prefix_chars": 5, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The best opposite of \"ancient\" depends on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several options, categorized by the nuance you wish to emphasizn### 1. Emphasizing New", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.578521000000137, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate the processing of machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 30, "s": 1.0018546000001152, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here is how to solve the problen**1. Identify the given information:**\n* Distance traveled = $60 \\text{ km}$\n* Time taken = $1.5 \\text{ hours}$\n\n**2.", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.5467257000000245, "equal": false, "common_prefix_chars": 4, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-int4-8k-embcpu.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 538.7704000002032, "chunks": 160, "decode_tok_s": 30.44823361753927, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 538.2878000000346, "chunks": 160, "decode_tok_s": 31.258143213214225, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 463.42780000009043, "chunks": 160, "decode_tok_s": 31.33347711260921, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 462.88369999979295, "chunks": 160, "decode_tok_s": 31.035879878027107, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-8k-embcpu:1", "runs": 3, "ttft_ms_median": 463.42780000009043, "decode_tok_s_median": 31.258143213214225, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-8k-embcpu:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50883)
+  Public API: http://127.0.0.1:50883/v1/
+  Local API (BYOM): http://127.0.0.1:50883/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4-8k-embcpu-arena:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4-8k-embcpu-arena
+■ note: Folder: e4b-cuda-int4-8k-embcpu-arena
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4-8k-embcpu-arena:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-8k-embcpu-arena:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-8k-embcpu-arena' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-8k-embcpu-arena:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 1.21705350000002, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.19484810000017205, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.4385197999999946, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.6645559999999477, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the nuance you want to convey.\n\nHere are the most common and useful optionn### 1. Standard & Polite", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.548387699999921, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on what style you prefen### 1. Using the Multiplication Operator (Most Common)\n\nThis is the most straightforward and readable method.", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.5047137000001385, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.21211429999993925, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.3730550000000221, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5017444000000069, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.19164699999987533, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.10170349999998507, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius ($\\text{100}^\\circ\\text{C}$)**.", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 30, "s": 1.025425099999893, "equal": false, "common_prefix_chars": 64, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "The word \"necessary\" spelled backwards is **yrasercen**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5242961000001287, "equal": false, "common_prefix_chars": 0, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.14314330000001974, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.15791230000013456, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.33395550000000185, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric progression where each number is double the previous number (powers of 2: $2^1, 2^2, 2^3, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.599670599999854, "equal": false, "common_prefix_chars": 64, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.3296156000001247, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.6979719999999361, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.4649541000001136, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue vastness stretches far,\nWaves crash on the sandy shore,\nDeep secrets it holds.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 20, "s": 0.6803649999999379, "equal": false, "common_prefix_chars": 5, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The best opposite of \"ancient\" depends on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several options, categorized by the nuance you wish to emphasizn### 1. Emphasizing New", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.5835749000000305, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate the processing of machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 30, "s": 1.0009287000000313, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here is how to solve the problen**1. Identify the given information:**\n* Distance traveled = $60 \\text{ km}$\n* Time taken = $1.5 \\text{ hours}$\n\n**2.", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.5569848999998612, "equal": false, "common_prefix_chars": 4, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-int4-8k-embcpu-arena.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 534.5708000002105, "chunks": 160, "decode_tok_s": 29.345789876725263, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 536.3027999999304, "chunks": 160, "decode_tok_s": 31.576232502273033, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 476.4568999999028, "chunks": 160, "decode_tok_s": 30.76264783048444, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 478.6134000000857, "chunks": 160, "decode_tok_s": 30.893713152689458, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-8k-embcpu-arena:1", "runs": 3, "ttft_ms_median": 478.6134000000857, "decode_tok_s_median": 30.893713152689458, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-8k-embcpu-arena:1' from memory.
+● success: Server stopped.
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:50928)
+  Public API: http://127.0.0.1:50928/v1/
+  Local API (BYOM): http://127.0.0.1:50928/catalogs/local/v1/
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4-8k-embcpu-graph:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4-8k-embcpu-graph
+■ note: Folder: e4b-cuda-int4-8k-embcpu-graph
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4-8k-embcpu-graph:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-8k-embcpu-graph:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-8k-embcpu-graph' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-8k-embcpu-graph:1') into memory.
+{"id": "p01", "ref_prompt_tokens": 21, "ref_new_tokens": 2, "text": "Tokyo", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 1, "s": 1.225996799999848, "equal": true, "common_prefix_chars": 5, "ref_chars": 5}
+{"id": "p02", "ref_prompt_tokens": 25, "ref_new_tokens": 4, "text": "391", "finish": "stop", "prompt_tokens": 25, "completion_tokens": 3, "s": 0.18257619999985764, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p03", "ref_prompt_tokens": 18, "ref_new_tokens": 12, "text": "The largest planet in the solar system is **Jupiter**.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 11, "s": 0.46752260000016577, "equal": true, "common_prefix_chars": 54, "ref_chars": 54}
+{"id": "p04", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "Here are a few ways to translate \"The weather is nice today\" to French, depending on the nuance you wann**Most common and natural:**\n\n* **Il fait beau aujourd'hui.** (This is the most direct and", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.6839786000000458, "equal": false, "common_prefix_chars": 187, "ref_chars": 199}
+{"id": "p05", "ref_prompt_tokens": 19, "ref_new_tokens": 48, "text": "There are several ways to translate \"Thank you for your help\" into Japanese, depending on the level of formality and the nuance you want to convey.\n\nHere are the most common and useful optionn### 1. Standard & Polite", "finish": "length", "prompt_tokens": 19, "completion_tokens": 48, "s": 1.5672825000001467, "equal": false, "common_prefix_chars": 62, "ref_chars": 212}
+{"id": "p06", "ref_prompt_tokens": 21, "ref_new_tokens": 48, "text": "Here are a few ways to write a Python function that returns the square of a number, depending on what style you prefen### 1. Using the Multiplication Operator (Most Common)\n\nThis is the most straightforward and readable method.", "finish": "length", "prompt_tokens": 21, "completion_tokens": 48, "s": 1.583928300000025, "equal": false, "common_prefix_chars": 97, "ref_chars": 227}
+{"id": "p07", "ref_prompt_tokens": 18, "ref_new_tokens": 6, "text": "Red, Yellow, Blue", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 5, "s": 0.25247799999988274, "equal": true, "common_prefix_chars": 17, "ref_chars": 17}
+{"id": "p08", "ref_prompt_tokens": 17, "ref_new_tokens": 10, "text": "The chemical symbol for gold is **Au**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 9, "s": 0.37395509999987553, "equal": true, "common_prefix_chars": 39, "ref_chars": 39}
+{"id": "p09", "ref_prompt_tokens": 17, "ref_new_tokens": 13, "text": "The play *Romeo and Juliet* was written by **William Shakespeare**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.5265524000001278, "equal": false, "common_prefix_chars": 0, "ref_chars": 58}
+{"id": "p10", "ref_prompt_tokens": 21, "ref_new_tokens": 5, "text": "5000", "finish": "stop", "prompt_tokens": 21, "completion_tokens": 4, "s": 0.19306749999987005, "equal": true, "common_prefix_chars": 4, "ref_chars": 4}
+{"id": "p11", "ref_prompt_tokens": 22, "ref_new_tokens": 2, "text": "Yes", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 1, "s": 0.11083559999997306, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p12", "ref_prompt_tokens": 22, "ref_new_tokens": 30, "text": "The boiling point of water at sea level is **100 degrees Celsius ($\\text{100}^\\circ\\text{C}$)**.", "finish": "stop", "prompt_tokens": 22, "completion_tokens": 30, "s": 1.0166199000000233, "equal": false, "common_prefix_chars": 64, "ref_chars": 96}
+{"id": "p13", "ref_prompt_tokens": 17, "ref_new_tokens": 5, "text": "The word \"necessary\" spelled backwards is **yrasercen**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 14, "s": 0.4913352999999461, "equal": false, "common_prefix_chars": 0, "ref_chars": 9}
+{"id": "p14", "ref_prompt_tokens": 16, "ref_new_tokens": 3, "text": "Joyful", "finish": "stop", "prompt_tokens": 16, "completion_tokens": 2, "s": 0.14132169999993494, "equal": true, "common_prefix_chars": 6, "ref_chars": 6}
+{"id": "p15", "ref_prompt_tokens": 24, "ref_new_tokens": 3, "text": "富士山", "finish": "stop", "prompt_tokens": 24, "completion_tokens": 2, "s": 0.14892139999983556, "equal": true, "common_prefix_chars": 3, "ref_chars": 3}
+{"id": "p16", "ref_prompt_tokens": 17, "ref_new_tokens": 9, "text": "La capital de España es **Madrid**.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 8, "s": 0.3342399000000569, "equal": true, "common_prefix_chars": 35, "ref_chars": 35}
+{"id": "p17", "ref_prompt_tokens": 27, "ref_new_tokens": 48, "text": "The next number in the sequence is **32**.\n\nThis is a geometric progression where each number is double the previous number (powers of 2: $2^1, 2^2, 2^3, 2", "finish": "length", "prompt_tokens": 27, "completion_tokens": 48, "s": 1.5715119000001323, "equal": false, "common_prefix_chars": 64, "ref_chars": 166}
+{"id": "p18", "ref_prompt_tokens": 15, "ref_new_tokens": 9, "text": "CPU stands for **Central Processing Unit**.", "finish": "stop", "prompt_tokens": 15, "completion_tokens": 8, "s": 0.3300373000001855, "equal": true, "common_prefix_chars": 43, "ref_chars": 43}
+{"id": "p19", "ref_prompt_tokens": 35, "ref_new_tokens": 20, "text": "Photosynthesis is the process where green plants convert sunlight, carbon dioxide, and water into food.", "finish": "stop", "prompt_tokens": 35, "completion_tokens": 19, "s": 0.6687140000001364, "equal": true, "common_prefix_chars": 103, "ref_chars": 103}
+{"id": "p20", "ref_prompt_tokens": 18, "ref_new_tokens": 14, "text": "There are **366** days in a leap year.", "finish": "stop", "prompt_tokens": 18, "completion_tokens": 13, "s": 0.48823499999980413, "equal": true, "common_prefix_chars": 38, "ref_chars": 38}
+{"id": "p21", "ref_prompt_tokens": 17, "ref_new_tokens": 20, "text": "Blue vastness stretches far,\nWaves crash on the sandy shore,\nDeep secrets it holds.", "finish": "stop", "prompt_tokens": 17, "completion_tokens": 20, "s": 0.6921509000001151, "equal": false, "common_prefix_chars": 5, "ref_chars": 75}
+{"id": "p22", "ref_prompt_tokens": 17, "ref_new_tokens": 48, "text": "The best opposite of \"ancient\" depends on the specific nuance you want to convey, as \"ancient\" implies extreme age. Here are several options, categorized by the nuance you wish to emphasizn### 1. Emphasizing New", "finish": "length", "prompt_tokens": 17, "completion_tokens": 48, "s": 1.5758029999999508, "equal": false, "common_prefix_chars": 4, "ref_chars": 234}
+{"id": "p23", "ref_prompt_tokens": 19, "ref_new_tokens": 31, "text": "An NPU (Neural Processing Unit) is a specialized electronic circuit designed to accelerate the processing of machine learning and artificial intelligence workloads with high energy efficiency.", "finish": "stop", "prompt_tokens": 19, "completion_tokens": 30, "s": 1.0275991999999405, "equal": false, "common_prefix_chars": 80, "ref_chars": 203}
+{"id": "p24", "ref_prompt_tokens": 34, "ref_new_tokens": 48, "text": "Here is how to solve the problen**1. Identify the given information:**\n* Distance traveled = $60 \\text{ km}$\n* Time taken = $1.5 \\text{ hours}$\n\n**2.", "finish": "length", "prompt_tokens": 34, "completion_tokens": 48, "s": 1.5897388999999293, "equal": false, "common_prefix_chars": 4, "ref_chars": 162}
+SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+{"reference": "results\\hf_ref.json", "ref_keys_ok": 20, "ref_misses": ["p05", "p06", "p13", "p24"]}
+{"file": "fixture-e4b-cuda-int4-8k-embcpu-graph.json", "keys_ok": 20, "of": 24, "misses": ["p05", "p06", "p13", "p24"], "errors": [], "ref_ok": 20, "misses_where_ref_ok": [], "bar": "PASS", "counted": 20}
+{"run": 0, "warmup": true, "ttft_ms": 564.6105000000716, "chunks": 160, "decode_tok_s": 30.036199854753086, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 523.7198999998327, "chunks": 160, "decode_tok_s": 31.820187363267188, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 462.10470000005444, "chunks": 160, "decode_tok_s": 31.96607719679033, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 460.20980000002965, "chunks": 160, "decode_tok_s": 30.724721394893606, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-8k-embcpu-graph:1", "runs": 3, "ttft_ms_median": 462.10470000005444, "decode_tok_s_median": 31.820187363267188, "prompt_tokens": 933}
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-8k-embcpu-graph:1' from memory.
+● success: Server stopped.

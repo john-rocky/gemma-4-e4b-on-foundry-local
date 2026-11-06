@@ -1,0 +1,24 @@
+{"decoder": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "embedding": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "vision": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}], "speech": [{"cuda": {"enable_skip_layer_norm_strict_mode": "1", "enable_cuda_graph": "0"}}]}
+search {"do_sample": true, "early_stopping": true, "max_length": 8192, "min_length": 0, "num_beams": 1, "num_return_sequences": 1, "past_present_share_buffer": true, "repetition_penalty": 1.0, "temperature": 1.0, "top_k": 1, "top_p": 1.0} context_length 8192
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+OpenVINOExecutionProvider: 28%
+OpenVINOExecutionProvider: 90%
+OpenVINOExecutionProvider: 100%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 100%
+WebGpuExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 33%
+NvTensorRTRTXExecutionProvider: 90%
+● success: Server ready (http://127.0.0.1:60610)
+  Public API: http://127.0.0.1:60610/v1/
+  Local API (BYOM): http://127.0.0.1:60610/catalogs/local/v1/
+● error: local_model_catalog.cc:276 fl::LocalModelCatalog::RegisterModel model_id is 
+already registered: gemma-4-e4b-it-cuda-int4-8k:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-8k:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-8k' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-8k:1') into memory.
+Tokyo

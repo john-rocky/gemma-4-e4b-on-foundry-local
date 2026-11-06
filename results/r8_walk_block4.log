@@ -1,0 +1,30 @@
+Collecting nvidia-cuda-runtime-cu12==12.9.79
+  Downloading nvidia_cuda_runtime_cu12-12.9.79-py3-none-win_amd64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.9.86
+  Downloading nvidia_cuda_nvrtc_cu12-12.9.86-py3-none-win_amd64.whl.metadata (1.7 kB)
+Collecting nvidia-cublas-cu12==12.9.2.10
+  Downloading nvidia_cublas_cu12-12.9.2.10-py3-none-win_amd64.whl.metadata (1.8 kB)
+Collecting nvidia-cudnn-cu12==9.28.0.42
+  Downloading nvidia_cudnn_cu12-9.28.0.42-py3-none-win_amd64.whl.metadata (1.9 kB)
+Downloading nvidia_cuda_runtime_cu12-12.9.79-py3-none-win_amd64.whl (3.6 MB)
+   ---------------------------------------- 3.6/3.6 MB 23.8 MB/s eta 0:00:00
+Downloading nvidia_cuda_nvrtc_cu12-12.9.86-py3-none-win_amd64.whl (76.4 MB)
+   ---------------------------------------- 76.4/76.4 MB 21.8 MB/s eta 0:00:00
+Downloading nvidia_cublas_cu12-12.9.2.10-py3-none-win_amd64.whl (553.2 MB)
+   --------------------------------------- 553.2/553.2 MB 33.9 MB/s eta 0:00:00
+Downloading nvidia_cudnn_cu12-9.28.0.42-py3-none-win_amd64.whl (693.3 MB)
+   --------------------------------------- 693.3/693.3 MB 32.5 MB/s eta 0:00:00
+Installing collected packages: nvidia-cudnn-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cublas-cu12
+Successfully installed nvidia-cublas-cu12-12.9.2.10 nvidia-cuda-nvrtc-cu12-12.9.86 nvidia-cuda-runtime-cu12-12.9.79 nvidia-cudnn-cu12-9.28.0.42
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+● success: Server stopped.
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:60978)
+  Public API: http://127.0.0.1:60978/v1/
+  Local API (BYOM): http://127.0.0.1:60978/catalogs/local/v1/

@@ -1,0 +1,38 @@
+19:22:39 diag start; speed gemma-4-e4b-it-cuda-int4-8k:1; edge gemma-4-e4b-it-cuda-int4:1,gemma-4-e4b-it-cuda-mixed:1; tries for up to 180 min to hold the lock on a quiet PC
+19:22:39 froze own walk processes: 
+19:36:51   lock taken; waiting up to 10 minutes for a quiet PC (build tools present: 13)
+19:37:13   quiet: 3 CPU samples in a row under 15 % (last 3 %), RTX 0 MiB; build tools present: 13 (System 11%core, svchost 2%core, WmiPrvSE 1%core)
+19:37:13   free RAM GB 17.5
+19:37:29   Loading model (gemma-4-e4b-it-cuda-int4-8k:1)
+19:38:07   success: Loaded 'gemma-4-e4b-it-cuda-int4-8k' (GPU variant 
+19:38:07   'gemma-4-e4b-it-cuda-int4-8k:1') into memory.
+19:38:07 daemon pid 4428, base http://127.0.0.1:62421
+19:38:25   {"label": "all", "run": 0, "chunks": 160, "decode_tok_s": 32.22, "gap_ms_p10": 29.2, "gap_ms_p50": 31.2, "gap_ms_p90": 32.6, "gap_ms_max": 33.8, "gap_bins_2ms": {"30-32": 79, "32-34": 40, "28-30": 40}}
+19:38:25   {"label": "all", "run": 1, "chunks": 160, "decode_tok_s": 32.48, "gap_ms_p10": 29.2, "gap_ms_p50": 30.7, "gap_ms_p90": 32.7, "gap_ms_max": 36.3, "gap_bins_2ms": {"30-32": 78, "28-30": 43, "32-34": 31, "26-28": 6, "36-38": 1}}
+19:38:25   affinity 0xffff; cores busy % / perf %: 0:80/132 1:3/88 2:11/90 3:0/101 4:4/111 5:0/209 6:0/206 7:0/206 8:0/144 9:2/119 10:0/143 11:1/170 12:0/128 13:71/114 14:25/113 15:2/139; gpu P2, 2775 MHz, 11001 MHz, 73.04 W, 40 %; others: System 11%core, MsMpEng 6%core, NVDisplay.Container 6%core
+19:38:43   {"label": "pcores", "run": 0, "chunks": 160, "decode_tok_s": 41.96, "gap_ms_p10": 20.9, "gap_ms_p50": 22.3, "gap_ms_p90": 25.6, "gap_ms_max": 54.9, "gap_bins_2ms": {"20-22": 68, "24-26": 39, "22-24": 38, "42-44": 4, "26-28": 3, "34-36": 2}}
+19:38:43   {"label": "pcores", "run": 1, "chunks": 160, "decode_tok_s": 39.97, "gap_ms_p10": 20.8, "gap_ms_p50": 22.8, "gap_ms_p90": 28.6, "gap_ms_max": 62.2, "gap_bins_2ms": {"20-22": 63, "22-24": 40, "24-26": 34, "26-28": 3, "54-56": 2, "30-32": 2}}
+19:38:43   affinity 0xf; cores busy % / perf %: 0:79/144 1:20/86 2:33/96 3:36/87 4:0/163 5:1/185 6:0/181 7:0/180 8:0/173 9:0/173 10:0/148 11:0/174 12:0/112 13:0/110 14:4/114 15:2/147; gpu P4, 2325 MHz, 9001 MHz, 81.11 W, 21 %; others: System 7%core, svchost 2%core, LEDKeeper2 2%core
+19:39:00   {"label": "ecores", "run": 0, "chunks": 160, "decode_tok_s": 31.7, "gap_ms_p10": 29.5, "gap_ms_p50": 31.6, "gap_ms_p90": 33.2, "gap_ms_max": 37.2, "gap_bins_2ms": {"30-32": 62, "32-34": 56, "28-30": 34, "36-38": 4, "34-36": 3}}
+19:39:00   {"label": "ecores", "run": 1, "chunks": 160, "decode_tok_s": 32.04, "gap_ms_p10": 29.2, "gap_ms_p50": 31.3, "gap_ms_p90": 32.9, "gap_ms_max": 41.2, "gap_bins_2ms": {"30-32": 62, "32-34": 52, "28-30": 41, "40-42": 1, "36-38": 1, "26-28": 1}}
+19:39:00   affinity 0xfff0; cores busy % / perf %: 0:74/148 1:2/85 2:15/97 3:1/99 4:1/166 5:1/212 6:1/212 7:1/211 8:1/160 9:1/167 10:2/113 11:5/113 12:1/115 13:47/113 14:1/121 15:51/113; gpu P0, 2767 MHz, 14001 MHz, 79.12 W, 43 %; others: System 10%core, NVDisplay.Container 5%core, WmiPrvSE 1%core
+19:39:17   {"label": "all2", "run": 0, "chunks": 160, "decode_tok_s": 32.9, "gap_ms_p10": 28.9, "gap_ms_p50": 30.1, "gap_ms_p90": 32.3, "gap_ms_max": 34.0, "gap_bins_2ms": {"28-30": 73, "30-32": 65, "32-34": 19, "34-36": 1, "26-28": 1}}
+19:39:17   {"label": "all2", "run": 1, "chunks": 160, "decode_tok_s": 32.2, "gap_ms_p10": 29.3, "gap_ms_p50": 31.1, "gap_ms_p90": 32.7, "gap_ms_max": 35.0, "gap_bins_2ms": {"30-32": 77, "32-34": 40, "28-30": 40, "34-36": 2}}
+19:39:17   affinity 0xffff; cores busy % / perf %: 0:77/152 1:0/82 2:12/91 3:0/83 4:1/157 5:0/199 6:1/120 7:0/200 8:0/134 9:0/153 10:0/149 11:0/163 12:58/113 13:39/114 14:0/123 15:5/130; gpu P0, 2752 MHz, 14001 MHz, 80.93 W, 37 %; others: System 14%core, MsMpEng 8%core, NVDisplay.Container 6%core
+19:39:55   into memory.
+19:40:43   cuda-int4 fixture SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+19:40:43   cuda-int4 speed {"run": 0, "warmup": true, "ttft_ms": 279.73350000047503, "chunks": 160, "decode_tok_s": 30.456192387519565, "prompt_tokens": 933, "completion_tokens": 160}
+19:40:43   cuda-int4 speed {"run": 1, "warmup": false, "ttft_ms": 298.23149999992893, "chunks": 160, "decode_tok_s": 32.020381556879514, "prompt_tokens": 933, "completion_tokens": 160}
+19:40:43   cuda-int4 speed {"run": 2, "warmup": false, "ttft_ms": 249.4378000001234, "chunks": 160, "decode_tok_s": 32.123452326414466, "prompt_tokens": 933, "completion_tokens": 160}
+19:40:43   cuda-int4 speed {"run": 3, "warmup": false, "ttft_ms": 246.52700000024197, "chunks": 160, "decode_tok_s": 32.39267847235461, "prompt_tokens": 933, "completion_tokens": 160}
+19:40:43   cuda-int4 speed SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4:1", "runs": 3, "ttft_ms_median": 249.4378000001234, "decode_tok_s_median": 32.123452326414466, "prompt_tokens": 933}
+19:40:43   cuda-int4 daemon MiB: after load 8136, peak in the 24 prompts 8230, after them 8230, peak in the speed run 13350, after it 13350
+19:41:39   into memory.
+19:42:25   cuda-mixed fixture SUMMARY {"n": 24, "errors": 0, "equal": 13, "prompt_tokens_equal_ref": 24}
+19:42:25   cuda-mixed speed {"run": 0, "warmup": true, "ttft_ms": 288.4409999996933, "chunks": 160, "decode_tok_s": 30.727659976605878, "prompt_tokens": 933, "completion_tokens": 160}
+19:42:25   cuda-mixed speed {"run": 1, "warmup": false, "ttft_ms": 1123.2271999997465, "chunks": 160, "decode_tok_s": 32.67077078669625, "prompt_tokens": 933, "completion_tokens": 160}
+19:42:25   cuda-mixed speed {"run": 2, "warmup": false, "ttft_ms": 323.0656000005183, "chunks": 160, "decode_tok_s": 32.521292344615375, "prompt_tokens": 933, "completion_tokens": 160}
+19:42:25   cuda-mixed speed {"run": 3, "warmup": false, "ttft_ms": 317.6908999994339, "chunks": 160, "decode_tok_s": 32.73375591994056, "prompt_tokens": 933, "completion_tokens": 160}
+19:42:25   cuda-mixed speed SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-mixed:1", "runs": 3, "ttft_ms_median": 323.0656000005183, "decode_tok_s_median": 32.67077078669625, "prompt_tokens": 933}
+19:42:25   cuda-mixed daemon MiB: after load 12226, peak in the 24 prompts 13344, after them 13344, peak in the speed run 15971, after it 15971
+19:42:29 diag end; resumed 0 processes; lock released

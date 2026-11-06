@@ -1,0 +1,87 @@
+=== OpenVINO EP recheck 2026-11-06T20:32:01.3483810+09:00 (CUDA 12 DLLs on PATH: the daemon registers its CUDA EP at start)
+appx: WindowsWorkload.EP.Intel.OpenVINO.Framework.1.8 1.8.81.0
+appx: WindowsWorkload.WinMLShared.5.2 1.2608.951.0
+appx: Microsoft.FoundryLocal 0.13.0.0
+appx: MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8 1.8.95.0
+appx: Microsoft.WinML.Intel.OpenVINO.EP.Framework.2 1.8.95.0
+
+--- gpu (e4b_cpu_int4_ov_gpu)
+  ■ Starting Foundry Local server
+  OpenVINOExecutionProvider: 0%
+  NvTensorRTRTXExecutionProvider: 0%
+  CUDAExecutionProvider: 0%
+  WebGpuExecutionProvider: 0%
+  ● success: Server ready (http://127.0.0.1:59091)
+    Public API: http://127.0.0.1:59091/v1/
+    Local API (BYOM): http://127.0.0.1:59091/catalogs/local/v1/
+  ● success: Registered local model.
+  ■ note: ID: gemma-4-e4b-it-openvino-gpu:1
+  ■ Loading model (gemma-4-e4b-it-openvino-gpu:1)
+  ● error: The Foundry Local runtime reported an internal error. 
+  genai_model_instance.cc:218 fl::GenAIModelInstance::GenAIModelInstance failed to
+  load model gemma-4-e4b-it-openvino-gpu:1: 
+  ep_plugin_provider_interfaces.cc
+  :71 onnxruntime::PluginExecutionProviderFactory::CreateProvider Error creating 
+  execution provider: [ONNXRuntimeError] : 9 : NOT_IMPLEMENTED : Experimental 
+  function OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build
+  System.Management.Automation.RemoteException
+  Hint: Run 'foundry report' to capture diagnostics for a bug report.
+  execution provider: [ONNXRuntimeError] : 9 : NOT_IMPLEMENTED : Experimental 
+  function OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build
+  System.Management.Automation.RemoteException
+  Hint: Run 'foundry report' to capture diagnostics for a bug report.
+
+--- npu (e4b_cpu_int4_ov_npu)
+  ■ Starting Foundry Local server
+  OpenVINOExecutionProvider: 0%
+  NvTensorRTRTXExecutionProvider: 0%
+  CUDAExecutionProvider: 0%
+  WebGpuExecutionProvider: 0%
+  ● success: Server ready (http://127.0.0.1:59110)
+    Public API: http://127.0.0.1:59110/v1/
+    Local API (BYOM): http://127.0.0.1:59110/catalogs/local/v1/
+  ● success: Registered local model.
+  ■ note: ID: gemma-4-e4b-it-openvino-npu:1
+  ■ Loading model (gemma-4-e4b-it-openvino-npu:1)
+  ● error: The Foundry Local runtime reported an internal error. 
+  genai_model_instance.cc:218 fl::GenAIModelInstance::GenAIModelInstance failed to
+  load model gemma-4-e4b-it-openvino-npu:1: 
+  ep_plugin_provider_interfaces.cc
+  :71 onnxruntime::PluginExecutionProviderFactory::CreateProvider Error creating 
+  execution provider: [ONNXRuntimeError] : 9 : NOT_IMPLEMENTED : Experimental 
+  function OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build
+  System.Management.Automation.RemoteException
+  Hint: Run 'foundry report' to capture diagnostics for a bug report.
+  execution provider: [ONNXRuntimeError] : 9 : NOT_IMPLEMENTED : Experimental 
+  function OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build
+  System.Management.Automation.RemoteException
+  Hint: Run 'foundry report' to capture diagnostics for a bug report.
+
+--- cpu (e4b_cpu_int4_ov_cpu)
+  ■ Starting Foundry Local server
+  OpenVINOExecutionProvider: 0%
+  NvTensorRTRTXExecutionProvider: 0%
+  CUDAExecutionProvider: 0%
+  WebGpuExecutionProvider: 0%
+  ● success: Server ready (http://127.0.0.1:59129)
+    Public API: http://127.0.0.1:59129/v1/
+    Local API (BYOM): http://127.0.0.1:59129/catalogs/local/v1/
+  ● success: Registered local model.
+  ■ note: ID: gemma-4-e4b-it-openvino-cpu:1
+  ■ Loading model (gemma-4-e4b-it-openvino-cpu:1)
+  ● error: The Foundry Local runtime reported an internal error. 
+  genai_model_instance.cc:218 fl::GenAIModelInstance::GenAIModelInstance failed to
+  load model gemma-4-e4b-it-openvino-cpu:1: 
+  ep_plugin_provider_interfaces.cc
+  :71 onnxruntime::PluginExecutionProviderFactory::CreateProvider Error creating 
+  execution provider: [ONNXRuntimeError] : 9 : NOT_IMPLEMENTED : Experimental 
+  function OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build
+  System.Management.Automation.RemoteException
+  Hint: Run 'foundry report' to capture diagnostics for a bug report.
+  execution provider: [ONNXRuntimeError] : 9 : NOT_IMPLEMENTED : Experimental 
+  function OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build
+  System.Management.Automation.RemoteException
+  Hint: Run 'foundry report' to capture diagnostics for a bug report.
+
+end 2026-11-06T20:32:52.4208939+09:00
+
