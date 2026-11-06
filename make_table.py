@@ -22,7 +22,7 @@ ROWS = [
     ("fp16, embedding session on CPU, 131072 context", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_fp16_embcpu_full.json", "fl_speed_fp16_embcpu_full.jsonl", "r7_fp16_embcpu_full.txt"),
     ("fp16, embedding session on CPU, 32K context", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_fp16_embcpu_32k.json", "fl_speed_fp16_embcpu_32k.jsonl", "r7_fp16_embcpu_32k.txt"),
     ("int4 (RTN), 131072 context", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_int4_full.json", "fl_speed_int4_full.jsonl", "r7_int4_full.txt"),
-    ("int4 (RTN), 32K context", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_int4_32k.json", "fl_speed_int4_32k.jsonl", "r7_int4_32k.txt"),
+    ("int4 (RTN), 32K context", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_int4_32k_b.json", "fl_speed_int4_32k_b.jsonl", "r7_int4_32k_b.txt"),
     ("int4 (RTN), 8K context", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_int4_8k_gpu.json", "fl_speed_int4_8k_gpu.jsonl", "r7_int4_8k_gpu.txt"),
     ("int4 (RTN), 131072 context, CUDA graphs", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_int4_graph.json", "fl_speed_int4_graph.jsonl", "r7_int4_graph.txt"),
     ("int4 (mixed, catalog E2B recipe), 131072 context", "Foundry", "CUDA / RTX 5080 Laptop", "fl_fixture_mixed.json", "fl_speed_mixed_s.jsonl", "r7_mixed.txt,r7_mixed_s.txt"),

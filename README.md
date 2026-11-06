@@ -11,7 +11,7 @@ Machine: MSI Stealth 16 AI+, Windows 11 build 26200, Core Ultra 9 386H, 31.5 GB 
 - RTX GPU with 16 GB: the int4 package with an 8K-token context (steps 2 to 6) as a Foundry Local model decodes at 58.8 tokens/s, with 246 ms to the first token of a 933-token prompt. The daemon holds 13,294 MiB of GPU memory at most.
 - Keep the context short on a 16 GB GPU. The daemon sets aside the KV cache for the whole context, and the export sets 131072 tokens. With that context the int4 package fills the GPU over the 24 prompts, then takes 15 s to the first token and decodes at 43.3 tokens/s. The fp16 package and the catalog E2B's CUDA form (the `mixed` int4 / int8 decoder) each ran out of GPU memory on 18 of the 24 prompts in a run (fp16 passed in another run, see "What to know").
 - Less GPU memory: the int4 decoder with an 8K context and the fp16 embedding session on the CPU (`e4b-cuda-int4-8k-embcpu`, step 7). The daemon holds 4,042 MiB after load and 9,186 MiB at most, and decodes at 47.0 tokens/s.
-- CPU only: the CPU package (step 8) on Foundry Local's CPU EP decodes at {{CPU_TOK}} tokens/s.
+- CPU only: the CPU package (step 8) on Foundry Local's CPU EP decodes at 11.6 tokens/s.
 - Intel GPU and NPU: Foundry Local 0.13.0 does not run these packages there. Its OpenVINO EP fails to load them, and local models do not take the WebGPU EP. Outside Foundry Local, ONNX Runtime GenAI 0.19.0 decodes at 18.9 tokens/s with WebGPU on the Intel GPU and 7.9 with OpenVINO (step 11). The NPU does not compile the graph.
 - CUDA graphs double the decode speed in ONNX Runtime GenAI (54.7 to 103.8 tokens/s for int4), but not in Foundry Local 0.13.0.
 
@@ -24,24 +24,35 @@ Speed: Foundry Local = a streamed chat completion over REST with a 933-token pro
 <!-- table: python make_table.py --public -->
 | Form | Runner | EP / device | Keys (bar) | Text = HF | First token = HF | Prefill | Decode | VRAM peak |
 |---|---|---|---|---|---|---|---|---|
-| fp16, embedding session on CPU | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 22/24 | — | TTFT 350 ms (933 tokens) | 29.6 tok/s | 12,630 MiB |
-| int4 (RTN) | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 265 ms (933 tokens) | 59.4 tok/s | 14,040 MiB |
-| int4 (mixed, catalog E2B recipe), 131072 context | Foundry Local | CUDA / RTX 5080 Laptop | not judged: 18 of 24 requests failed: `CUDA error: out of memory` | 3/24 | — | TTFT 259 ms (933 tokens) | 46.1 tok/s | 15,192 MiB |
+| fp16, embedding session on CPU, 131072 context | Foundry Local | CUDA / RTX 5080 Laptop | not judged: 18 of 24 requests failed: `CUDA error: out of memory` | — | — | — | — | — |
+| fp16, embedding session on CPU, 32K context | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 22/24 | — | TTFT 362 ms (933 tokens) | 28.6 tok/s | 15,966 MiB |
+| int4 (RTN), 131072 context | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 14,972 ms (933 tokens) | 43.3 tok/s | 15,997 MiB |
+| int4 (RTN), 32K context | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 254 ms (933 tokens) | 53.6 tok/s | 15,920 MiB |
+| int4 (RTN), 8K context | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 246 ms (933 tokens) | 58.8 tok/s | 13,294 MiB |
+| int4 (RTN), 131072 context, CUDA graphs | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 15,327 ms (933 tokens) | 23.5 tok/s | 15,998 MiB |
+| int4 (mixed, catalog E2B recipe), 131072 context | Foundry Local | CUDA / RTX 5080 Laptop | not judged: 18 of 24 requests failed: `CUDA error: out of memory` | — | — | — | — | — |
+| int4 (mixed, catalog E2B recipe), 32K context | Foundry Local | CUDA / RTX 5080 Laptop | 19/20 PASS | 13/24 | — | TTFT 1,816 ms (933 tokens) | 49.3 tok/s | 15,986 MiB |
+| int4 (mixed, catalog E2B recipe), 32K context, CUDA graphs | Foundry Local | CUDA / RTX 5080 Laptop | 19/20 PASS | 13/24 | — | TTFT 307 ms (933 tokens) | 49.7 tok/s | 15,939 MiB |
 | int4 (RTN), int8 embedding on CPU, 8K context | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 421 ms (933 tokens) | 13.5 tok/s | 9,182 MiB |
-| int4 (RTN), fp16 embedding on CPU, 8K context, CUDA arena by request | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | — | — | — |
+| int4 (RTN), fp16 embedding on CPU, 8K context | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 362 ms (933 tokens) | 47.0 tok/s | 9,186 MiB |
+| int4 (RTN), fp16 embedding on CPU, 8K context, CUDA arena by request | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 351 ms (933 tokens) | 48.4 tok/s | 9,186 MiB |
+| int4 (RTN), fp16 embedding on CPU, 8K context, CUDA graphs | Foundry Local | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | — | TTFT 361 ms (933 tokens) | 47.8 tok/s | 8,192 MiB |
 | fp16, embedding session on CPU | GenAI 0.19.0 | CUDA / RTX 5080 Laptop | 20/20 PASS | 22/24 | 24/24 (max abs Δ 1.1) | — | — | — |
 | int4 (RTN) | GenAI 0.19.0 | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | 22/24 (max abs Δ 34.4) | 134 ms (512 tokens) | 54.7 tok/s | 11,352 MiB |
 | int4 (RTN), CUDA graphs | GenAI 0.19.0 | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | 22/24 (max abs Δ 34.4) | 127 ms (512 tokens) | 103.8 tok/s | 10,368 MiB |
 | int4 (mixed, catalog E2B recipe) | GenAI 0.19.0 | CUDA / RTX 5080 Laptop | 19/20 PASS | 13/24 | 23/24 (max abs Δ 16.3) | 138 ms (512 tokens) | 50.7 tok/s | 13,136 MiB |
-| int4 (RTN), int8 embedding on CPU, 8K context | GenAI 0.19.0 | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | 22/24 (max abs Δ 34.4) | — | — | — |
+| int4 (mixed, catalog E2B recipe), CUDA graphs | GenAI 0.19.0 | CUDA / RTX 5080 Laptop | 19/20 PASS | 13/24 | 23/24 (max abs Δ 16.3) | 140 ms (512 tokens) | 70.5 tok/s | 13,792 MiB |
+| int4 (RTN), int8 embedding on CPU, 8K context | GenAI 0.19.0 | CUDA / RTX 5080 Laptop | 20/20 PASS | 13/24 | 22/24 (max abs Δ 34.4) | 235 ms (512 tokens) | 14.3 tok/s | 5,910 MiB |
+| int4 (RTN) | GenAI 0.19.0 | WebGPU / RTX 5080 Laptop | 20/20 PASS | 13/24 | 22/24 (max abs Δ 34.5) | 1,748 ms (512 tokens) | 57.1 tok/s | 7,879 MiB |
+| int4 (RTN) | GenAI 0.19.0 | WebGPU / Intel GPU | 20/20 PASS | 13/24 | 22/24 (max abs Δ 34.7) | 1,803 ms (512 tokens) | 18.9 tok/s | — |
 | int4 (RTN, CPU recipe) | GenAI 0.19.0 | OpenVINO / Intel GPU | 20/20 PASS | 13/24 | 22/24 (max abs Δ 34.2) | 2,178 ms (512 tokens) | 7.9 tok/s | — |
 | int4 (RTN, CPU recipe) | GenAI 0.19.0 | OpenVINO / CPU | 20/20 PASS | 13/24 | 22/24 (max abs Δ 33.9) | 5,785 ms (512 tokens) | 5.9 tok/s | — |
-| int4 (RTN, CPU recipe) | Foundry Local | CPU / Core Ultra 9 386H | 20/20 PASS | 13/24 | — | TTFT 17,571 ms (933 tokens) | 12.3 tok/s | — |
+| int4 (RTN, CPU recipe) | Foundry Local | CPU / Core Ultra 9 386H | 20/20 PASS | 13/24 | — | TTFT 20,195 ms (933 tokens) | 11.6 tok/s | — |
 | int4 (RTN, CPU recipe) | GenAI 0.19.0 | CPU / Core Ultra 9 386H | 20/20 PASS | 13/24 | 22/24 (max abs Δ 33.8) | 9,388 ms (512 tokens) | 15.6 tok/s | — |
 | int4 (RTN) | Foundry Local | WebGPU / Intel GPU | load fails: `unknown execution provider for local model` (registered with `--execution-provider WebGpuExecutionProvider`) | — | — | — | — | — |
 | int4 (RTN, CPU recipe) | Foundry Local | OpenVINO / Intel GPU, NPU, CPU | load fails on all three devices: `OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build` (Foundry-Local#1261) | — | — | — | — | — |
 | int4 (RTN, CPU recipe) | GenAI 0.19.0 | OpenVINO / Intel NPU | compile fails: the graph's input shapes are dynamic (`Upper bounds are not specified for node ...`) | — | — | — | — | — |
-| int4 (RTN, CPU recipe), enable_causallm | GenAI 0.19.0 | OpenVINO / Intel GPU, NPU | session fails: `the model graph has been partitioned into 277 subgraphs` (enable_causallm needs one) | — | — | — | — | — |
+| int4 (RTN, CPU recipe), enable_causallm | GenAI 0.19.0 | OpenVINO / Intel GPU, NPU | session fails with every session or only the decoder on the device: `the model graph has been partitioned into 277 subgraphs` (enable_causallm needs one) | — | — | — | — | — |
 <!-- end of table -->
 
 ## Steps
@@ -239,11 +250,11 @@ foreach ($a in "0", "1") {
 - Foundry Local's documented way to add a compiled model (a folder with `inference_model.json` in the model cache) did not list these packages with CLI 0.13.0, as a junction or as real folders in the catalog's layout (`Microsoft\<name>-1\v1\`) or flat; `foundry model register` works. While `foundry cache cd` points at another folder, the registered local models are not listed either.
 - `foundry cache cd` asks to confirm a daemon restart and fails in a non-interactive shell; `--force` skips only that question.
 - The daemon keeps a model's GPU memory after `foundry model unload`; `foundry server stop` frees it.
-- The daemon sets aside the KV cache for the whole context of `genai_config.json` on the first request, and the export sets 131072 tokens. On the 16 GB GPU, the int4 package with that context grows from 8,132 MiB after load to 15,997 MiB over the 24 prompts. The speed run after them takes 15 s to the first token and decodes at 43.3 tokens/s. As the only run in a fresh daemon, it takes 265 ms and decodes at 59.4 (`results/r7_int4_s.txt`). {{INT4_32K}} With 8K it holds 13,294 MiB at most and decodes at 58.8.
-- The fp16 package with the 131072-token context answered all 24 prompts in one run (`results/r7_fp16_embcpu_b.txt`) and ran out of GPU memory on 18 of them in another (`results/r7_fp16_embcpu_full.txt`). {{FP16_32K}}
+- The daemon sets aside the KV cache for the whole context of `genai_config.json` on the first request, and the export sets 131072 tokens. On the 16 GB GPU, the int4 package with that context grows from 8,132 MiB after load to 15,997 MiB over the 24 prompts. The speed run after them takes 15 s to the first token and decodes at 43.3 tokens/s. As the only run in a fresh daemon, it takes 265 ms and decodes at 59.4 (`results/r7_int4_s.txt`). With a 32K context it holds 15,920 MiB at most and decodes at 53.6 tokens/s. With 8K it holds 13,294 MiB at most and decodes at 58.8.
+- The fp16 package with the 131072-token context answered all 24 prompts in one run (`results/r7_fp16_embcpu_b.txt`) and ran out of GPU memory on 18 of them in another (`results/r7_fp16_embcpu_full.txt`). With a 32K context it answered all 24 and decodes at 28.6 tokens/s, with 15,966 MiB at most (`results/r7_fp16_embcpu_32k.txt`).
 - The fp16 package is 16.6 GB and does not fit in a 16 GB GPU. `variant_pkg.py --place embedding=cpu` runs the embedding session (a lookup) on the CPU.
 - The int8 embedding runs slowly on the CPU: the 8K variant with it decodes at 13.5 tokens/s in Foundry Local and 14.3 in ONNX Runtime GenAI. `e4b-cuda-int4-8k-embcpu` takes the fp16 embedding from the fp16 package (`--take embedding=e4b-cuda-fp16`) and decodes at 47.0.
-- `arena_extend_strategy=kSameAsRequested` in the CUDA options left the daemon's GPU memory as it was over the 24 prompts and the speed run: 4,042 MiB after load and 9,186 MiB at most, with and without it. {{ARENA_FRESH}}
+- `arena_extend_strategy=kSameAsRequested` in the CUDA options left the daemon's GPU memory as it was over the 24 prompts and the speed run: 4,042 MiB after load and 9,186 MiB at most, with and without it. As the only run in a fresh daemon, the daemon held 7,760 MiB at most without it and 7,796 MiB with it (46.6 and 48.4 tokens/s).
 - The `mixed` decoder is 5.05 GB against 2.80 GB for RTN int4. Its first-token logits are closer to the Hugging Face model's (largest difference 16.3 against 34.4), and it gives the same 13 of 24 identical texts. It misses one keyed answer (p22: its 48 tokens stop before the answer).
 - With the export's 131072-token context, the `mixed` package runs out of the 16 GB GPU on 18 of the 24 prompts (`CUDA error: out of memory`). With a 32K context it answers all 24, but the daemon holds 15,986 MiB, and the 933-token prompt takes 1.8 s to the first token after a 0.24 s warm-up.
 - The text of the int4 (RTN) package differs from the Hugging Face model's on more prompts than fp16 does (13/24 equal against 22/24), while the keyed answers stay right. The gap comes from the int4 decoder weights: an int4 decoder with the fp16 embedding gives the same 13/24, and the fp16 decoder with the int8 embedding gives 22/24 (`results/parity_diag_*.json`). The CPU package with fp32 instead of int8 compute in its int4 MatMuls also gives 13/24, at 3.8 instead of 15.6 tokens/s (`results/parity_cpu_int4_acc0.json`).

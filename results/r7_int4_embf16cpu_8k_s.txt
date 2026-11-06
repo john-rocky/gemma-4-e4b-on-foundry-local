@@ -1,0 +1,272 @@
+﻿=== arm int4_embf16cpu_8k_s pkg=e4b_int4_embf16cpu_8k id=gemma-4-e4b-it-cuda-int4-8k:1 task=vision-language-chat device=gpu ep=CUDAExecutionProvider at 2026-11-06T15:17:11.3641506+09:00
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 0.7 s]
+
+--- foundry server start
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:62904)
+  Public API: http://127.0.0.1:62904/v1/
+  Local API (BYOM): http://127.0.0.1:62904/catalogs/local/v1/
+[exit=0, 6.6 s]
+url=http://127.0.0.1:62904/catalogs/local/v1
+
+--- foundry model unregister gemma-4-e4b-it-cuda-int4-8k:1
+● success: Removed registration IDs: gemma-4-e4b-it-cuda-int4-8k:1.
+■ note: Model files and original folders were preserved.
+[exit=0, 0.7 s]
+
+--- foundry model register e4b_int4_embf16cpu_8k gemma-4-e4b-it-cuda-int4-8k:1 --task vision-language-chat --display-name Gemma 4 E4B (int4_embf16cpu_8k_s) --device gpu --execution-provider CUDAExecutionProvider
+● success: Registered local model.
+■ note: ID: gemma-4-e4b-it-cuda-int4-8k:1
+■ note: Alias: gemma-4-e4b-it-cuda-int4-8k
+■ note: Folder: e4b_int4_embf16cpu_8k
+■ note: Task: vision-language-chat
+■ note: Files were not copied; the original folder is retained and must remain 
+available.
+■ note: Next: foundry run gemma-4-e4b-it-cuda-int4-8k:1
+[exit=0, 0.2 s]
+
+--- foundry model list --search e4b --variants
++------------------------------------------------------------------------------+
+| Model     | Source | Variant  | Type     | Device | Executio | Size | Cached |
+| Name      |        |          |          |        | n        |      |        |
+|           |        |          |          |        | Provider |      |        |
+|-----------+--------+----------+----------+--------+----------+------+--------|
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | CPUExecu | —    | ●      |
+| 4b-it-cpu |        | E4B      | al       |        | tionProv |      |        |
+| -int4     |        | (cpu_int |          |        | ider     |      |        |
+|           |        | 4_full)  |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16    |        | (fp16_em |          |        | vider    |      |        |
+|           |        | bcpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16-em |        | (fp16_em |          |        | vider    |      |        |
+| bcpu      |        | bcpu_ful |          |        |          |      |        |
+|           |        | l)       |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16-em |        | (fp16_em |          |        | vider    |      |        |
+| bcpu-32k  |        | bcpu_32k |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4    |        | (int4_fu |          |        | vider    |      |        |
+|           |        | ll)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-32 |        | (int4_32 |          |        | vider    |      |        |
+| k         |        | k)       |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+| -arena    |        | bcpu_8k_ |          |        |          |      |        |
+|           |        | arena)   |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_8k |          |        | vider    |      |        |
+| -gpu      |        | _gpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+| -graph    |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_graph |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-em |        | (int4_em |          |        | vider    |      |        |
+| bf16-8k   |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_arena |          |        |          |      |        |
+|           |        | _full)   |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-gr |        | (int4_gr |          |        | vider    |      |        |
+| aph       |        | aph)     |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed   |        | (mixed)  |          |        | vider    |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k        |        | 2k)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k-graph  |        | 2k_graph |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | OpenVINO | —    | ●      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-cpu |        | (ov_cpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | OpenVINO | —    | ●      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-gpu |        | (ov_gpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | NPU    | OpenVINO | —    | ●      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-npu |        | (ov_npu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | WebGpuEx | —    | ●      |
+| 4b-it-web |        | E4B      | al       |        | ecutionP |      |        |
+| gpu-igpu  |        | (webgpu_ |          |        | rovider  |      |        |
+|           |        | igpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ●      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+|           |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_s)    |          |        |          |      |        |
++------------------------------------------------------------------------------+
+Device: NPU / GPU / CPU = exact hardware target for this variant.
+Execution Provider: runtime backend used by this variant.
+Cached: this specific variant is downloaded on this machine.
+[exit=0, 0.1 s]
+
+--- foundry cache ls --search e4b --variants
++------------------------------------------------------------------------------+
+| Alias     | Source | Variant  | Type     | Device | Executio | Size | Loaded |
+|           |        |          |          |        | n        |      |        |
+|           |        |          |          |        | Provider |      |        |
+|-----------+--------+----------+----------+--------+----------+------+--------|
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | CPUExecu | —    | ○      |
+| 4b-it-cpu |        | E4B      | al       |        | tionProv |      |        |
+| -int4     |        | (cpu_int |          |        | ider     |      |        |
+|           |        | 4_full)  |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16    |        | (fp16_em |          |        | vider    |      |        |
+|           |        | bcpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16-em |        | (fp16_em |          |        | vider    |      |        |
+| bcpu      |        | bcpu_ful |          |        |          |      |        |
+|           |        | l)       |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-fp16-em |        | (fp16_em |          |        | vider    |      |        |
+| bcpu-32k  |        | bcpu_32k |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4    |        | (int4_fu |          |        | vider    |      |        |
+|           |        | ll)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-32 |        | (int4_32 |          |        | vider    |      |        |
+| k         |        | k)       |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+| -arena    |        | bcpu_8k_ |          |        |          |      |        |
+|           |        | arena)   |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_8k |          |        | vider    |      |        |
+| -gpu      |        | _gpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+| -graph    |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_graph |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-em |        | (int4_em |          |        | vider    |      |        |
+| bf16-8k   |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_arena |          |        |          |      |        |
+|           |        | _full)   |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-gr |        | (int4_gr |          |        | vider    |      |        |
+| aph       |        | aph)     |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed   |        | (mixed)  |          |        | vider    |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k        |        | 2k)      |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-mixed-3 |        | (mixed_3 |          |        | vider    |      |        |
+| 2k-graph  |        | 2k_graph |          |        |          |      |        |
+|           |        | )        |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | CPU    | OpenVINO | —    | ○      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-cpu |        | (ov_cpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | OpenVINO | —    | ○      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-gpu |        | (ov_gpu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | NPU    | OpenVINO | —    | ○      |
+| 4b-it-ope |        | E4B      | al       |        | Executio |      |        |
+| nvino-npu |        | (ov_npu) |          |        | nProvide |      |        |
+|           |        |          |          |        | r        |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | WebGpuEx | —    | ○      |
+| 4b-it-web |        | E4B      | al       |        | ecutionP |      |        |
+| gpu-igpu  |        | (webgpu_ |          |        | rovider  |      |        |
+|           |        | igpu)    |          |        |          |      |        |
+| gemma-4-e | Local  | Gemma 4  | Multimod | GPU    | CUDAExec | —    | ○      |
+| 4b-it-cud |        | E4B      | al       |        | utionPro |      |        |
+| a-int4-8k |        | (int4_em |          |        | vider    |      |        |
+|           |        | bf16cpu_ |          |        |          |      |        |
+|           |        | 8k_s)    |          |        |          |      |        |
++------------------------------------------------------------------------------+
+[exit=0, 0.1 s]
+
+--- foundry model load gemma-4-e4b-it-cuda-int4-8k:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-8k:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-8k' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-8k:1') into memory.
+[exit=0, 24.7 s]
+gpu peak MiB after load: 4036 (daemon only: 4036)
+--- speed (REST, streamed); cpu load % before: 7
+  busy: MsMpEng 2400 9 %core
+  busy: System 4 5 %core
+  busy: WmiPrvSE 7144 2 %core
+  busy: powershell 21068 2 %core
+  busy: svchost 5096 2 %core
+{"run": 0, "warmup": true, "ttft_ms": 1233.7775999912992, "chunks": 160, "decode_tok_s": 44.859685252575524, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 393.9188000076683, "chunks": 160, "decode_tok_s": 47.44333535134283, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 366.77430001145694, "chunks": 160, "decode_tok_s": 46.594729678977934, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 363.60810000041965, "chunks": 160, "decode_tok_s": 45.460731649131795, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-8k:1", "runs": 3, "ttft_ms_median": 366.77430001145694, "decode_tok_s_median": 46.594729678977934, "prompt_tokens": 933}
+gpu peak MiB after speed: 7760 (daemon only: 7760)
+
+--- foundry model unload gemma-4-e4b-it-cuda-int4-8k:1
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-8k:1' from memory.
+[exit=0, 1.4 s]
+
+--- modules in the daemon
+onnxruntime.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime.dll  1.31.0.20261008.6.402979a
+onnxruntime-genai.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime-genai.dll  0.18.0
+onnxruntime_providers_shared.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime_providers_shared.dll  1.31.0.20261008.6.402979a
+onnxruntime_providers_openvino_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_openvino_plugin.dll  1.7.0+72b3270.ci.72
+openvino_onnx_frontend.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_onnx_frontend.dll  2026.3.0.22451
+openvino.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino.dll  2026.3.0.22451
+openvino_auto_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_auto_plugin.dll  2026.3.0.22451
+openvino_intel_npu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_npu_plugin.dll  2026.3.0.22451
+openvino_intel_gpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_gpu_plugin.dll  2026.3.0.22451
+openvino_intel_cpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_cpu_plugin.dll  2026.3.0.22451
+onnxruntime-genai-cuda.dll  onnxruntime-genai-cuda.dll  0.18.0
+cudart64_12.dll  cudart64_12.dll  6,14,11,12090
+onnxruntime_providers_cuda.dll  onnxruntime_providers_cuda.dll  1.31.0.20261008.4.402979a
+cublas64_12.dll  cublas64_12.dll  6,14,11,1292
+cublasLt64_12.dll  cublasLt64_12.dll  6,14,11,1292
+onnxruntime_providers_nv_tensorrt_rtx.dll  MicrosoftCorporationII.WinML.NVIDIA.TRT-RTX.EP.2_2.30.51.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_nv_tensorrt_rtx.dll  0.4.0
+onnxruntime_providers_webgpu.dll  onnxruntime_providers_webgpu.dll  1.28.20260728.4.7f4a15b
+cudnn64_9.dll  cudnn64_9.dll  9.28.0.42
+cudnn_ops64_9.dll  cudnn_ops64_9.dll  9.28.0.42
+cudnn_graph64_9.dll  cudnn_graph64_9.dll  
+--- sdk log, errors
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 2.1 s]
+=== end 2026-11-06T15:18:12.4512222+09:00
