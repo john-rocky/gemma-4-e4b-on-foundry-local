@@ -4,12 +4,14 @@
 
 The checks here are text in, text out. The packages also carry the vision and audio encoders; they load, but no image or audio prompt was checked.
 
-Machine: MSI Stealth 16 AI+, Windows 11 build 26200, Core Ultra 9 386H, 31.5 GB RAM, RTX 5080 Laptop 16 GB (driver 591.74), Intel Graphics (driver 32.0.101.8724), Intel AI Boost NPU (driver 32.0.100.4841). Gemma 4 E4B at revision `4ecc2ba63b`.
+Machine: MSI Stealth 16 AI+, Windows 11 build 26200.6899 (26200.9711 after an update on 11-06, see "After the Windows update"), Core Ultra 9 386H, 31.5 GB RAM, RTX 5080 Laptop 16 GB (driver 591.74), Intel Graphics (driver 32.0.101.8724), Intel AI Boost NPU (driver 32.0.100.4841). Gemma 4 E4B at revision `4ecc2ba63b`.
 
 ## In short
 
+The numbers in this section and in the results table were measured on 11-06 before the laptop installed a Windows update at 17:31. After the update, steps 5 to 7 give the same answers, and decode in Foundry Local is slower (see "After the Windows update").
+
 - RTX GPU with 16 GB: the int4 package with an 8K-token context (steps 2 to 6) as a Foundry Local model decodes at 58.8 tokens/s, with 246 ms to the first token of a 933-token prompt. The daemon holds 13,294 MiB of GPU memory at most.
-- Keep the context short on a 16 GB GPU. The export sets 131072 tokens. With that context the int4 package fills the GPU over the 24 prompts, then takes 15 s to the first token and decodes at 43.3 tokens/s. The fp16 package and the catalog E2B's CUDA form (the `mixed` int4 / int8 decoder) each ran out of GPU memory on 18 of the 24 prompts in a run (fp16 passed in another run, see "What to know").
+- Keep the context short on a 16 GB GPU. The export sets 131072 tokens. With that context, before the update, the int4 package filled the GPU over the 24 prompts, then took 15 s to the first token and decoded at 43.3 tokens/s. The fp16 package and the catalog E2B's CUDA form (the `mixed` int4 / int8 decoder) each ran out of GPU memory on 18 of the 24 prompts in a run (fp16 passed in another run, see "What to know"). After the update, the `mixed` package answered all 24 and peaked at 15,971 MiB.
 - Less GPU memory: the int4 decoder with an 8K context and the fp16 embedding session on the CPU (`e4b-cuda-int4-8k-embcpu`, step 7). The daemon holds 4,042 MiB after load and 9,186 MiB at most, and decodes at 47.0 tokens/s.
 - CPU only: the CPU package (step 8) on Foundry Local's CPU EP decodes at 11.6 tokens/s.
 - Intel GPU and NPU: Foundry Local 0.13.0 does not run these packages there. Its OpenVINO EP fails to load them, and local models do not take the WebGPU EP. Outside Foundry Local, ONNX Runtime GenAI 0.19.0 decodes at 18.9 tokens/s with WebGPU on the Intel GPU and 7.9 with OpenVINO (step 11). The NPU does not compile the graph.
@@ -17,7 +19,7 @@ Machine: MSI Stealth 16 AI+, Windows 11 build 26200, Core Ultra 9 386H, 31.5 GB 
 
 ## Results
 
-One laptop, 2026-11-06. The 24 prompts in `fixture/` run greedy with 48 new tokens, against Hugging Face transformers 5.22.1 in bf16 on the same machine (`results/hf_ref.json`). The answer keys were written before any ONNX output was measured. A form passes when it answers right wherever the reference does (20 of the 24 prompts), with at most one miss. "Text = HF" counts answers identical to the reference's text. "First token = HF" counts the same first token, with the largest logit difference (GenAI only: Foundry Local's REST API returns text).
+One laptop, 2026-11-06, before the Windows update (build 26200.6899). The 24 prompts in `fixture/` run greedy with 48 new tokens, against Hugging Face transformers 5.22.1 in bf16 on the same machine (`results/hf_ref.json`). The answer keys were written before any ONNX output was measured. A form passes when it answers right wherever the reference does (20 of the 24 prompts), with at most one miss. "Text = HF" counts answers identical to the reference's text. "First token = HF" counts the same first token, with the largest logit difference (GenAI only: Foundry Local's REST API returns text).
 
 Speed: Foundry Local = a streamed chat completion over REST with a 933-token prompt and 160 new tokens; GenAI 0.19.0 = a 512-token prompt and 128 new tokens. Each is the median of 3 runs after a warm-up; the two runners used different prompts, so compare within one runner. Each Foundry Local form ran in a fresh daemon: load, the 24 prompts, then the speed run. The CPU run restarted the daemon and loaded the model again before its speed run. VRAM: for Foundry Local, the daemon's own dedicated GPU memory at its highest over that run (Windows performance counter); for GenAI, nvidia-smi's total.
 
@@ -54,6 +56,16 @@ Speed: Foundry Local = a streamed chat completion over REST with a 933-token pro
 | int4 (RTN, CPU recipe) | GenAI 0.19.0 | OpenVINO / Intel NPU | compile fails: the graph's input shapes are dynamic (`Upper bounds are not specified for node ...`) | — | — | — | — | — |
 | int4 (RTN, CPU recipe), enable_causallm | GenAI 0.19.0 | OpenVINO / Intel GPU, NPU | session fails with every session or only the decoder on the device: `the model graph has been partitioned into 277 subgraphs` (enable_causallm needs one) | — | — | — | — | — |
 <!-- end of table -->
+
+## After the Windows update
+
+The laptop installed a Windows update and restarted between 17:31 and 17:35 on 11-06 (build 26200.6899 to 26200.9711, `results/r8_os_builds.txt`). Foundry Local, the CUDA DLLs, the GPU driver and the packages stayed the same. Every step of this README ran once on the laptop, in order, from an empty folder: steps 1 to 4 before the update and steps 5 to 11 after it (`results/r8_walk_block1.log` to `results/r8_walk_block12.log`, one log per code block).
+
+- Every Foundry Local form of steps 5 to 8 gives the same answers, word for word, wherever both runs answered (`results/r8_answers_vs_before.txt`). The two 131072-token forms that ran out of GPU memory before now answer all 24. The Hugging Face reference made again in step 9 gives the same 24 answers.
+- On a quiet PC, the 8K int4 package decodes at 32 tokens/s instead of 58.8 (`results/r8_diag_after_update.txt`). With the daemon limited to the four P-cores (processor affinity) it decodes at 40 to 42. Its decode follows the daemon's CPU placement, and one GPU reading per run showed 21 to 43 % utilization, so the limit is on the CPU side. What the update changed there is not established.
+- The CPU package on Foundry Local's CPU EP decodes at 9.1 tokens/s with 33,072 ms to the first token, against 11.6 and 20,195 ms before, in the same procedure (`results/r8_cpu_after.txt`).
+- The 131072-token int4 package rises only to 8,230 MiB (8,136 after load) over the 24 prompts, against 15,997 MiB before, then to 13,350 MiB in the speed run, with 249 ms to the first token. The `mixed` package answers all 24 prompts and peaks at 15,971 MiB in the speed run.
+- Foundry Local's OpenVINO EP still fails to load the CPU package on the Intel GPU, the NPU and the CPU, with the same error (`results/r8_ov_recheck.txt`).
 
 ## Steps
 
@@ -96,9 +108,9 @@ foundry server start
 ```
 
 ```powershell
-# 5. The int4 package with an 8K-token context: the export sets 131072, and on a 16 GB GPU that slows the daemon down
-#    (see "What to know"). variant_pkg.py makes a folder of hard links to a package's weights with a new
-#    genai_config.json. Register that folder as a local model (no copy) and ask one question.
+# 5. The int4 package with an 8K-token context: the export sets 131072, and on a 16 GB GPU that slowed the daemon down
+#    in a run before the Windows update (see "What to know"). variant_pkg.py makes a folder of hard links to a
+#    package's weights with a new genai_config.json. Register that folder as a local model (no copy) and ask one question.
 $py = ".venv-export\Scripts\python.exe"
 & $py variant_pkg.py --src e4b-cuda-int4 --dst e4b-cuda-int4-8k --max_length 8192
 $env:Path = "$PWD\cuda12-dll;$env:Path"
@@ -133,7 +145,8 @@ $py = ".venv-export\Scripts\python.exe"
 & $py variant_pkg.py --src e4b-cuda-int4-8k-embcpu --dst e4b-cuda-int4-8k-embcpu-arena --place decoder=cuda,vision=cuda,speech=cuda --cuda_option arena_extend_strategy=kSameAsRequested
 & $py variant_pkg.py --src e4b-cuda-int4-8k-embcpu --dst e4b-cuda-int4-8k-embcpu-graph --place decoder=cuda --cuda_option enable_cuda_graph=1
 # Each one: a fresh daemon (it keeps its GPU memory after an unload), register, load, the 24 prompts, the speed run.
-# The 131072-token fp16 and mixed packages run out of the 16 GB GPU on most prompts (results table).
+# Before the Windows update, the 131072-token fp16 and mixed packages ran out of the 16 GB GPU on 18 of the 24 prompts
+# in a run (results table); after it they answered all 24 ("After the Windows update").
 $env:Path = "$PWD\cuda12-dll;$env:Path"
 foreach ($m in @(@("e4b-cuda-int4", "gemma-4-e4b-it-cuda-int4:1"), @("e4b-cuda-int4-32k", "gemma-4-e4b-it-cuda-int4-32k:1"),
                  @("e4b-cuda-int4-graph", "gemma-4-e4b-it-cuda-int4-graph:1"), @("e4b-cuda-fp16-embcpu", "gemma-4-e4b-it-cuda-fp16-embcpu:1"),
@@ -208,11 +221,10 @@ foreach ($m in "e4b-cuda-int4", "e4b-cuda-mixed") {
   & $py genai_speed.py -m $m --provider cuda --ep_option enable_cuda_graph=1 --label "$m-graph" --out "speed-genai-$m-graph.jsonl"
 }
 # fp16 and the int8 embedding on the CPU, with the sessions where their genai_config.json puts them
-# (the speed run stops on the fp16 package in GenAI 0.19.0, see "What to know")
+# (GenAI 0.19.0's speed run stops on these two packages at the first decode step, see "What to know")
 foreach ($m in "e4b-cuda-fp16-embcpu", "e4b-cuda-int4-8k-emb8cpu") {
   & $py genai_parity.py -m $m --provider follow_config @ref --out "parity-$m.json"
 }
-& $py genai_speed.py -m e4b-cuda-int4-8k-emb8cpu --provider follow_config --label e4b-cuda-int4-8k-emb8cpu --out speed-genai-e4b-cuda-int4-8k-emb8cpu.jsonl
 .venv-export\Scripts\python.exe score_keys.py --keys fixture\answer_keys.json --ref hf_ref.json parity-e4b-cuda-int4.json parity-e4b-cuda-int4-graph.json parity-e4b-cuda-mixed.json parity-e4b-cuda-mixed-graph.json parity-e4b-cuda-fp16-embcpu.json parity-e4b-cuda-int4-8k-emb8cpu.json
 ```
 
@@ -241,6 +253,8 @@ foreach ($a in "0", "1") {
 
 ## What to know
 
+The numbers in this section were measured before the Windows update of 11-06 17:31, unless a line says otherwise.
+
 - Mobius 0.1.0 reads `config.head_dim`, which transformers 5.15.0 and later refuse for Gemma 4 (`AmbiguousGlobalPerLayerAttributeError`, [huggingface/transformers#47384](https://github.com/huggingface/transformers/pull/47384)). `requirements-export.txt` pins transformers 5.14.1. Mobius main reads it the new way.
 - `write_ort_genai_config` takes the tokenizer from the Hub by model id; a local folder as the id fails with `HFValidationError`. `export_e4b.py --hf_id` passes the Hub id, as Olive's `MobiusBuilder` does.
 - olive-ai 0.13.0 imports `requests` without installing it; `requirements-export.txt` lists it.
@@ -250,16 +264,16 @@ foreach ($a in "0", "1") {
 - Foundry Local's documented way to add a compiled model (a folder with `inference_model.json` in the model cache) did not list these packages with CLI 0.13.0, as a junction or as real folders in the catalog's layout (`Microsoft\<name>-1\v1\`) or flat; `foundry model register` works. While `foundry cache cd` points at another folder, the registered local models are not listed either.
 - `foundry cache cd` asks to confirm a daemon restart and fails in a non-interactive shell; `--force` skips only that question.
 - The daemon keeps a model's GPU memory after `foundry model unload`; `foundry server stop` frees it.
-- The export sets a 131072-token context in `genai_config.json`. On the 16 GB GPU, the int4 package with that context grows from 8,132 MiB after load to 15,997 MiB over the 24 prompts. The speed run after them takes 15 s to the first token and decodes at 43.3 tokens/s. As the only run in a fresh daemon, it takes 265 ms and decodes at 59.4 (`results/r7_int4_s.txt`). With a 32K context it holds 15,920 MiB at most and decodes at 53.6 tokens/s. With 8K it holds 13,294 MiB at most and decodes at 58.8.
-- The fp16 package with the 131072-token context answered all 24 prompts in one run (`results/r7_fp16_embcpu_b.txt`) and ran out of GPU memory on 18 of them in another (`results/r7_fp16_embcpu_full.txt`). With a 32K context it answered all 24 and decodes at 28.6 tokens/s, with 15,966 MiB at most (`results/r7_fp16_embcpu_32k.txt`).
+- The export sets a 131072-token context in `genai_config.json`. Before the Windows update, on the 16 GB GPU, the int4 package with that context grew from 8,132 MiB after load to 15,997 MiB over the 24 prompts. The speed run after them took 15 s to the first token and decoded at 43.3 tokens/s. As the only run in a fresh daemon, it took 265 ms and decoded at 59.4 (`results/r7_int4_s.txt`). With a 32K context it held 15,920 MiB at most and decoded at 53.6 tokens/s. With 8K it held 13,294 MiB at most and decoded at 58.8. After the update, the 131072-token package rose only to 8,230 MiB over the 24 prompts.
+- The fp16 package with the 131072-token context answered all 24 prompts in one run (`results/r7_fp16_embcpu_b.txt`) and ran out of GPU memory on 18 of them in another (`results/r7_fp16_embcpu_full.txt`), both before the Windows update; after it, it answered all 24 in the README walk. With a 32K context it answered all 24 and decodes at 28.6 tokens/s, with 15,966 MiB at most (`results/r7_fp16_embcpu_32k.txt`).
 - The fp16 package is 16.6 GB and does not fit in a 16 GB GPU. `variant_pkg.py --place embedding=cpu` runs the embedding session (a lookup) on the CPU.
 - The int8 embedding runs slowly on the CPU: the 8K variant with it decodes at 13.5 tokens/s in Foundry Local and 14.3 in ONNX Runtime GenAI. `e4b-cuda-int4-8k-embcpu` takes the fp16 embedding from the fp16 package (`--take embedding=e4b-cuda-fp16`) and decodes at 47.0.
 - `arena_extend_strategy=kSameAsRequested` in the CUDA options left the daemon's GPU memory as it was over the 24 prompts and the speed run: 4,042 MiB after load and 9,186 MiB at most, with and without it. As the only run in a fresh daemon, the daemon held 7,760 MiB at most without it and 7,796 MiB with it (46.6 and 48.4 tokens/s).
 - The `mixed` decoder is 5.05 GB against 2.80 GB for RTN int4. Its first-token logits are closer to the Hugging Face model's (largest difference 16.3 against 34.4), and it gives the same 13 of 24 identical texts. It misses one keyed answer (p22: its 48 tokens stop before the answer).
-- With the export's 131072-token context, the `mixed` package runs out of the 16 GB GPU on 18 of the 24 prompts (`CUDA error: out of memory`). With a 32K context it answers all 24, but the daemon holds 15,986 MiB, and the 933-token prompt takes 1.8 s to the first token after a 0.24 s warm-up.
+- With the export's 131072-token context, the `mixed` package ran out of the 16 GB GPU on 18 of the 24 prompts (`CUDA error: out of memory`) in a run before the Windows update. After it, it answered all 24 and peaked at 15,971 MiB. With a 32K context it answers all 24, but the daemon holds 15,986 MiB, and the 933-token prompt takes 1.8 s to the first token after a 0.24 s warm-up.
 - The text of the int4 (RTN) package differs from the Hugging Face model's on more prompts than fp16 does (13/24 equal against 22/24), while the keyed answers stay right. The gap comes from the int4 decoder weights: an int4 decoder with the fp16 embedding gives the same 13/24, and the fp16 decoder with the int8 embedding gives 22/24 (`results/parity_diag_*.json`). The CPU package with fp32 instead of int8 compute in its int4 MatMuls also gives 13/24, at 3.8 instead of 15.6 tokens/s (`results/parity_cpu_int4_acc0.json`).
 - CUDA graphs (`enable_cuda_graph` 1 on the decoder session; the catalog E2B packages set 0) keep the answers and raise the decode speed in ONNX Runtime GenAI 0.19.0: int4 from 54.7 to 103.8 tokens/s, `mixed` from 50.7 to 70.5. In Foundry Local 0.13.0 the 8K and 32K variants keep their speed (47.0 to 47.8 and 49.3 to 49.7 tokens/s), and the 131072-token int4 package decodes at 23.5 instead of 43.3 tokens/s.
-- ONNX Runtime GenAI 0.19.0's speed run stops on the fp16 package at the first decode step: `The output OrtValue provided for output 'inputs_embeds' of node 'InsertedPrecisionFreeCast_inputs_embeds' (Cast) has shape {1,512,2560} but the computed output shape for this run is {1,1,2560}`. Its 24 prompts run, and Foundry Local runs the same package with the 933-token prompt.
+- ONNX Runtime GenAI 0.19.0's speed run stops at the first decode step on the packages whose embedding session runs on the CPU: `The output OrtValue provided for output 'inputs_embeds' of node 'InsertedPrecisionFreeCast_inputs_embeds' (Cast) has shape {1,512,2560} but the computed output shape for this run is {1,1,2560}`. It stopped in every run of the fp16 package and in some runs of the int8-embedding 8K package: the table's 14.3 tokens/s is from a run that went through, and `results/r8_walk_block11_first.log` has one that stopped. The 24 prompts run on both, and Foundry Local runs the same packages with the 933-token prompt.
 - Foundry Local 0.13.0's own OpenVINO execution provider (the WinML plugin package 1.8.95.0) fails to load these packages on the Intel GPU, the NPU and the CPU alike, with `OrtEpApi_ReleaseEpContextConfig_SinceV28 is not available in this build` ([microsoft/Foundry-Local#1261](https://github.com/microsoft/Foundry-Local/issues/1261)). Step 11 runs the CPU package through ONNX Runtime GenAI 0.19.0 and the pip plugin `onnxruntime-ep-openvino` 1.8.1 instead: 7.9 tokens/s on the Intel GPU and 5.9 on the CPU, slower than the CPU EP (15.6).
 - With `enable_causallm=True` (the provider option of the catalog's OpenVINO variants), the OpenVINO EP refuses this graph on the Intel GPU and the NPU, with every session or only the decoder on the device: `the model graph has been partitioned into 277 subgraphs`. The open olive-recipes PR [#527](https://github.com/microsoft/olive-recipes/pull/527) gives the cause for Gemma 4: OpenVINO's ONNX frontend has no `RMSNormalization` (opset 24; the E4B decoder has 235 of them) and fails shape inference on `Attention` with a KV cache. Without that option, the NPU does not compile the dynamic-shape graph: `Upper bounds are not specified for node ...`.
 - Foundry Local 0.13.0 does not load a local model on the WebGPU EP: the load of a model registered with `--execution-provider WebGpuExecutionProvider` fails with `unknown execution provider for local model`. ONNX Runtime GenAI 0.19.0 with the pip plugin `onnxruntime-ep-webgpu` 0.5.0 runs the int4 package with every session on WebGPU: 18.9 tokens/s on the Intel GPU and 57.1 on the RTX, where CUDA decodes at 54.7 and takes 134 ms instead of 1,748 ms for the 512-token prompt. On the RTX, the Python process stayed alive after its run, so `genai_parity.py` and `genai_speed.py` exit right after writing their output when a session runs on WebGPU.
