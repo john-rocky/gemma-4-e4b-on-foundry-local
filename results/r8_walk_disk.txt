@@ -1,0 +1,2 @@
+# Disk use of the README walk's folder after the last step, read 2026-11-07 01:20 JST: file sizes summed by name, and with each hard-linked file counted once (by its NTFS file ID; variant_pkg.py hard-links the weight files). Deleting the folder afterwards freed 99.11 GB on C:.
+2026-11-07T01:20:30 walk: files 80750 (unreadable 0); GB by name 223.4; GB with each hard-linked file once 99.1

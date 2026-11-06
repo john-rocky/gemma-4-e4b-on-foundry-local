@@ -71,7 +71,7 @@ The laptop installed a Windows update and restarted between 17:31 and 17:35 on 1
 
 ## Steps
 
-Clone this repo into an empty folder and run the steps in PowerShell from it, in order. They need Python 3.12 (`py -3.12`), Foundry Local 0.13.0 (`winget install Microsoft.FoundryLocal`) and an NVIDIA driver for CUDA 12 and 13. The folder's files add up to 223 GB after the last step. The variants are hard links to their package's weight files, so the folder takes less space on disk.
+Clone this repo into an empty folder and run the steps in PowerShell from it, in order. They need Python 3.12 (`py -3.12`), Foundry Local 0.13.0 (`winget install Microsoft.FoundryLocal`) and an NVIDIA driver for CUDA 12 and 13. After the last step the folder takes 99 GB of disk (`results/r8_walk_disk.txt`). Its files add up to 223 GB because the variants are hard links to their package's weight files.
 
 ```powershell
 # 1. The weights (16 GB) and the export environment
