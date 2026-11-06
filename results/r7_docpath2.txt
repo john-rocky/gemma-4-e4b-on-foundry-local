@@ -1,0 +1,55 @@
+﻿=== doc path 2 gemma-4-e4b-it-cuda-int4-doc:1 pkg=e4b_cuda_int4 at 2026-11-06T12:20:34.2164542+09:00
+
+--- foundry cache location
+■ note: models
+[exit=0, 0.4 s]
+made v1 (57 files)
+made gemma-4-e4b-it-cuda-int4-doc (57 files)
+
+--- foundry cache cd doc_cache2 --force
+● success: Cache directory set to 'doc_cache2'.
+[exit=0, 2.2 s]
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 2.9 s]
+
+--- foundry server start
+■ Starting Foundry Local server
+OpenVINOExecutionProvider: 0%
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:62746)
+  Public API: http://127.0.0.1:62746/v1/
+  Local API (BYOM): http://127.0.0.1:62746/catalogs/local/v1/
+[exit=0, 15.5 s]
+
+--- foundry cache ls --variants
+■ note: No cached variants matched.
+[exit=0, 3.5 s]
+
+--- foundry model list --search e4b --variants
++------------------------------------------------------------------------------+
+| Model Name | Source | Variant | Type | Device | Execution    | Size | Cached |
+|            |        |         |      |        | Provider     |      |        |
++------------------------------------------------------------------------------+
+Device: NPU / GPU / CPU = exact hardware target for this variant.
+Execution Provider: runtime backend used by this variant.
+Cached: this specific variant is downloaded on this machine.
+[exit=0, 1.1 s]
+not listed: no load
+
+--- foundry cache cd models --force
+● success: Cache directory set to 'models'.
+[exit=0, 4.9 s]
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 2.1 s]
+
+--- foundry cache location
+■ note: models
+[exit=0, 1.5 s]
+doc_cache2 left: False; package files: 57
+=== end 2026-11-06T12:21:17.2516885+09:00

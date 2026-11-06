@@ -6,7 +6,7 @@ Per prompt, on the reference's own token ids:
   greedy  - free greedy decoding: tokens equal to the reference from the start (prefix) and full-sequence match
 Also checks that GenAI's own chat template + tokenizer give the same prompt ids.
 
-    python genai_parity.py -m <package dir> --provider cuda|cpu|openvino [--ov_device CPU|GPU|NPU] \
+    python genai_parity.py -m <package dir> --provider cuda|cpu|openvino|webgpu [--ov_device CPU|GPU|NPU] \
         --ref hf_ref.json --ref_logits hf_first_logits.npy --out parity.json [--ids p01,p02]
 """
 
@@ -19,8 +19,22 @@ import numpy as np
 import onnxruntime_genai as og
 
 
+def register_plugins():
+    """Register the plugin EPs installed in this venv (OpenVINO, WebGPU), so a genai_config that names them loads."""
+    import importlib
+
+    for name in ("onnxruntime_ep_openvino", "onnxruntime_ep_webgpu"):
+        try:
+            module = importlib.import_module(name)
+        except ImportError:
+            continue
+        og.register_execution_provider_library(module.get_ep_name(), module.get_library_path())
+
+
 def make_model(args):
     config = og.Config(args.model)
+    if args.provider == "follow_config":
+        register_plugins()
     if args.provider == "openvino":
         import onnxruntime_ep_openvino as ov_ep
 
@@ -37,6 +51,15 @@ def make_model(args):
         for item in args.ep_option:
             key, value = item.split("=", 1)
             config.set_provider_option("cuda", key, value)
+    elif args.provider == "webgpu":
+        import onnxruntime_ep_webgpu as webgpu_ep
+
+        og.register_execution_provider_library(webgpu_ep.get_ep_name(), webgpu_ep.get_library_path())
+        config.clear_providers()
+        config.append_provider("WebGPU")
+        for item in args.ep_option:  # e.g. adapterIndex=1 (on the test PC: 0 = RTX, 1 = Intel GPU)
+            key, value = item.split("=", 1)
+            config.set_provider_option("WebGPU", key, value)
     elif args.provider == "cpu":
         config.clear_providers()
     if args.overlay:
@@ -52,7 +75,7 @@ def last_logits(generator):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--model", required=True)
-    parser.add_argument("--provider", default="follow_config", choices=["follow_config", "cuda", "cpu", "openvino"])
+    parser.add_argument("--provider", default="follow_config", choices=["follow_config", "cuda", "cpu", "openvino", "webgpu"])
     parser.add_argument("--ov_device", default="CPU")
     parser.add_argument("--ep_option", action="append", default=[])
     parser.add_argument("--overlay", default="")

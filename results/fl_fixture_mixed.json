@@ -1,0 +1,198 @@
+{
+ "model": "gemma-4-e4b-it-cuda-mixed:1",
+ "url": "http://127.0.0.1:59550/catalogs/local/v1",
+ "summary": {
+  "n": 24,
+  "errors": 18,
+  "equal": 3,
+  "prompt_tokens_equal_ref": 6
+ },
+ "records": [
+  {
+   "id": "p01",
+   "ref_prompt_tokens": 21,
+   "ref_new_tokens": 2,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:431 fl::OnnxChatGenerator::CreatePrepared failed to create generator: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p02",
+   "ref_prompt_tokens": 25,
+   "ref_new_tokens": 4,
+   "text": "391",
+   "finish": "stop",
+   "prompt_tokens": 25,
+   "completion_tokens": 3,
+   "s": 0.13471859999117441,
+   "equal": true,
+   "common_prefix_chars": 3,
+   "ref_chars": 3
+  },
+  {
+   "id": "p03",
+   "ref_prompt_tokens": 18,
+   "ref_new_tokens": 12,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p04",
+   "ref_prompt_tokens": 19,
+   "ref_new_tokens": 48,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p05",
+   "ref_prompt_tokens": 19,
+   "ref_new_tokens": 48,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p06",
+   "ref_prompt_tokens": 21,
+   "ref_new_tokens": 48,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:431 fl::OnnxChatGenerator::CreatePrepared failed to create generator: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p07",
+   "ref_prompt_tokens": 18,
+   "ref_new_tokens": 6,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p08",
+   "ref_prompt_tokens": 17,
+   "ref_new_tokens": 10,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p09",
+   "ref_prompt_tokens": 17,
+   "ref_new_tokens": 13,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p10",
+   "ref_prompt_tokens": 21,
+   "ref_new_tokens": 5,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:431 fl::OnnxChatGenerator::CreatePrepared failed to create generator: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p11",
+   "ref_prompt_tokens": 22,
+   "ref_new_tokens": 2,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:431 fl::OnnxChatGenerator::CreatePrepared failed to create generator: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p12",
+   "ref_prompt_tokens": 22,
+   "ref_new_tokens": 30,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:431 fl::OnnxChatGenerator::CreatePrepared failed to create generator: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p13",
+   "ref_prompt_tokens": 17,
+   "ref_new_tokens": 5,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p14",
+   "ref_prompt_tokens": 16,
+   "ref_new_tokens": 3,
+   "text": "Joyful",
+   "finish": "stop",
+   "prompt_tokens": 16,
+   "completion_tokens": 2,
+   "s": 0.15294279999216087,
+   "equal": true,
+   "common_prefix_chars": 6,
+   "ref_chars": 6
+  },
+  {
+   "id": "p15",
+   "ref_prompt_tokens": 24,
+   "ref_new_tokens": 3,
+   "text": "富士山",
+   "finish": "stop",
+   "prompt_tokens": 24,
+   "completion_tokens": 2,
+   "s": 0.11836269999912474,
+   "equal": true,
+   "common_prefix_chars": 3,
+   "ref_chars": 3
+  },
+  {
+   "id": "p16",
+   "ref_prompt_tokens": 17,
+   "ref_new_tokens": 9,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p17",
+   "ref_prompt_tokens": 27,
+   "ref_new_tokens": 48,
+   "text": "The next number in the sequence is **32**.\n\n**Reasoning:**\n\nThis is a geometric sequence where each number is found by multiplying the previous number by 2 (powers of 2):\n\n* $2 \\times ",
+   "finish": "length",
+   "prompt_tokens": 27,
+   "completion_tokens": 48,
+   "s": 1.1342008999927202,
+   "equal": false,
+   "common_prefix_chars": 44,
+   "ref_chars": 166
+  },
+  {
+   "id": "p18",
+   "ref_prompt_tokens": 15,
+   "ref_new_tokens": 9,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p19",
+   "ref_prompt_tokens": 35,
+   "ref_new_tokens": 20,
+   "text": "Photosynthesis is how green plants convert sunlight, carbon dioxide, and water into food.",
+   "finish": "stop",
+   "prompt_tokens": 35,
+   "completion_tokens": 17,
+   "s": 0.47998119999829214,
+   "equal": false,
+   "common_prefix_chars": 18,
+   "ref_chars": 103
+  },
+  {
+   "id": "p20",
+   "ref_prompt_tokens": 18,
+   "ref_new_tokens": 14,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p21",
+   "ref_prompt_tokens": 17,
+   "ref_new_tokens": 20,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p22",
+   "ref_prompt_tokens": 17,
+   "ref_new_tokens": 48,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p23",
+   "ref_prompt_tokens": 19,
+   "ref_new_tokens": 31,
+   "error": "HTTP 500 {\"error\":{\"code\":null,\"message\":\"Inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory\",\"param\":null,\"type\":\"server_error\"}}"
+  },
+  {
+   "id": "p24",
+   "ref_prompt_tokens": 34,
+   "ref_new_tokens": 48,
+   "text": "Here's how to calculate the average speed:\n\n**Formula:**\n$$\\text{Average Speed} = \\frac{\\text{Distance}}{\\text{Time}}$$\n\n**Given values:**\n* Distance = $60 \\text{",
+   "finish": "length",
+   "prompt_tokens": 34,
+   "completion_tokens": 48,
+   "s": 1.0244489000033354,
+   "equal": false,
+   "common_prefix_chars": 57,
+   "ref_chars": 162
+  }
+ ]
+}

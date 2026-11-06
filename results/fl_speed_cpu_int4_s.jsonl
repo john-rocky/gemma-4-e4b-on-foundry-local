@@ -1,0 +1,5 @@
+{"run": 0, "warmup": true, "ttft_ms": 17862.683400002425, "chunks": 160, "decode_tok_s": 11.651576958507802, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 17777.398099991842, "chunks": 160, "decode_tok_s": 12.59979333485219, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 17354.679900003248, "chunks": 160, "decode_tok_s": 12.274707395676415, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 17571.093500009738, "chunks": 160, "decode_tok_s": 12.255652164182761, "prompt_tokens": 933, "completion_tokens": 160}
+{"summary": true, "model": "gemma-4-e4b-it-cpu-int4:1", "runs": 3, "ttft_ms_median": 17571.093500009738, "decode_tok_s_median": 12.274707395676415, "prompt_tokens": 933}

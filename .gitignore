@@ -1,0 +1,13 @@
+# what the README's steps create in this folder
+__pycache__/
+.venv-*/
+gemma-4-E4B-it/
+e4b-*/
+cuda12/
+cuda12-dll/
+/hf_ref.json
+/hf_first_logits.npy
+/mixed_upcast.json
+/fixture-*.json
+/parity-*.json
+/speed-*.jsonl

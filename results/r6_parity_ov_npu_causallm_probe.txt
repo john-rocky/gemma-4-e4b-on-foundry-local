@@ -1,0 +1,12 @@
+﻿[2026-11-06T13:04:30.4383532+09:00] parity ov_npu_causallm_probe pkg=e4b_cpu_int4 provider=openvino ov=NPU venv=.venv-ov
+Traceback (most recent call last):
+  File "genai_parity.py", line 202, in <module>
+    main()
+  File "genai_parity.py", line 99, in main
+    model = make_model(args)
+            ^^^^^^^^^^^^^^^^
+  File "genai_parity.py", line 67, in make_model
+    return og.Model(config)
+           ^^^^^^^^^^^^^^^^
+RuntimeError: 'enable_causallm' is enabled, but the model graph has been partitioned into 277 subgraphs. CausalLM mode requires the entire model to be compiled as a single subgraph.
+[2026-11-06T13:04:33.0880619+09:00] parity exit=1

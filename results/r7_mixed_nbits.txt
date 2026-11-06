@@ -1,0 +1,11 @@
+42 ('MatMulNBits', 'down_proj', 8, 32, None)
+42 ('MatMulNBits', 'gate_proj', 8, 32, None)
+24 ('MatMulNBits', 'k_proj', 4, 32, None)
+1 ('MatMulNBits', 'lm_head', 8, 32, None)
+42 ('MatMulNBits', 'o_proj', 8, 32, None)
+42 ('MatMulNBits', 'per_layer_input_gate', 4, 32, None)
+42 ('MatMulNBits', 'per_layer_projection', 4, 32, None)
+42 ('MatMulNBits', 'q_proj', 4, 32, None)
+42 ('MatMulNBits', 'up_proj', 8, 32, None)
+24 ('MatMulNBits', 'v_proj', 4, 32, None)
+other ops: {'RMSNormalization': 235, 'Reshape': 181, 'Mul': 151, 'Add': 108, 'Gelu': 84, 'Cast': 68, 'Slice': 42, 'Squeeze': 42, 'GroupQueryAttention': 42, 'SkipSimplifiedLayerNormalization': 42, 'Div': 25, 'ReduceMean': 24}

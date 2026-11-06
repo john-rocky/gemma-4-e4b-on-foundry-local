@@ -1,9 +1,11 @@
 """Make a variant of a GenAI package: hard links for the weight files (same NTFS volume, no copy), a fresh genai_config.json.
 
     python variant_pkg.py --src <package> --dst <new package> [--place decoder=cuda,embedding=cpu,vision=cuda,speech=cuda]
-        [--max_length 8192] [--greedy] [--cuda_option key=value ...] [--ov_device GPU]
+        [--max_length 8192] [--greedy] [--cuda_option key=value ...] [--ov_device GPU] [--webgpu_option key=value ...]
+        [--take embedding=<other package>]
 
---place sets each component's provider_options: cuda | cpu | openvino (device from --ov_device).
+--place sets each component's provider_options: cuda | cpu | openvino (device from --ov_device, options from --ov_option)
+| webgpu (options from --webgpu_option, e.g. adapterIndex=1).
 --greedy writes do_sample false (the catalog E2B package uses do_sample true with top_k 1).
 """
 
@@ -38,15 +40,27 @@ def main():
     parser.add_argument("--place", default="")
     parser.add_argument("--ov_device", default="GPU")
     parser.add_argument("--cuda_option", action="append", default=[])
+    parser.add_argument("--webgpu_option", action="append", default=[])
+    parser.add_argument("--ov_option", action="append", default=[], help="OpenVINO provider option key=value")
+    parser.add_argument("--ov_opt_level", default="", help="graph_optimization_level of the OpenVINO sessions")
+    parser.add_argument("--ov_load_config", default="", help="KEY=VALUE,... for the OpenVINO device, as load_config")
+    parser.add_argument("--take", action="append", default=[],
+                        help="<component folder>=<package>: that folder from another package (same export, other weights)")
     parser.add_argument("--max_length", type=int, default=0)
     parser.add_argument("--greedy", action="store_true")
     args = parser.parse_args()
 
     link_tree(args.src, args.dst)
+    for item in args.take:  # a component folder from another package of the same export, e.g. embedding=<fp16 package>
+        folder, other = item.split("=", 1)
+        if os.path.isdir(os.path.join(args.dst, folder)):
+            shutil.rmtree(os.path.join(args.dst, folder))
+        link_tree(os.path.join(other, folder), os.path.join(args.dst, folder))
     path = os.path.join(args.dst, "genai_config.json")
     config = json.load(open(path, encoding="utf-8"))
     model = config["model"]
     cuda_opts = dict(item.split("=", 1) for item in args.cuda_option)
+    webgpu_opts = dict(item.split("=", 1) for item in args.webgpu_option)
     for item in filter(None, args.place.split(",")):
         component, where = item.split("=")
         if component not in model:
@@ -60,7 +74,16 @@ def main():
             opts.update(cuda_opts)
             session["provider_options"] = [{"cuda": opts}]
         elif where == "openvino":
-            session["provider_options"] = [{"OpenVINO": {"device_type": args.ov_device}}]
+            opts = {"device_type": args.ov_device}
+            opts.update(dict(item.split("=", 1) for item in args.ov_option))
+            if args.ov_load_config:  # e.g. MAX_PROMPT_LEN=1024,MIN_RESPONSE_LEN=128 -> {"NPU": {...}}
+                pairs = dict(item.split("=", 1) for item in args.ov_load_config.split(","))
+                opts["load_config"] = json.dumps({args.ov_device: pairs}, separators=(",", ":"))
+            session["provider_options"] = [{"OpenVINO": opts}]
+            if args.ov_opt_level:
+                session["graph_optimization_level"] = args.ov_opt_level
+        elif where == "webgpu":
+            session["provider_options"] = [{"WebGPU": dict(webgpu_opts)}]
         else:
             raise SystemExit(f"unknown placement {where}")
     if args.max_length:

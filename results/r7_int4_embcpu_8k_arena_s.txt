@@ -1,0 +1,79 @@
+﻿=== arm int4_embcpu_8k_arena_s pkg=e4b_cuda_int4_embcpu_8k_arena id=gemma-4-e4b-it-cuda-int4-8k-arena:1 task=vision-language-chat device=gpu ep=CUDAExecutionProvider at 2026-11-06T13:11:40.1529400+09:00
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 0.7 s]
+
+--- foundry server start
+■ Starting Foundry Local server
+NvTensorRTRTXExecutionProvider: 0%
+CUDAExecutionProvider: 0%
+WebGpuExecutionProvider: 0%
+● success: Server ready (http://127.0.0.1:59690)
+  Public API: http://127.0.0.1:59690/v1/
+  Local API (BYOM): http://127.0.0.1:59690/catalogs/local/v1/
+[exit=0, 6.3 s]
+url=http://127.0.0.1:59690/catalogs/local/v1
+
+--- foundry model load gemma-4-e4b-it-cuda-int4-8k-arena:1
+■ Loading model (gemma-4-e4b-it-cuda-int4-8k-arena:1)
+● success: Loaded 'gemma-4-e4b-it-cuda-int4-8k-arena' (GPU variant 
+'gemma-4-e4b-it-cuda-int4-8k-arena:1') into memory.
+[exit=0, 10.1 s]
+gpu peak MiB after load: 4034 (daemon only: 4034)
+--- speed (REST, streamed); cpu load % before: 13
+  busy: System 4 21 %core
+  busy: MsMpEng 2400 20 %core
+  busy: WmiPrvSE 6256 3 %core
+  busy: svchost 5096 3 %core
+  busy: MSI.CentralServer 7412 2 %core
+{"run": 0, "warmup": true, "ttft_ms": 981.1360000021523, "chunks": 160, "decode_tok_s": 13.355831385300295, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 1, "warmup": false, "ttft_ms": 438.1278999935603, "chunks": 160, "decode_tok_s": 13.747904655032944, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 2, "warmup": false, "ttft_ms": 398.88770000834484, "chunks": 160, "decode_tok_s": 13.60546464600518, "prompt_tokens": 933, "completion_tokens": 160}
+{"run": 3, "warmup": false, "ttft_ms": 389.0722000069218, "chunks": 160, "decode_tok_s": 13.803523836485558, "prompt_tokens": 933, "completion_tokens": 160}
+SUMMARY {"summary": true, "model": "gemma-4-e4b-it-cuda-int4-8k-arena:1", "runs": 3, "ttft_ms_median": 398.88770000834484, "decode_tok_s_median": 13.747904655032944, "prompt_tokens": 933}
+gpu peak MiB after speed: 7758 (daemon only: 7758)
+
+--- foundry model unload gemma-4-e4b-it-cuda-int4-8k-arena:1
+● success: Unloaded 'gemma-4-e4b-it-cuda-int4-8k-arena:1' from memory.
+[exit=0, 1 s]
+
+--- modules in the daemon
+onnxruntime.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime.dll  1.31.0.20261008.6.402979a
+onnxruntime-genai.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime-genai.dll  0.18.0
+onnxruntime_providers_shared.dll  Microsoft.FoundryLocal_0.13.0.0_x64__8wekyb3d8bbwe\onnxruntime_providers_shared.dll  1.31.0.20261008.6.402979a
+onnxruntime_providers_openvino_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_openvino_plugin.dll  1.7.0+72b3270.ci.72
+openvino_onnx_frontend.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_onnx_frontend.dll  2026.3.0.22451
+openvino.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino.dll  2026.3.0.22451
+openvino_auto_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_auto_plugin.dll  2026.3.0.22451
+openvino_intel_npu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_npu_plugin.dll  2026.3.0.22451
+openvino_intel_gpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_gpu_plugin.dll  2026.3.0.22451
+openvino_intel_cpu_plugin.dll  MicrosoftCorporationII.WinML.Intel.OpenVINO.EP.1.8_1.8.95.0_x64__8wekyb3d8bbwe\ExecutionProvider\openvino_intel_cpu_plugin.dll  2026.3.0.22451
+onnxruntime-genai-cuda.dll  onnxruntime-genai-cuda.dll  0.18.0
+cudart64_12.dll  cudart64_12.dll  6,14,11,12090
+onnxruntime_providers_cuda.dll  onnxruntime_providers_cuda.dll  1.31.0.20261008.4.402979a
+cublas64_12.dll  cublas64_12.dll  6,14,11,1292
+cublasLt64_12.dll  cublasLt64_12.dll  6,14,11,1292
+onnxruntime_providers_nv_tensorrt_rtx.dll  MicrosoftCorporationII.WinML.NVIDIA.TRT-RTX.EP.2_2.30.51.0_x64__8wekyb3d8bbwe\ExecutionProvider\onnxruntime_providers_nv_tensorrt_rtx.dll  0.4.0
+onnxruntime_providers_webgpu.dll  onnxruntime_providers_webgpu.dll  1.28.20260728.4.7f4a15b
+cudnn64_9.dll  cudnn64_9.dll  9.28.0.42
+cudnn_ops64_9.dll  cudnn_ops64_9.dll  9.28.0.42
+cudnn_graph64_9.dll  cudnn_graph64_9.dll  
+--- sdk log, errors
+[2026-11-06 13:03:52.583] [error] ORT [onnxruntime] [onnxruntime-genai] [sequential_executor.cc:677 onnxruntime::ExecuteKernel] Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:03:52.584] [error] Chat completion inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:03:58.960] [error] ORT [onnxruntime] [onnxruntime-genai] [sequential_executor.cc:677 onnxruntime::ExecuteKernel] Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:03:58.961] [error] Chat completion inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:03.280] [error] ORT [onnxruntime] [onnxruntime-genai] [sequential_executor.cc:677 onnxruntime::ExecuteKernel] Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:03.283] [error] Chat completion inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:08.342] [error] ORT [onnxruntime] [onnxruntime-genai] [sequential_executor.cc:677 onnxruntime::ExecuteKernel] Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:08.343] [error] Chat completion inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:12.425] [error] ORT [onnxruntime] [onnxruntime-genai] [sequential_executor.cc:677 onnxruntime::ExecuteKernel] Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:12.426] [error] Chat completion inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:17.736] [error] ORT [onnxruntime] [onnxruntime-genai] [sequential_executor.cc:677 onnxruntime::ExecuteKernel] Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+[2026-11-06 13:04:17.737] [error] Chat completion inference failed: onnx_chat_generator.cc:144 fl::OnnxChatGenerator::GenerateNextToken token generation failed: Non-zero status code returned while running RMSNormalization node. Name:'decoder/model/layers.0/input_layernorm/RMSNormalization_node_101' Status Message: CUDA error: out of memory
+
+--- foundry server stop
+● success: Server stopped.
+[exit=0, 2.1 s]
+=== end 2026-11-06T13:12:55.6927438+09:00

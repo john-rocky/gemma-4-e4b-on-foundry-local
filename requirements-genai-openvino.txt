@@ -1,5 +1,0 @@
-# ONNX Runtime GenAI 0.19.0 with the OpenVINO execution provider plugin from pip (CPU, Intel GPU, NPU)
-onnxruntime-genai==0.19.0
-onnxruntime==1.31.1
-onnxruntime-ep-openvino==1.8.1
-numpy==2.5.4

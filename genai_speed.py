@@ -4,7 +4,7 @@ Fixed prompt of N tokens (<bos> + a fixed English text), D new tokens forced wit
 then R timed runs. prefill = time of append_tokens(prompt); decode = D / time of D generate_next_token() calls.
 GPU memory: nvidia-smi polled every 0.25 s while the runs go (peak MiB used on the RTX).
 
-    python genai_speed.py -m <package dir> --provider cuda|cpu|openvino [--ov_device GPU] --label <name> --out speed.jsonl
+    python genai_speed.py -m <package dir> --provider cuda|cpu|openvino|webgpu [--ov_device GPU] --label <name> --out speed.jsonl
 """
 
 import argparse
@@ -52,8 +52,22 @@ class GpuPeak:
         self._thread.join(timeout=5)
 
 
+def register_plugins():
+    """Register the plugin EPs installed in this venv (OpenVINO, WebGPU), so a genai_config that names them loads."""
+    import importlib
+
+    for name in ("onnxruntime_ep_openvino", "onnxruntime_ep_webgpu"):
+        try:
+            module = importlib.import_module(name)
+        except ImportError:
+            continue
+        og.register_execution_provider_library(module.get_ep_name(), module.get_library_path())
+
+
 def make_model(args):
     config = og.Config(args.model)
+    if args.provider == "follow_config":
+        register_plugins()
     if args.provider == "openvino":
         import onnxruntime_ep_openvino as ov_ep
 
@@ -64,11 +78,18 @@ def make_model(args):
     elif args.provider == "cuda":
         config.clear_providers()
         config.append_provider("cuda")
+    elif args.provider == "webgpu":
+        import onnxruntime_ep_webgpu as webgpu_ep
+
+        og.register_execution_provider_library(webgpu_ep.get_ep_name(), webgpu_ep.get_library_path())
+        config.clear_providers()
+        config.append_provider("WebGPU")
     elif args.provider == "cpu":
         config.clear_providers()
+    names = {"openvino": "OpenVINO", "webgpu": "WebGPU"}
     for item in args.ep_option:
         key, value = item.split("=", 1)
-        config.set_provider_option("OpenVINO" if args.provider == "openvino" else args.provider, key, value)
+        config.set_provider_option(names.get(args.provider, args.provider), key, value)
     if args.overlay:
         config.overlay(args.overlay)
     return og.Model(config)
@@ -77,7 +98,7 @@ def make_model(args):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--model", required=True)
-    parser.add_argument("--provider", default="follow_config", choices=["follow_config", "cuda", "cpu", "openvino"])
+    parser.add_argument("--provider", default="follow_config", choices=["follow_config", "cuda", "cpu", "openvino", "webgpu"])
     parser.add_argument("--ov_device", default="CPU")
     parser.add_argument("--ep_option", action="append", default=[])
     parser.add_argument("--overlay", default="")
@@ -126,7 +147,7 @@ def main():
                "decode_ms_per_token_median": statistics.median(r["decode_ms"] / args.new for r in timed),
                "gpu_mem_before_mib": gpu.base, "gpu_mem_peak_mib": gpu.peak}
     print("SUMMARY", json.dumps(summary), flush=True)
-    with open(args.out, "a", encoding="utf-8") as f:
+    with open(args.out, "w", encoding="utf-8") as f:
         for r in rows:
             f.write(json.dumps(r) + "\n")
         f.write(json.dumps(summary) + "\n")
