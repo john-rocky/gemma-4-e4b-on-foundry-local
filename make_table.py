@@ -55,6 +55,10 @@ ROWS = [
     ("int4 (RTN, CPU recipe), fp32 compute", "GenAI", "CPU / Core Ultra 9 386H", "parity_cpu_int4_acc0.json", "speed_cpu_int4_acc0.jsonl", None),
 ]
 
+# decode speeds measured again on 11-09 with High QoS (the mean of two processes, results/speed_high_qos_1109.txt):
+# speed file -> tokens/s shown in place of that file's 11-06 median
+AGAIN = {"speed_cuda_int4.jsonl": 58.40}
+
 # rows kept out of the README table (--public): diagnostics and option checks, named in the README's notes instead
 INTERNAL = {"parity_diag_e4b_dec4_embf16cpu.json", "fl_fixture_int4_embcpu_8k_arena.json", "parity_cpu_int4_acc0.json"}
 
@@ -148,7 +152,7 @@ def main():
             cells.append(f"{peak:,} MiB" if peak else "—")
         elif s is not None:
             cells.append(f"{s['prefill_ms_median']:,.0f} ms ({s['prompt_tokens']} tokens)")
-            cells.append(f"{s['decode_tok_s_median']:.1f} tok/s")
+            cells.append(f"{AGAIN.get(speed, s['decode_tok_s_median']):.1f} tok/s")
             peak = s.get("gpu_mem_peak_mib")
             cells.append(f"{peak:,} MiB" if peak and "RTX" in ep else "—")
         else:

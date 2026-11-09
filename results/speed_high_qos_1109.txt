@@ -1,0 +1,43 @@
+Speed measured again with High QoS, 2026-11-09, Windows 11 build 26200.9711, on the same laptop and drivers as
+the published numbers. This file lists each timed process.
+
+The int4 package: Hugging Face mlboydaisuke/gemma-4-E4B-it-Foundry-Local at 9d1751f, cuda-int4-8k/, with
+context_length and search.max_length set back to 131072 (variant_pkg.py changes only these two). Python: the
+versions of requirements-genai-cuda.txt.
+
+How: every timed run is a new Python process started over ssh (Win32_Process.Create); the sitting lines below give
+the desktop's state (LogonUI = Windows' lock-screen process).
+It runs the published script unchanged (runpy), with the published number's arguments.
+High QoS = the process calls SetProcessInformation(ProcessPowerThrottling, ControlMask = EXECUTION_SPEED,
+StateMask = 0) at its start, before the published script and its imports run (the wrapper imports only ctypes,
+json, os, sys and time before the call); default = no call. Each process reads the state back
+(ControlMask/StateMask) at its start and at its end, and times a fixed 30,000-iteration Python loop at its start
+and three times at its end (the end value below is the fastest of the three, with the core type it ran on).
+State 1/0 = power throttling opted out (High QoS); 0/0 = nothing set.
+At their end, the loop took 0.76 to 0.86 ms in the High processes below and 2.31 to 2.35 ms in the default ones.
+Order per form: High, default, default, High (uncounted processes first where noted). A row's value = the mean
+of its two processes of one QoS.
+Control before and after each sitting (or each group, where noted): a static fp16 graph on the Intel GPU (Windows ML,
+OpenVINO EP, 101 tokens, default QoS), known 98.2 ms; rows count when the controls around them are within 5 % of it.
+
+Sitting 1 (processes started 16:09-16:21): controls before 99.2 ms (+1.0 %), after 99.0 ms (+0.8 %); desktop locked at 16:21 (LogonUI running)
+
+int4 (RTN), GenAI 0.19.0, CUDA, no CUDA graphs (genai_speed.py --provider cuda)
+  decode tokens/s and 512-token prefill ms, median of 3 runs after one warm-up run; one uncounted warm-up process first; columns: decode / prefill
+  High 1     58.66 / 129.74                                state 1/0 at start, 1/0 at end; loop 0.83 ms at start, 0.78 ms at end (P core)
+  default 1  36.82 / 120.17                                state 0/0 at start, 0/0 at end; loop 0.73 ms at start, 2.34 ms at end (E core)
+  default 2  37.06 / 121.60                                state 0/0 at start, 0/0 at end; loop 0.77 ms at start, 2.31 ms at end (E core)
+  High 2     58.14 / 130.49                                state 1/0 at start, 1/0 at end; loop 0.75 ms at start, 0.81 ms at end (P core)
+  High mean     58.40 / 130.11
+  default mean  36.94 / 120.89
+  published     54.7 / 134   (High mean against published: +6.8 %, -2.9 %)
+
+int4 (RTN), GenAI 0.19.0, CUDA, CUDA graphs (the same, with --ep_option enable_cuda_graph=1)
+  decode tokens/s and 512-token prefill ms, median of 3 runs after one warm-up run; right after the group above; columns: decode / prefill
+  High 1     103.41 / 130.92                               state 1/0 at start, 1/0 at end; loop 0.75 ms at start, 0.86 ms at end (P core)
+  default 1  98.43 / 130.98                                state 0/0 at start, 0/0 at end; loop 0.74 ms at start, 2.35 ms at end (E core)
+  default 2  98.59 / 125.60                                state 0/0 at start, 0/0 at end; loop 1.09 ms at start, 2.35 ms at end (E core)
+  High 2     102.99 / 130.83                               state 1/0 at start, 1/0 at end; loop 1.08 ms at start, 0.76 ms at end (P core)
+  High mean     103.20 / 130.87
+  default mean  98.51 / 128.29
+  published     103.8 / 127   (High mean against published: -0.6 %, +3.0 %)
