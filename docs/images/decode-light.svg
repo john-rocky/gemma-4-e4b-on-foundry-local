@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 272" width="860" height="272" role="img" aria-labelledby="t d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">Gemma 4 E4B as a Foundry Local model: decode speed</title>
+<desc id="d">Int4 package, 8K context, RTX 5080 Laptop: 58.8 before, 32 after. Int4 package, Core Ultra 9 386H CPU: 11.6 before, 9.1 after.</desc>
+<text x="0" y="28" font-size="20" font-weight="600" fill="#0b0b0b">Gemma 4 E4B as a Foundry Local model: decode speed</text>
+<text x="0" y="52" font-size="14" font-weight="400" fill="#52514e">Tokens per second on one laptop, on two Windows 11 builds</text>
+<rect x="0" y="66" width="14" height="14" rx="4" fill="#2a78d6"/>
+<text x="20" y="78" font-size="14" font-weight="400" fill="#52514e">Build 26200.6899, before the update</text>
+<rect x="327" y="66" width="14" height="14" rx="4" fill="#eb6834"/>
+<text x="347" y="78" font-size="14" font-weight="400" fill="#52514e">Build 26200.9711, after the update</text>
+<text x="0" y="116" font-size="15" font-weight="400" fill="#0b0b0b">Int4 package, 8K context, RTX 5080 Laptop</text>
+<rect x="0" y="124" width="800" height="22" rx="4" fill="#2a78d6"/>
+<text x="808" y="140" font-size="15" font-weight="600" fill="#0b0b0b">58.8</text>
+<rect x="0" y="150" width="439.993" height="22" rx="4" fill="#eb6834"/>
+<text x="447.993" y="166" font-size="15" font-weight="600" fill="#0b0b0b">32</text>
+<text x="0" y="208" font-size="15" font-weight="400" fill="#0b0b0b">Int4 package, Core Ultra 9 386H CPU</text>
+<rect x="0" y="216" width="158.006" height="22" rx="4" fill="#2a78d6"/>
+<text x="166.006" y="232" font-size="15" font-weight="600" fill="#0b0b0b">11.6</text>
+<rect x="0" y="242" width="123.712" height="22" rx="4" fill="#eb6834"/>
+<text x="131.712" y="258" font-size="15" font-weight="600" fill="#0b0b0b">9.1</text>
+</svg>
