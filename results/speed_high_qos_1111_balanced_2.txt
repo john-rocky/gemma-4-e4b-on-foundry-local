@@ -1,0 +1,73 @@
+Speed measured again with High QoS, 2026-11-11, 09:33-11:30, Windows 11 build 26200.9711, on the same laptop and GPU
+drivers as the published numbers. This file lists each timed process of the forms below.
+
+Power settings during these runs: MSI Center's User Scenario on Balanced, Windows' power mode on its default (no
+power mode overlay), on AC power. The published numbers of 2026-11-06 were measured with MSI Center's earlier
+setting (not Extreme Performance; which setting it was is not recorded).
+
+The packages: Hugging Face mlboydaisuke/gemma-4-E4B-it-Foundry-Local at 9d1751f, cuda-int4-8k/ for Foundry Local on
+the RTX, cpu-int4/ for ONNX Runtime GenAI. Python: the versions of requirements-genai.txt.
+
+How: every timed process was started by a PowerShell script that was itself started over ssh (Win32_Process.Create);
+the sitting lines below give the desktop's state (LogonUI = Windows' lock-screen process). The published script runs
+unchanged (runpy), with the published number's arguments.
+High QoS = SetProcessInformation(ProcessPowerThrottling, ControlMask = EXECUTION_SPEED, StateMask = 0); default = no
+call. State 1/0 = power throttling opted out (High QoS); 0/0 = nothing set.
+ONNX Runtime GenAI: the process makes the call at its start, before the published script and its imports run. Each
+process reads the state back at its start and at its end, and times a fixed 30,000-iteration Python loop at its
+start and three times at its end (the end value below is the fastest of the three, with the core type it ran on).
+Foundry Local: each timed row is a fresh daemon (foundry server stop, foundry server start). High QoS = the same call
+on the daemon's process, made from another process by its process id, right after foundry server start and before
+the model is loaded. fl_rest.py itself makes no call in either case. The daemon's state is read after the call and
+after the speed run. Core sample: the busy % of every logical processor over 4 s, starting 12 s into the speed run;
+a row gives the sum over logical processors 0-3 (the four P-cores) and the sum over 4-15.
+Order: High, default, default, High. A row's value = the mean of its two processes of one QoS.
+Controls: a static fp16 graph on the Intel GPU (Windows ML, OpenVINO EP, 101 tokens, default QoS), run before each
+form and again after the form plus 180 s of idle. On this laptop it takes 98.2 ms (103.0 ms when its own load takes
+35 s or more) or, in a faster state whose cause is not established, 92.8 ms (known only for a load under 35 s). A form
+counts when each of its controls is within 5 % of one of these values for its load time, when its controls are within
+5 % of each other if any of them is in the faster state, and when its two High processes are within 5 % of each other.
+A control right after the last process is recorded only.
+The closing control of a form is also the control before a form that follows it directly: the first two forms below
+share the 95.0 ms control.
+Forms not counted get one more run. OpenVINO on the Intel GPU ran twice: in the first run its two High processes came
+19.4 % apart (8.18 and 6.85; default 5.83 and 5.84), so the block below is its second run. The CPU package on Foundry
+Local's CPU EP ran twice and is not listed: in both runs the control between the two halves of that form, which
+loaded in more than 35 s, was more than 5 % from the one value known for that load time (94.2 and 93.8 ms against
+103.0 ms); in the first run its two High processes were also 7.3 % apart.
+
+Sitting (processes started 09:40-09:44): control before 99.4 ms (+1.2 %), right after the last process 99.0 ms (+0.8 %) (recorded only), after 180 s of idle 95.0 ms (-3.3 %); desktop locked (LogonUI running) at the start and the end of the sitting
+
+int4 (RTN), 8K context, Foundry Local 0.13.0, CUDA / RTX 5080 Laptop (step 6: fl_rest.py fixture, then fl_rest.py speed)
+  decode tokens/s and time to first token ms (933-token prompt), median of 3 runs after one warm-up run; one uncounted warm-up daemon first (load, one short request); columns: decode / TTFT
+  High 1     61.17 / 250        daemon state 1/0 after the call (or at start), 1/0 after the speed run; no core sample (the speed run ended before it); answers 13/24 equal to the reference text
+  default 1  32.53 / 243        daemon state 0/0 after the call (or at start), 0/0 after the speed run; busy % summed over logical processors in a 4 s sample of the speed run: 0-3 97, 4-15 103; answers 13/24 equal to the reference text
+  default 2  32.36 / 234        daemon state 0/0 after the call (or at start), 0/0 after the speed run; busy % summed over logical processors in a 4 s sample of the speed run: 0-3 90, 4-15 99; answers 13/24 equal to the reference text
+  High 2     61.12 / 247        daemon state 1/0 after the call (or at start), 1/0 after the speed run; no core sample (the speed run ended before it); answers 13/24 equal to the reference text
+  High mean     61.15 / 248   (against 58.8 before the update: +4.0 %)
+  default mean  32.44 / 239
+  published     58.8 / 246 before the Windows update, 32 (decode only) after it (2026-11-06)
+
+Sitting (processes started 09:50-09:56): control before 95.0 ms (-3.3 %), right after the last process 101.3 ms (+3.2 %) (recorded only), after 180 s of idle 98.4 ms (+0.2 %); desktop locked (LogonUI running) at the start and the end of the sitting
+
+int4 (RTN, CPU recipe), GenAI 0.19.0, CPU (genai_speed.py --provider cpu)
+  decode tokens/s and 512-token prefill ms, median of 3 runs after one warm-up run; one uncounted warm-up process first; columns: decode / prefill
+  High 1     16.64 / 7840.81            state 1/0 at start, 1/0 at end; loop 0.83 ms at start, 0.79 ms at end (P core)
+  default 1  10.48 / 18230.95           state 0/0 at start, 0/0 at end; loop 0.88 ms at start, 2.3 ms at end (E core)
+  default 2  10.52 / 18332.16           state 0/0 at start, 0/0 at end; loop 0.67 ms at start, 2.3 ms at end (E core)
+  High 2     15.89 / 7971.21            state 1/0 at start, 1/0 at end; loop 0.7 ms at start, 0.76 ms at end (P core)
+  High mean     16.27 / 7906   (against 15.6 before the update: +4.3 %)
+  default mean  10.50 / 18282
+  published     15.6 / 9,388 before the Windows update, 10.2 / 18,723 after it (2026-11-06)
+
+Sitting (processes started 11:16-11:23): control before 91.2 ms (faster state, -1.7 % from 92.8), right after the last process 91.7 ms (faster state, -1.2 % from 92.8) (recorded only), after 180 s of idle 91.6 ms (faster state, -1.2 % from 92.8); desktop locked (LogonUI running) at the start and the end of the sitting
+
+int4 (RTN, CPU recipe), GenAI 0.19.0, OpenVINO / Intel GPU (genai_speed.py --provider openvino --ov_device GPU)
+  decode tokens/s and 512-token prefill ms, median of 3 runs after one warm-up run; one uncounted warm-up process first; columns: decode / prefill
+  High 1     8.25 / 2080.56             state 1/0 at start, 1/0 at end; loop 0.73 ms at start, 0.77 ms at end (P core)
+  default 1  6.34 / 2982.26             state 0/0 at start, 0/0 at end; loop 1.21 ms at start, 2.31 ms at end (E core)
+  default 2  6.36 / 3094.58             state 0/0 at start, 0/0 at end; loop 0.68 ms at start, 2.33 ms at end (E core)
+  High 2     8.45 / 2072.98             state 1/0 at start, 1/0 at end; loop 0.74 ms at start, 0.75 ms at end (P core)
+  High mean     8.35 / 2077   (against 7.9 before the update: +5.7 %)
+  default mean  6.35 / 3038
+  published     7.9 / 2,178 before the Windows update, 6.4 / 3,586 after it (2026-11-06)

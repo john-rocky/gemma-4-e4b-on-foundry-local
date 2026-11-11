@@ -9,7 +9,7 @@
 </picture>
 </p>
 
-A Windows update on 2026-11-06 slowed decoding on this laptop, but the answers to the 24 test prompts did not change. [What changed](docs/results.md#after-the-windows-update) has the numbers. The test prompts are all text. The packages also hold the vision and audio encoders, which load, but I have not tried an image or audio prompt.
+A Windows update on 2026-11-06 slowed decoding on this laptop, but the answers to the 24 test prompts did not change. [What changed](docs/results.md#after-the-windows-update) has the numbers. Measured again on 11-11, the 8K int4 package decoded at 32.4 tokens/s (processes started from an ssh session, desktop locked, MSI Center's User Scenario on Balanced, Windows' power mode on its default). With Foundry Local's daemon opted out of Windows power throttling by a call from another process (`SetProcessInformation` with `ProcessPowerThrottling`), it decoded at 61.1. What the update changed is not established. The test prompts are all text. The packages also hold the vision and audio encoders, which load, but I have not tried an image or audio prompt.
 
 ## Which package
 
