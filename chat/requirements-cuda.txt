@@ -1,0 +1,13 @@
+# The chat on an NVIDIA GPU: ONNX Runtime GenAI 0.19.0 with CUDA (the CUDA 13 runtime and cuDNN from pip), and the window
+onnxruntime-genai-cuda==0.19.0
+onnxruntime-gpu==1.31.1
+nvidia-cuda-runtime==13.5.37
+nvidia-cuda-nvrtc==13.5.37
+nvidia-cublas==13.10.0.20
+nvidia-cudnn-cu13==9.28.0.42
+numpy==2.5.4
+flatbuffers==25.12.19
+packaging==26.3
+protobuf==7.36.2
+customtkinter==6.0.0
+darkdetect==0.8.0

@@ -1,0 +1,197 @@
+{
+ "repo": "mlboydaisuke/gemma-4-E4B-it-Foundry-Local",
+ "revision": "ad8a408b845aed1abe40806bb2b734a189817054",
+ "url": "https://huggingface.co/mlboydaisuke/gemma-4-E4B-it-Foundry-Local/resolve/ad8a408b845aed1abe40806bb2b734a189817054/{package}/{path}",
+ "devices": {
+  "cuda": "cuda-int4-8k",
+  "webgpu": "cuda-int4-8k",
+  "cpu": "cpu-int4"
+ },
+ "packages": {
+  "cuda-int4-8k": {
+   "bytes": 7216677601,
+   "files": [
+    {
+     "path": "audio_encoder/model.onnx",
+     "size": 1235179,
+     "sha256": "76c47e0ebb34950d0a8095dc3f8bd05723ecfab0f40a834b54616983e8a3f293"
+    },
+    {
+     "path": "audio_encoder/model.onnx.data",
+     "size": 338212096,
+     "sha256": "c36365010ba042705451761b595231412dda89091defa935db829393cab38bf7"
+    },
+    {
+     "path": "audio_feature_extraction.json",
+     "size": 952,
+     "sha256": "092637a5c78f8d912568107951dde5a7a3e929c203c17c06b8c972eaf50e8a42"
+    },
+    {
+     "path": "chat_template.jinja",
+     "size": 18569,
+     "sha256": "0a2c8073c878ab1da004bee933a998606537bbb62016310352c7285c3f01c5b5"
+    },
+    {
+     "path": "decoder/model.onnx",
+     "size": 1028264,
+     "sha256": "5d2c060565572be342b96fd603f76c1c7b60696f5c6d3cc8d97f8425b05cb457"
+    },
+    {
+     "path": "decoder/model.onnx.data",
+     "size": 2799146496,
+     "sha256": "ae39387ffa60e38abda3c5992dadf91ceab905f5384aa10f7c6b94edc12a5de4"
+    },
+    {
+     "path": "embedding/model.onnx",
+     "size": 15765,
+     "sha256": "48fe2af851404a0f4a0783f5110f254edb2fb7a644df1e596ab33a6eedbd87a5"
+    },
+    {
+     "path": "embedding/model.onnx.data",
+     "size": 3846932992,
+     "sha256": "57ce316b0cae4b23032234ecfcd2534d60f575aa121a7787079d0110c245da99"
+    },
+    {
+     "path": "export_info.json",
+     "size": 555,
+     "sha256": "863b659cce9bc6b14da8aae90deda390584b7f4ba4d315da30c3780dd9beef0d"
+    },
+    {
+     "path": "genai_config.json",
+     "size": 4283,
+     "sha256": "a3175631530cff5dbda6741e8caf361616dd4f0713a712f49c95faa3a39df3c7"
+    },
+    {
+     "path": "image_processor.json",
+     "size": 770,
+     "sha256": "11a1658a552746e37e5e7912736dae9957d5d54de396fde42864d4672f4cb32b"
+    },
+    {
+     "path": "quant_info.json",
+     "size": 2011,
+     "sha256": "463a0a370564eb078cb4a44968a92d4ab91d76d11906e5592b0a870c054a295f"
+    },
+    {
+     "path": "tokenizer.json",
+     "size": 32156428,
+     "sha256": "91d9cf86906f78e197021fda88214d448e5c120665d0243a8e776e046986c6bc"
+    },
+    {
+     "path": "tokenizer_config.json",
+     "size": 22216,
+     "sha256": "13eea4cb65714c57f05c6e1cf04e18d29246bee5b37529045f34f7f9b6ac0476"
+    },
+    {
+     "path": "vision_encoder/model.onnx",
+     "size": 1182945,
+     "sha256": "e93e62590d563bfebedf54429a20ee8e3cb5cab05a7b267a575fbc9ec4487c23"
+    },
+    {
+     "path": "vision_encoder/model.onnx.data",
+     "size": 196718080,
+     "sha256": "d237bf91d2c20d40d7758cf59d6f38653828101b35f3474c3423018b2f3b560b"
+    }
+   ]
+  },
+  "cpu-int4": {
+   "bytes": 7459026598,
+   "files": [
+    {
+     "path": "audio_encoder/model.onnx",
+     "size": 1162623,
+     "sha256": "f69ce49a821a837189fbe393216878c4089c0a3edd12acdc0a2b1f38aa835047"
+    },
+    {
+     "path": "audio_encoder/model.onnx.data",
+     "size": 319677440,
+     "sha256": "f8f84acbfce388ad2977c57a14885f8cc00933167c52f3ee57c35f0ac8d36503"
+    },
+    {
+     "path": "audio_feature_extraction.json",
+     "size": 952,
+     "sha256": "092637a5c78f8d912568107951dde5a7a3e929c203c17c06b8c972eaf50e8a42"
+    },
+    {
+     "path": "chat_template.jinja",
+     "size": 18569,
+     "sha256": "0a2c8073c878ab1da004bee933a998606537bbb62016310352c7285c3f01c5b5"
+    },
+    {
+     "path": "decoder/model.onnx",
+     "size": 1007847,
+     "sha256": "a8975d3be0889b398e619d27a6b746d131810e5d1d95d851fffcdec06525fa3b"
+    },
+    {
+     "path": "decoder/model.onnx.data",
+     "size": 3290115072,
+     "sha256": "a4aea9eb6d8b31086d3d98f3c644172d5c0796bf7325f4060216d64e76e33c99"
+    },
+    {
+     "path": "embedding/model.onnx",
+     "size": 15252,
+     "sha256": "7451ed7795e45be9b60a1259e6cb1ccd191530d3923d9c62b1946c4e72234266"
+    },
+    {
+     "path": "embedding/model.onnx.data",
+     "size": 3627119616,
+     "sha256": "799e08a6216c39b1d75584abf886a768467e0ea3f2ba99ebf8ad696a2fcfcfde"
+    },
+    {
+     "path": "export_info.json",
+     "size": 584,
+     "sha256": "104d80600988cb7d6e850ce068a4fd3d419d6093972ad9676387180fc08207bc"
+    },
+    {
+     "path": "export_info_audio_encoder_vision_encoder.json",
+     "size": 479,
+     "sha256": "26215cdd6b078ec8489a722d479fbc43d38b31412e2a2ed624659f4f11c49f10"
+    },
+    {
+     "path": "export_info_decoder.json",
+     "size": 454,
+     "sha256": "cc0cee6f7c5840358d95428516ccf2df24973f0b0038f3b605fd665fc5e1cd99"
+    },
+    {
+     "path": "export_info_embedding.json",
+     "size": 454,
+     "sha256": "f77b1a3dabf3fcba7537136e1f364f18d4b82c65b5dd00d52ec1e08e5f0163de"
+    },
+    {
+     "path": "genai_config.json",
+     "size": 3279,
+     "sha256": "db77d220158b0a35ade5b3eae458d8aa7d00ae186c8308e01f5861edbb28466c"
+    },
+    {
+     "path": "image_processor.json",
+     "size": 770,
+     "sha256": "11a1658a552746e37e5e7912736dae9957d5d54de396fde42864d4672f4cb32b"
+    },
+    {
+     "path": "quant_info.json",
+     "size": 2112,
+     "sha256": "0829ed0075fbbc40e6e98b549e8048f3a695462646444a9cdb4631af54e62a1e"
+    },
+    {
+     "path": "tokenizer.json",
+     "size": 32156428,
+     "sha256": "91d9cf86906f78e197021fda88214d448e5c120665d0243a8e776e046986c6bc"
+    },
+    {
+     "path": "tokenizer_config.json",
+     "size": 22216,
+     "sha256": "13eea4cb65714c57f05c6e1cf04e18d29246bee5b37529045f34f7f9b6ac0476"
+    },
+    {
+     "path": "vision_encoder/model.onnx",
+     "size": 1156819,
+     "sha256": "a5fe2e2cd45872b1900510261fd784c1763ba37c4201f4f41b7a02911f6d4b36"
+    },
+    {
+     "path": "vision_encoder/model.onnx.data",
+     "size": 186565632,
+     "sha256": "7af7bdc07583e02b45a22733642816378e37cddb86a0aee7077a250fafc530c7"
+    }
+   ]
+  }
+ }
+}

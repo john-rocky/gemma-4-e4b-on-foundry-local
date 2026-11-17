@@ -1,0 +1,6 @@
+# what chat.cmd creates next to this file: the Python environments and the downloaded model
+.venv-*/
+models/
+__pycache__/
+*.log
+*.jsonl

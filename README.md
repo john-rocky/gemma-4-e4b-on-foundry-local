@@ -2,6 +2,14 @@
 
 [google/gemma-4-E4B-it](https://huggingface.co/google/gemma-4-E4B-it) is not in the Foundry Local catalog, and [microsoft/Foundry-Local#1232](https://github.com/microsoft/Foundry-Local/issues/1232) asks for it. This repo builds ONNX Runtime GenAI packages of E4B and runs them as local models in Foundry Local 0.13.0 on one Windows laptop. Two of the packages are ready to download from [Hugging Face](https://huggingface.co/mlboydaisuke/gemma-4-E4B-it-Foundry-Local).
 
+To chat with the model without Foundry Local, run [`chat/`](chat/): it opens a chat window that runs one of those two packages with ONNX Runtime GenAI 0.19.0. On the same laptop's RTX 5080 Laptop GPU it wrote one 634-token answer in 7.1 s, and a badge in the window counts the network connections the chat holds. The chat turns on CUDA graphs, which make decode 1.8 times as fast in ONNX Runtime GenAI and not in Foundry Local 0.13.0, as measured in [the results](docs/results.md#in-short).
+
+```powershell
+git clone https://github.com/john-rocky/gemma-4-e4b-on-foundry-local
+cd gemma-4-e4b-on-foundry-local\chat
+.\chat.cmd
+```
+
 <p align="center">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/john-rocky/gemma-4-e4b-on-foundry-local/main/docs/images/decode-dark.svg">
